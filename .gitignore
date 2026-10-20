@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.netlify/
+# client's raw design export (2 GB) — kept locally, not in git
+source/
+*.zip
+# generated from art/ by scripts/art-images.mjs
+public/img/
+# client source files (zip, WordPress export)
+notes/

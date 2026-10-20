@@ -1,0 +1,12 @@
+{
+  "name": "Claudio Castillo — Non-Repeating Generative Art",
+  "short_name": "Claudio Castillo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e7",
+  "theme_color": "#0b1b33",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

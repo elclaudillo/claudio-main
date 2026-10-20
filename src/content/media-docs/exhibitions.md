@@ -1,0 +1,77 @@
+---
+title: Exhibitions
+order: 1
+---
+
+- CADAF Virtual Fair June 2020
+- MHCAC Virtual art group show SOS earth day April 2020
+- Raw Space (solo) Vero Beach January 2020
+- Context Art Fair Miami Art week Dec 2019
+- From Generative art to stained glass MHCAC December 2019
+- Miami Beach Art deco Museum (solo) January 2019
+- Ecce mater tua, Miami Hispanic Cultural Arts Center. May 2018
+- LA art, California, January 2018
+- Intercontinental digital take over for Miami art week (solo), December 2017
+- Hispanic Cultural Art Center (solo), Miami, December 2017
+- Fat village, January Fort Lauderdale, Fl 2017
+- LA art California, January 2017
+- Spectrum, Miami Florida, Dec 2016
+- SOBU Miami Art week, FL 2016
+- Florida Contemporaries, The Baker Museum, Naples, FL January 2016
+- Spectrum, Miami, FL December 2015
+- Art Expo New York, NY March 2014
+- Spectrum, Miami, FL December 2014
+- Art Palm Beach, January 2014
+- MIA Sea Fair, Miami, January 2014
+- SCOPE Art Fair, Miami December 2013
+- Museum of Latin American Art (MOLAA), Disrupted Nature May, 2013
+- Fountain Art Fair, New York, March 2013
+- FAT VILLAGE, Ft Lauderdale, March 2013
+- Brisky Gallery, Miami, February 2013
+- MIA Sea Fair, February 2013
+- Groundspace Project Los Angeles, January 2013
+- Parallax Fair, Miami, FL, December 2012
+- Art Miami, Miami, Fl, December 2011
+- Edgezones, Miami, Fl, December 2011
+- Art Miami, Miami, Fl, December 2010
+- Solo Show Arte Americas, Tresart, Miami Fl, March 2010
+- Imaginarium, Ft Lauderdale, Fl, February -March 13 2010
+- Art Miami, Miami, Fl, December 2009
+- Museum of Contemporary Art Taipei, Animamix Biennial, Taiwan, November 2009
+- Naples Museum of Art, Fl, Latin American Painting Now, October 2009
+- Hot Art Fair, Basel, Switzerland, June 2009
+- Arte Americas, Miami, FL, March 2009
+- Art Expo, New York City, NY, February 2009
+- Nicole Henry Gallery Group Show, Palm Beach, FL, November 2009
+- Art Miami, Miami, Fl, December 2009
+- Nicole Henry Gallery, Palm Beach, FL, November 2009
+- Museum of Latin American Art, Long Beach, CA, Beyond Photoshop, Sept 2008
+- PINTA, Contemporary Art Fair, New York City, NY, November 2008
+- Museum of Latin American Art, Long Beach, CA, Awards 08 Show, Sept 2008
+- CCE/Museum of Modern Art, Santo Domingo, Dominican Republic, June 2008
+- Tresart Cuban Contemporaries, Miami, FL, May 2008
+- Arte Americas, Miami, FL, March 2008
+- Edgezones Group Show, Miami, FL, December 2007
+- Art Futures Group Show, Miami, FL, December 2007
+- Art Miami, Miami, FL, December 2007
+- PINTA Contemporary Art Fair, New York City, NY, November 2007
+- Museum of Contemporary Art Shanghai, Animamix Biennial, China, October 2007
+- Art Expo, Las Vegas, NV, September 2007
+- Group Show, Art Futures Gallery, Miami, FL, July 2007
+- "Light on San Servolo" Art Fair, Venice Biennale, Venice, Italy, June 2007
+- CIGE Art Fair, Beijing, China, May 2007
+- CIRCA Art Fair, Puerto Rico, April 2007
+- DiVA Video Art Fair, New York City, NY, February 2007
+- Group Show, "Zones Fair", Edgezones, Miami, FL, December 2006
+- Group Show, "Moving Image", Alonso Gallery, Miami, FL, November 2006
+- Group Show, Edgezones, Miami, FL, December 2005
+- Group Show, "Son," Design Center of the Americas, Hollywood, FL, 1993
+- Solo Show, Brickell Square, Miami, FL, 1992
+- Group Show, "Comet Halley", A.I.R. Gallery, New York, NY, 1985
+- Group Show, Galeria Sigfrido, Madrid, Spain, 1982
+- Solo Show, Bacardi Gallery, Miami, FL, 1979
+- Solo Show, El Sombrero Gallery, Torremolinos, Spain, 1977
+
+### Awards
+
+- Winner of the 2008 Museum of Latin American Art's award in the category of video and photography.

@@ -1,0 +1,85 @@
+{
+  "title": "gtmo landscape",
+  "year": "2010",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 2,
+  "video": "https://www.youtube.com/watch?v=u3KC_4LzFx8",
+  "seriesLink": "https://indd.adobe.com/view/79a90d05-a56b-4ab3-bb0c-56fea120613d",
+  "medium": "Watercolours, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 8 with 2 APs, videos and prints.\nExhibited at Museum of Contemporary Art, Taipei, Taiwan, China during Animamix Biennale.",
+  "images": [
+    "/art/gtmo-1.jpg",
+    "/art/gtmo-2.jpg",
+    "/art/gtmo-4.jpg",
+    "/art/gtmo-5.jpg",
+    "/art/gtmo-6.jpg",
+    "/art/gtmo-7.jpg",
+    "/art/gtmo-8.jpg",
+    "/art/gtmo-9.jpg",
+    "/art/gtmo-10.jpg",
+    "/art/gtmo-11.jpg",
+    "/art/gtmo-12.jpg",
+    "/art/gtmo-13.jpg",
+    "/art/gtmo-14.jpg",
+    "/art/gtmo-15.jpg",
+    "/art/gtmo-16.jpg",
+    "/art/gtmo-17.jpg",
+    "/art/gtmo-18.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación, video, software. Un feed de clima RSS en vivo impulsa la obra en tiempo real. Humedad, nubosidad, precipitación, etc. se rastrean en cualquier parte del mundo.",
+      "modalMedium": "",
+      "modalExtra": "Exhibido en el Museo de Arte Contemporáneo de Taipéi, Taiwán, China, durante la Bienal Animamix."
+    },
+    "it": {
+      "medium": "Acquerelli, animazione, video, audio e software. Orologio di 24 ore con cicli lunari, di marea e solari.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe. Ognuna unica."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation, vidéo, logiciel. Un flux météo RSS en direct pilote l'œuvre en temps réel. Humidité, couverture nuageuse, précipitations, etc. sont suivies partout dans le monde.",
+      "modalMedium": "",
+      "modalExtra": "Version aléatoire générative en C++, version RSS en temps réel basée sur Flash AIR. Édition de 8 avec 2 EA, vidéos et tirages. Chacune unique.\nExposé au Musée d'Art Contemporain de Taipei, Taïwan, Chine, lors de la Biennale Animamix."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation, Video, Software. Ein Live-RSS-Wetter-Feed steuert das Kunstwerk in Echtzeit. Luftfeuchtigkeit, Bewölkung, Niederschlag usw. werden weltweit verfolgt.",
+      "modalMedium": "",
+      "modalExtra": "Generative Zufallsversion in C++, Echtzeit-RSS-Version basiert auf Flash AIR. Auflage von 8 mit 2 KA, Videos und Drucken. Jedes ein Unikat.\nAusgestellt im Museum für zeitgenössische Kunst Taipei, Taiwan, China, während der Animamix-Biennale."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 비디오, 소프트웨어. 실시간 RSS 날씨 피드가 작품을 실시간으로 구동합니다. 습도, 구름량, 강수량 등이 전 세계 어디서나 추적됩니다.",
+      "modalMedium": "",
+      "modalExtra": "C++ 기반 생성형 무작위 버전, 실시간 RSS 버전은 Flash AIR 기반. 에디션 8점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유.\n애니마믹스 비엔날레 기간 중 대만 타이베이 현대미술관에서 전시."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、映像、ソフトウェア。リアルタイムのRSS天気フィードが作品をリアルタイムで駆動します。湿度、雲量、降水量などが世界中どこでも追跡されます。.",
+      "modalMedium": "",
+      "modalExtra": "C++によるジェネレーティブ・ランダムバージョン、リアルタイムRSSバージョンはFlash AIRベース。エディション8点、APS2点、映像とプリントを含む。それぞれ唯一無二。\nアニマミックス・ビエンナーレ期間中、台湾台北の現代美術館で展示."
+    },
+    "zh": {
+      "medium": "水彩、动画、视频、软件。实时RSS天气数据实时驱动作品。湿度、云量、降水量等在世界任何地方被追踪。.",
+      "modalMedium": "",
+      "modalExtra": "C++生成随机版本，实时RSS版本基于Flash AIR。限量8件，附2件AP、视频和版画。每件独一无二。\n于动漫双年展期间在中国台湾台北当代艺术博物馆展出."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، فيديو، برمجيات. يُشغّل العمل خلاصة طقس RSS مباشرة في الوقت الفعلي. تُرصد الرطوبة والغطاء السحابي والهطول وغيرها في أي مكان في العالم.",
+      "modalMedium": "",
+      "modalExtra": "نسخة عشوائية توليدية بلغة C++، والنسخة المباشرة عبر RSS مبنية على Flash AIR. إصدار من 8 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة.\nعُرض في متحف الفن المعاصر في تايبيه، تايوان، الصين، خلال بينالي أنيماميكس."
+    },
+    "ru": {
+      "medium": "Акварель, анимация, видео, программное обеспечение. Живая RSS-лента погоды управляет произведением в реальном времени. Влажность, облачность, осадки и т.д. отслеживаются в любой точке мира.",
+      "modalMedium": "",
+      "modalExtra": "Генеративная случайная версия на C++, версия RSS в реальном времени основана на Flash AIR. Тираж 8 экземпляров с 2 АП, видео и отпечатками. Каждый уникален.\nЭкспонировалось в Музее современного искусства Тайбэя, Тайвань, Китай, во время биеннале Animamix."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, वीडियो, सॉफ्टवेयर। एक लाइव RSS मौसम फ़ीड कलाकृति को वास्तविक समय में संचालित करता है। नमी, बादल, वर्षा आदि दुनिया में कहीं भी ट्रैक की जाती है।.",
+      "modalMedium": "",
+      "modalExtra": "C++ में जनरेटिव यादृच्छिक संस्करण, रियल-टाइम RSS संस्करण Flash AIR आधारित है। 8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।\nएनिमामिक्स बिएनाले के दौरान ताइपे, ताइवान, चीन के समकालीन कला संग्रहालय में प्रदर्शित."
+    }
+  }
+}

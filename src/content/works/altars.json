@@ -1,0 +1,96 @@
+{
+  "title": "altars",
+  "year": "2019",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 1,
+  "video": "https://www.youtube.com/watch?v=5w6s8QWcOMY&t=202s",
+  "seriesLink": "",
+  "medium": "Watercolours, video, photography, software\n24 hour clock with lunar and solar cycles. \nRandom, hourly and triggered animations.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 8 with 2 APs, videos and prints.",
+  "images": [
+    "/art/altars-1.jpg",
+    "/art/altars-4.jpg",
+    "/art/altars-5.jpg",
+    "/art/altars-10.jpg",
+    "/art/altars-11.jpg",
+    "/art/altars-12.jpg",
+    "/art/altars-14.jpg",
+    "/art/altars-15.jpg",
+    "/art/altars-16.jpg",
+    "/art/altars-17.jpg",
+    "/art/altars-18.jpg",
+    "/art/altars-19.jpg",
+    "/art/altars-21.jpg",
+    "/art/altars-23.jpg",
+    "/art/altars-24.jpg",
+    "/art/altars-26.jpg",
+    "/art/altars-27.jpg",
+    "/art/altars-28.jpg",
+    "/art/altars-33.jpg",
+    "/art/altars-34.jpg",
+    "/art/altars-35.jpg",
+    "/art/altars-37.jpg",
+    "/art/altars-38.jpg",
+    "/art/altars-40.jpg",
+    "/art/altars-43.jpg",
+    "/art/altars-45.jpg",
+    "/art/altars-48.jpg",
+    "/art/altars-49.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, video, fotografía, software\nReloj de 24 horas con ciclos lunares y solares.\nAnimaciones aleatorias, por hora y activadas.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "it": {
+      "medium": "Acquerelli, video, fotografia, software\nOrologio di 24 ore con cicli lunari e solari.\nAnimazioni casuali, orarie e attivate.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe. Ognuna unica."
+    },
+    "fr": {
+      "medium": "Aquarelles, vidéo, photographie, logiciel\nHorloge de 24 heures avec cycles lunaires et solaires.\nAnimations aléatoires, horaires et déclenchées.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 8 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Aquarelle, Video, Fotografie, Software\n24-Stunden-Uhr mit Mond- und Sonnenzyklen.\nZufällige, stündliche und ausgelöste Animationen.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 8 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "수채화, 비디오, 사진, 소프트웨어\n달과 태양 주기가 있는 24시간 시계.\n무작위, 매시간 및 트리거되는 애니메이션.",
+      "modalMedium": "",
+      "modalExtra": "에디션 8점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "水彩画、映像、写真、ソフトウェア\n月と太陽のサイクルを持つ24時間時計。\nランダム、毎時、およびトリガーされるアニメーション。.",
+      "modalMedium": "",
+      "modalExtra": "エディション8点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、视频、摄影、软件\n带有月相和太阳周期的24小时时钟。\n随机、每小时及触发式动画。.",
+      "modalMedium": "",
+      "modalExtra": "限量8件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، فيديو، تصوير فوتوغرافي، برمجيات\nساعة 24 ساعة بدورات قمرية وشمسية.\nرسوم متحركة عشوائية، كل ساعة، ومُفعّلة.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 8 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, видео, фотография, программное обеспечение\n24-часовые часы с лунными и солнечными циклами.\nСлучайные, ежечасные и запускаемые анимации.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 8 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "जलरंग, वीडियो, फोटोग्राफी, सॉफ्टवेयर\nचंद्र और सौर चक्रों वाली 24 घंटे की घड़ी।\nयादृच्छिक, प्रति घंटा और सक्रिय एनिमेशन।.",
+      "modalMedium": "",
+      "modalExtra": "8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

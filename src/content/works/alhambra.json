@@ -1,0 +1,74 @@
+{
+  "title": "alhambra tiles",
+  "year": "2018",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=U8hsCdSBgcw&t=6s",
+  "seriesLink": "https://indd.adobe.com/view/bf456d7a-7964-4684-9bbc-6734e0ee8e5c",
+  "medium": "Mosaic morphing linear video is regenerated on hue values. Lunar cycle on top, hour hands appear when triggered by sensor.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
+  "images": [
+    "/art/alhambra-1.jpg",
+    "/art/alhambra-2.jpg",
+    "/art/alhambra-3.jpg",
+    "/art/alhambra-4.jpg",
+    "/art/alhambra-5.jpg",
+    "/art/alhambra-6.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Video lineal de mosaico en transformación regenerado según valores de matiz. Ciclo lunar en la parte superior; las manecillas aparecen al activarse por sensor.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "it": {
+      "medium": "Video lineare di mosaico in trasformazione, rigenerato secondo i valori di tonalità. Ciclo lunare nella parte superiore; le lancette appaiono quando attivate da un sensore.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "fr": {
+      "medium": "Mosaïque en morphose, vidéo linéaire régénérée selon les valeurs de teinte. Cycle lunaire en haut, les aiguilles apparaissent lorsqu'elles sont déclenchées par un capteur.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 5 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Sich wandelndes Mosaik, lineares Video wird anhand von Farbtonwerten regeneriert. Mondzyklus oben, Zeiger erscheinen bei Auslösung durch einen Sensor.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 5 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "색조 값에 따라 재생성되는 변형 모자이크 선형 비디오. 상단에는 달 주기, 센서에 의해 트리거되면 시침이 나타납니다.",
+      "modalMedium": "",
+      "modalExtra": "에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "色相値に基づいて再生成される変形モザイク線形映像。上部に月周期、センサーによって作動すると時針が現れます。.",
+      "modalMedium": "",
+      "modalExtra": "エディション5点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "根据色调值再生的变形马赛克线性视频。顶部为月相周期，传感器触发时指针出现。.",
+      "modalMedium": "",
+      "modalExtra": "限量5件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "فسيفساء متحولة، فيديو خطي يُعاد توليده بناءً على قيم اللون. دورة قمرية في الأعلى، تظهر عقارب الساعة عند التفعيل بواسطة مستشعر.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Трансформирующаяся мозаика, линейное видео регенерируется по значениям оттенка. Лунный цикл сверху, стрелки появляются при срабатывании датчика.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 5 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "रंग मूल्यों के आधार पर पुनर्जीवित होने वाला रूपांतरित मोज़ेक रैखिक वीडियो। ऊपर चंद्र चक्र, सेंसर द्वारा सक्रिय होने पर घंटे की सुइयां दिखाई देती हैं।.",
+      "modalMedium": "",
+      "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

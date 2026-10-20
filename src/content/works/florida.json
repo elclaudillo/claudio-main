@@ -1,0 +1,79 @@
+{
+  "title": "florida",
+  "year": "2014",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=YD-b8huw9Fg",
+  "seriesLink": "",
+  "medium": "Watercolours, time-lapse video, animation and software. Lunar phases.",
+  "modalMedium": "Watercolours, time-lapse video, animation and software. Lunar phases. Linear video is turned non linear generative by targeting colours and have them regenerate in real time across all possible 16 million hues.",
+  "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
+  "images": [
+    "/art/florida-1.jpg",
+    "/art/florida-2.jpg",
+    "/art/florida-3.jpg",
+    "/art/florida-4.jpg",
+    "/art/florida-5.jpg",
+    "/art/florida-6.jpg",
+    "/art/florida-7.jpg",
+    "/art/florida-8.jpg",
+    "/art/florida-9.jpg",
+    "/art/florida-10.jpg",
+    "/art/florida-11.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, video en time-lapse, animación y software. Fases lunares. Video lineal convertido en generativo no lineal al regenerar colores en tiempo real entre los 16 millones de matices posibles.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "it": {
+      "medium": "Acquerelli, video time-lapse, animazione e software. Fasi lunari. Il video lineare diventa generativo non lineare individuando i colori e rigenerandoli in tempo reale attraverso tutte le 16 milioni di tonalità possibili.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 5 con 2 PA, video e stampe. Ognuna unica."
+    },
+    "fr": {
+      "medium": "Aquarelles, vidéo en accéléré, animation et logiciel. Phases lunaires. La vidéo linéaire devient générative non linéaire en ciblant les couleurs et en les régénérant en temps réel parmi 16 millions de teintes possibles.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 5 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Aquarelle, Zeitraffervideo, Animation und Software. Mondphasen. Lineares Video wird durch gezielte Farbregeneration in Echtzeit über alle 16 Millionen möglichen Farbtöne nichtlinear generativ.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 5 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "수채화, 타임랩스 비디오, 애니메이션 및 소프트웨어. 달의 위상. 색상을 타겟팅하여 1,600만 가지 가능한 색조 전체에서 실시간으로 재생성함으로써 선형 비디오가 비선형 생성형으로 전환됩니다.",
+      "modalMedium": "",
+      "modalExtra": "에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "水彩画、タイムラプス映像、アニメーション、ソフトウェア。月の満ち欠け。色をターゲットにしてリアルタイムで1600万色すべての色相にわたって再生成することで、線形映像が非線形の生成映像になります。.",
+      "modalMedium": "",
+      "modalExtra": "エディション5点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、延时视频、动画和软件。月相。通过针对颜色并在1600万种可能色调中实时再生，线性视频转变为非线性生成视频。.",
+      "modalMedium": "",
+      "modalExtra": "限量5件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، فيديو بفارق زمني، رسوم متحركة وبرمجيات. أطوار القمر. يتحول الفيديو الخطي إلى فيديو توليدي غير خطي من خلال استهداف الألوان وإعادة توليدها في الوقت الفعلي عبر 16 مليون درجة لون ممكنة.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, таймлапс-видео, анимация и программное обеспечение. Фазы луны. Линейное видео становится нелинейно генеративным за счёт нацеливания на цвета и их регенерации в реальном времени среди всех 16 миллионов возможных оттенков.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 5 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "जलरंग, टाइम-लैप्स वीडियो, एनिमेशन और सॉफ्टवेयर। चंद्र चरण। रंगों को लक्षित करके और वास्तविक समय में सभी 16 मिलियन संभावित रंगों में पुनर्जीवित करके रैखिक वीडियो को गैर-रेखीय जनरेटिव बनाया जाता है।.",
+      "modalMedium": "",
+      "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "tagline": "Arte generativo — acuarelas pintadas a mano, animaciones, video, audio y software.",
+  "navAbout": "Sobre",
+  "navWorks": "Obras",
+  "worksHeading": "Obras Seleccionadas",
+  "playVideo": "▶ Ver video de muestra",
+  "seriesLinkLabel": "Ver más piezas de la misma serie, misma lógica, distintas imágenes →",
+  "aboutHeading": "Sobre la obra",
+  "aboutQuote": "«No te bañarás dos veces en el mismo río».",
+  "aboutQuoteAuthor": "Heráclito",
+  "about": [
+    "Claudio Castillo es un artista multimedia que fusiona la acuarela, el video, la fotografía, la animación y el software en una forma de arte que cobra vida propia: visiones cinéticas y en constante evolución donde el cambio es inevitable y ocurre ante nuestros propios ojos.",
+    "Parte de versiones digitalizadas de sus acuarelas, divide cada imagen en capas y anima cada capa de múltiples maneras. El software solo reordena y secuencia estas animaciones hechas a mano —la obra no es generada por computadora, es acuarela y collage animados—, de modo que la pintura se recompone sin fin en «pinturas regenerativas no lineales» que nunca se repiten.",
+    "Mientras las imágenes derivan al azar —agua, flores, lluvia, enredaderas, raíces, cielo—, el reloj interno de la computadora hace lo contrario: mantiene la hora exacta y predice ciclos naturales como las fases de la luna y las mareas. Algunas piezas también se alimentan de datos en vivo, del clima a los titulares de noticias y la bolsa, y responden al mundo en tiempo real.",
+    "La obra se inscribe en una larga tradición de artistas que trabajan con el tiempo y el azar, desde los 3 zurcidos patrón de Duchamp y los móviles de Calder hasta Nam June Paik, John Cage y Brian Eno. Puede verse en pantalla o proyectada, impresa, grabada o transmitida: cada instante, un original único. La «obra» en sí nunca termina: seguirá creándose mucho después de que el artista ya no esté."
+  ],
+  "selectedMedia": "Prensa Seleccionada",
+  "otherWork": "Otras obras",
+  "installNote": "Agrega esta página a tu pantalla de inicio para instalarla como una app."
+}

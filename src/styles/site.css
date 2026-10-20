@@ -1,0 +1,342 @@
+/* Light theme values come from Claudio's design (inline styles in the Claude
+   Design export). Dark theme is a near-black "gallery wall" for the art.
+   The theme is set on <html data-theme> by the inline script in Home.astro:
+   the visitor's saved choice, else their system setting. */
+:root {
+  color-scheme: light;
+  --gold: #b8923f;
+  --bg: #f6f1e7;
+  --text: #1c1a17;
+  --heading: #0b1b33;
+  --body: #33302b;
+  --muted: #6b6459;
+  --surface: #fff;
+  --surface-alt: #f6f3ee;
+  --card-img-bg: #e9e2d2;
+  --rule: rgba(28,26,23,0.12);
+  --nav-bg: #faf7f0;
+  --nav-border: rgba(28,26,23,0.14);
+  --nav-text: #4a443c;
+  --nav-text-hover: #1c1a17;
+  --btn-border: rgba(28,26,23,0.28);
+  --btn-border-hover: rgba(28,26,23,0.55);
+  --tagline: #241f19;
+  --menu-hover-bg: #f6f1e7;
+  --hero-bg: #0b1b33;
+  --footer-bg: #0e223f;
+  --footer-text: #c9c2ac;
+  --footer-icon: #e7d3a1;
+  --footer-note: #8d857a;
+  --shadow: rgba(11,27,51,0.14);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --gold: #d0a650;
+  --bg: #0e0f12;
+  --text: #ece6da;
+  --heading: #f3ede2;
+  --body: #d6cfc2;
+  --muted: #a39a8c;
+  --surface: #18191d;
+  --surface-alt: #121316;
+  --card-img-bg: #1f2024;
+  --rule: rgba(255,255,255,0.09);
+  --nav-bg: #141518;
+  --nav-border: rgba(255,255,255,0.08);
+  --nav-text: #cfc7b8;
+  --nav-text-hover: #fff;
+  --btn-border: rgba(255,255,255,0.22);
+  --btn-border-hover: rgba(255,255,255,0.5);
+  --tagline: #b9b1a3;
+  --menu-hover-bg: #23252a;
+  --hero-bg: #050608;
+  --footer-bg: #08090b;
+  --footer-text: #a39a8c;
+  --footer-icon: #d9c48f;
+  --footer-note: #7d766b;
+  --shadow: rgba(0,0,0,0.55);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: "Inter", sans-serif; line-height: 1.6;
+  -webkit-text-size-adjust: 100%; min-height: 100vh;
+}
+/* Smooth theme switch; .cc-theme-ready is added after first paint so the
+   page doesn't animate in from the wrong colours on load. */
+.cc-theme-ready body, .cc-theme-ready .cc-nav, .cc-theme-ready .cc-card, .cc-theme-ready section,
+.cc-theme-ready .cc-footer, .cc-theme-ready .cc-hero {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+}
+a { color: var(--gold); }
+a:hover { color: var(--heading); }
+button { font-family: "Inter", sans-serif; }
+[hidden] { display: none !important; }
+
+/* Windows/Chrome High Contrast strips every background and accent colour.
+   This is an art portfolio — colour is the content — so opt the design out. */
+@media (forced-colors: active) {
+  body, body * { forced-color-adjust: none !important; }
+}
+
+/* ---- nav ---------------------------------------------------------------- */
+.cc-nav {
+  position: sticky; top: 0; z-index: 50; min-height: 12px;
+  display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 12.8px;
+  padding: calc(6px + env(safe-area-inset-top)) 5vw 6px 5vw;
+  background: var(--nav-bg); border-bottom: 1px solid var(--nav-border);
+}
+.cc-brand { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; min-width: 0; }
+/* The Edge Animate stage is 558×60; scale sets the logo size. */
+.cc-brand-name {
+  --logo-scale: 0.58;
+  position: relative; display: block; width: calc(558px * var(--logo-scale)); height: calc(60px * var(--logo-scale));
+  overflow: hidden; text-decoration: none; color: transparent;
+}
+.cc-brand-name iframe {
+  position: absolute; left: 0; top: 0; width: 558px; height: 60px; border: 0; background: transparent;
+  transform: scale(var(--logo-scale)); transform-origin: left top; pointer-events: none;
+  filter: brightness(1.75) saturate(0.85) opacity(0.8);
+}
+.cc-tagline {
+  font-style: italic; font-size: 0.6rem; line-height: 1.1; color: var(--tagline);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%;
+}
+.cc-nav-right { display: flex; align-items: center; gap: 12.8px; flex-shrink: 0; flex-wrap: nowrap; margin-left: auto; justify-content: flex-end; }
+.cc-nav-links { list-style: none; display: flex; gap: 16px; flex-shrink: 0; }
+.cc-nav-links a { text-decoration: none; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text); }
+.cc-nav-links a:hover { color: var(--nav-text-hover); }
+
+.cc-btn {
+  cursor: pointer; text-decoration: none; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--nav-text); background: none; padding: 8px 14px; border-radius: 2px;
+  border: 1px solid var(--btn-border); flex-shrink: 0; line-height: normal;
+}
+.cc-btn:hover { color: var(--nav-text-hover); border-color: var(--btn-border-hover); }
+.cc-lang-btn { line-height: 1; padding-top: 10px; padding-bottom: 10px; }
+.cc-theme-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 34px; padding: 0; }
+.cc-theme-btn svg { width: 16px; height: 16px; fill: currentColor; }
+.cc-theme-btn .cc-icon-sun { display: none; }
+:root[data-theme="dark"] .cc-theme-btn .cc-icon-sun { display: block; }
+:root[data-theme="dark"] .cc-theme-btn .cc-icon-moon { display: none; }
+.cc-live.is-live { color: #f6f1e7; background: #8a2a22; border-color: #8a2a22; animation: ccLivePulse 3.6s ease-in-out infinite; }
+@keyframes ccLivePulse {
+  0%, 100% { background-color: #5e1712; border-color: #5e1712; box-shadow: 0 0 0 0 rgba(214,52,38,0.6); }
+  50% { background-color: #d8392b; border-color: #d8392b; box-shadow: 0 0 0 8px rgba(214,52,38,0); }
+}
+
+.cc-menu-wrap { position: relative; flex-shrink: 0; }
+.cc-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; box-shadow: 0 8px 24px var(--shadow);
+}
+.cc-menu-contact { padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.cc-menu-contact a {
+  width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--btn-border); color: var(--muted);
+}
+.cc-menu-contact a:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+.cc-menu-contact svg { width: 15px; height: 15px; fill: currentColor; }
+.cc-menu-lang { min-width: 150px; overflow: hidden; }
+.cc-menu-lang a { display: block; width: 100%; text-align: left; padding: 9px 14px; font-size: 0.72rem; color: var(--text); text-decoration: none; }
+.cc-menu-lang a:hover, .cc-menu-lang a[aria-current] { background: var(--menu-hover-bg); color: var(--gold); }
+
+/* ---- hero --------------------------------------------------------------- */
+.cc-top { background-color: var(--hero-bg); color: #fff; }
+.cc-hero {
+  width: 100%; height: 100dvh; min-height: 480px; background: var(--hero-bg);
+  display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+}
+.cc-hero img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: opacity 2s ease; }
+.cc-hero .cc-hero-prev { position: absolute; inset: 0; margin: auto; opacity: 0; }
+.cc-hero .cc-hero-cur { position: relative; cursor: pointer; }
+.cc-hero-link { display: contents; }
+
+/* ---- works -------------------------------------------------------------- */
+.cc-works { padding: 16px 6vw 100px; }
+.cc-heading { max-width: 720px; margin: 0 auto 24px; text-align: center; }
+.cc-heading h2 { font-weight: 600; letter-spacing: 0.01em; color: var(--heading); }
+.cc-works .cc-heading { padding-top: 28px; }
+.cc-works .cc-heading h2 { font-size: clamp(0.85rem, 1.6vw, 1.1rem); }
+.cc-rule { width: 56px; height: 2px; background: var(--gold); margin: 18px auto 0; }
+/* Masonry: columns at least 300px wide, cards keep their natural height. */
+.cc-works-grid { max-width: 1200px; margin: 0 auto; columns: 300px; column-gap: 34px; }
+.cc-card {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease; display: flex; flex-direction: column;
+  break-inside: avoid; margin-bottom: 34px; position: relative;
+}
+.cc-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px var(--shadow); }
+.cc-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.cc-card-img { width: 100%; background: var(--card-img-bg); display: grid; place-items: center; overflow: hidden; }
+.cc-card-img img { width: 100%; height: auto; display: block; object-fit: contain; }
+.cc-card-body { padding: 18px 20px 22px; position: relative; flex: 1; display: flex; flex-direction: column; }
+.cc-title-row { display: flex; align-items: baseline; gap: 10px; }
+.cc-card h3 { font-weight: 600; font-size: 1.15rem; color: var(--heading); text-transform: lowercase; }
+.cc-year { font-weight: 600; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.cc-medium { font-size: 0.88rem; color: var(--muted); margin-top: 10px; flex: 1; }
+.cc-play {
+  display: inline-block; margin-top: 12px; font-size: 0.56rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start;
+}
+.cc-play:hover { color: var(--heading); border-bottom-color: var(--heading); }
+
+/* Desktop with a mouse: the art fills the card and the info slides up over
+   it on hover (or keyboard focus). Touch screens keep the info below. */
+@media (hover: hover) and (pointer: fine) and (min-width: 681px) {
+  .cc-card { border: none; background: var(--card-img-bg); }
+  .cc-card-img img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .cc-card:hover .cc-card-img img, .cc-card:focus-within .cc-card-img img { transform: scale(1.035); }
+  .cc-card-body {
+    position: absolute; left: 0; right: 0; bottom: 0; max-height: 100%; overflow: hidden;
+    padding: 56px 20px 20px;
+    background: linear-gradient(to top, rgba(8,9,12,0.92) 0%, rgba(8,9,12,0.78) 55%, rgba(8,9,12,0) 100%);
+    transform: translateY(101%); opacity: 0;
+    transition: transform .55s cubic-bezier(.2,.7,.2,1), opacity .4s ease;
+  }
+  .cc-card:hover .cc-card-body, .cc-card:focus-within .cc-card-body { transform: translateY(0); opacity: 1; }
+  .cc-card-body h3 { color: #fff; }
+  .cc-card-body .cc-year { color: #e2bd6a; }
+  .cc-card-body .cc-medium {
+    color: rgba(255,255,255,0.82); flex: none;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .cc-card-body .cc-play { color: #e2bd6a; border-bottom-color: #e2bd6a; }
+  .cc-card-body .cc-play:hover { color: #fff; border-bottom-color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-card, .cc-card-body, .cc-card-img img { transition: opacity .2s ease !important; }
+  .cc-card:hover, .cc-card:hover .cc-card-img img { transform: none !important; }
+}
+
+/* ---- other work (second masonry grid) ----------------------------------- */
+.cc-other-works { border-top: 1px solid var(--rule); padding-top: 40px; }
+
+/* ---- about -------------------------------------------------------------- */
+.cc-about { padding: 56px 6vw 100px; background: var(--surface); }
+.cc-about .cc-heading { margin-bottom: 48px; }
+.cc-about .cc-heading h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.cc-about-body { max-width: 760px; margin: 0 auto; font-size: 1.08rem; color: var(--body); }
+.cc-about-body p { margin-bottom: 22px; }
+.cc-media { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--rule); }
+.cc-media-label { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.cc-media-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.cc-media-links a { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.cc-media-links a:hover { color: var(--heading); }
+
+/* ---- footer ------------------------------------------------------------- */
+.cc-footer { padding: 50px 6vw calc(50px + env(safe-area-inset-bottom)); text-align: center; background: var(--footer-bg); color: var(--footer-text); font-size: 0.85rem; }
+.cc-footer-social { display: flex; justify-content: center; gap: 18px; margin: 0 0 4px; flex-wrap: wrap; }
+.cc-footer-social a {
+  display: inline-flex; align-items: center; justify-content: center; width: 47.6px; height: 47.6px; border-radius: 50%;
+  color: var(--footer-icon); border: 1px solid color-mix(in srgb, var(--footer-icon) 35%, transparent);
+}
+.cc-footer-social a:hover { background: var(--footer-icon); color: var(--footer-bg); border-color: var(--footer-icon); }
+.cc-footer-social svg { width: 22.4px; height: 22.4px; fill: currentColor; }
+.cc-install { max-width: 640px; margin: 26px auto 0; font-size: 0.8rem; color: var(--footer-note); }
+
+/* ---- modal -------------------------------------------------------------- */
+.cc-overlay { position: fixed; inset: 0; background: rgba(11,15,20,0.86); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 4vh 4vw; }
+.cc-modal { background: var(--surface); max-width: 960px; width: 100%; max-height: 92vh; overflow-y: auto; display: flex; flex-wrap: wrap; border-radius: 2px; align-items: stretch; }
+.cc-modal-img { background: #111; min-height: 280px; flex: 1 1 340px; position: relative; overflow: hidden; }
+.cc-modal-img a { position: absolute; inset: 0; display: block; z-index: 2; cursor: pointer; }
+.cc-modal-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+.cc-modal-body { padding: 38px; position: relative; display: flex; flex-direction: column; flex: 1 1 300px; }
+.cc-close { position: absolute; top: 14px; right: 18px; font-size: 1.6rem; background: none; border: none; cursor: pointer; color: var(--muted); line-height: 1; }
+.cc-modal .cc-title-row { margin-bottom: 18px; }
+.cc-modal h3 { font-weight: 600; font-size: 1.6rem; color: var(--heading); text-transform: lowercase; }
+.cc-modal .cc-year { font-weight: 400; font-size: 0.75rem; }
+.cc-modal-medium { font-size: 1rem; color: var(--body); margin-bottom: 10px; }
+.cc-modal-extra { font-size: 1rem; color: var(--body); margin-bottom: 14px; }
+.cc-series { display: block; font-size: 0.85rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start; margin-bottom: 14px; }
+.cc-series:hover { color: var(--heading); border-bottom-color: var(--heading); }
+.cc-modal-play {
+  display: inline-block; margin-top: auto; padding-top: 14px; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start;
+}
+
+/* ---- small laptops: tighter one-row nav --------------------------------- */
+@media (max-width: 1180px) {
+  .cc-brand-name { --logo-scale: 0.5; }
+  .cc-nav-right { gap: 9px; }
+  .cc-tagline { max-width: 300px; }
+}
+
+/* ---- tablets and phones: two-row header --------------------------------- */
+/* Row 1: logo + theme toggle. Row 2: links and buttons, right-aligned. */
+@media (max-width: 1000px) {
+  /* row-gap 4px ×2 around the zero-height line break = 8px between rows */
+  .cc-nav { flex-wrap: wrap; gap: 4px 7px; }
+  .cc-nav::after { content: ""; order: 2; flex-basis: 100%; height: 0; }
+  .cc-nav-right { display: contents; }
+  .cc-nav-right > * { order: 3; }
+  .cc-nav-links { margin-left: auto; gap: 12px; }
+  .cc-nav-right > .cc-theme-btn { order: 1; margin-left: auto; align-self: flex-start; }
+  .cc-brand-name { --logo-scale: 0.55; }
+  .cc-tagline { max-width: none; }
+}
+
+/* ---- phones (from the design's 680px breakpoint) ------------------------ */
+@media (max-width: 680px) {
+  .cc-nav-links a { font-size: 0.64rem; }
+  .cc-btn { padding: 8px 9px; font-size: 0.62rem; }
+  .cc-nav-right > .cc-theme-btn { width: 34px; height: 32px; padding: 0; }
+  .cc-tagline { display: none; }
+  .cc-brand-name { --logo-scale: 0.52; }
+  .cc-hero { align-items: flex-start; height: auto; min-height: 62vh; }
+  .cc-hero img { max-height: 78vh; }
+  .cc-modal { max-height: 94vh; }
+  .cc-modal-img { min-height: 260px; }
+  .cc-modal-body { padding: 24px; }
+  .cc-works-grid { columns: 1; max-width: 480px; }
+  .cc-card { margin-bottom: 28px; }
+}
+@media (max-width: 380px) {
+  .cc-brand-name { --logo-scale: 0.47; }
+  .cc-nav-links { gap: 9px; }
+  .cc-btn { padding: 8px 7px; letter-spacing: 0.05em; }
+}
+
+/* ---- selected media: link groups + expandable documents ------------------ */
+.cc-media-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px 44px; margin-top: 34px; }
+.cc-media-group h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.cc-media-group ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.cc-media-group a { display: block; text-decoration: none; color: var(--body); font-size: 0.95rem; line-height: 1.45; }
+.cc-media-source { display: block; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.cc-media-title { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold) 55%, transparent); text-underline-offset: 3px; }
+.cc-media-group a:hover .cc-media-title { color: var(--heading); text-decoration-color: var(--heading); }
+
+.cc-docs { margin-top: 40px; border-top: 1px solid var(--rule); }
+.cc-doc { border-bottom: 1px solid var(--rule); }
+.cc-doc summary {
+  cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--heading);
+}
+.cc-doc summary::-webkit-details-marker { display: none; }
+.cc-doc summary::after { content: "+"; font-size: 1.2rem; font-weight: 400; color: var(--gold); transition: transform .25s ease; }
+.cc-doc[open] summary::after { transform: rotate(45deg); }
+.cc-doc summary:hover { color: var(--gold); }
+.cc-doc summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.cc-doc-body { padding: 2px 0 26px; font-size: 0.95rem; line-height: 1.65; color: var(--body); }
+.cc-doc-body p { margin-bottom: 14px; }
+.cc-doc-body h3 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 22px 0 8px; }
+.cc-doc-body ul { padding-left: 18px; }
+.cc-doc-body li { margin-bottom: 5px; }
+.cc-doc-body li::marker { color: var(--gold); }
+.cc-doc-body strong { color: var(--heading); font-weight: 600; }
+.cc-doc-body blockquote {
+  margin: 6px 0 20px; padding: 4px 0 4px 18px; border-left: 2px solid var(--gold);
+  font-size: 1.15rem; font-style: italic; line-height: 1.5; color: var(--heading);
+}
+.cc-doc-body blockquote p { margin: 0; }
+.cc-doc-body em { font-style: italic; }
+
+/* ---- about: lead paragraph + pull quote --------------------------------- */
+.cc-about-body .cc-about-lead { font-size: 1.32rem; line-height: 1.55; color: var(--heading); margin-bottom: 28px; }
+.cc-about-quote { margin: 38px 0; padding: 6px 0 6px 26px; border-left: 2px solid var(--gold); }
+.cc-about-quote p { margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-style: italic; line-height: 1.35; color: var(--heading); }
+.cc-about-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+@media (max-width: 680px) {
+  .cc-about-body .cc-about-lead { font-size: 1.15rem; }
+}

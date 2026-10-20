@@ -1,0 +1,18 @@
+{
+  "title": "Flower Jungle",
+  "year": "",
+  "section": "other",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=tLpEegOEPkE",
+  "seriesLink": "",
+  "medium": "",
+  "modalMedium": "",
+  "modalExtra": "",
+  "images": [
+    "/art/flower-jungle.jpg"
+  ],
+  "translations": {}
+}

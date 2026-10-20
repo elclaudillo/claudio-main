@@ -1,0 +1,75 @@
+{
+  "title": "biombo",
+  "year": "2009",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=EyjQrsZd0VI",
+  "seriesLink": "",
+  "medium": "Watercolours, animation and software.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 8 with 2 APs, videos and prints.",
+  "images": [
+    "/art/biombo-1.jpg",
+    "/art/biombo-2.jpg",
+    "/art/biombo-3.jpg",
+    "/art/biombo-4.jpg",
+    "/art/biombo-6.jpg",
+    "/art/biombo-7.jpg",
+    "/art/biombo-8.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación y software.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "it": {
+      "medium": "Acquerelli, animazione e software.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe. Ognuna unica."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation et logiciel.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 8 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation und Software.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 8 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션 및 소프트웨어.",
+      "modalMedium": "",
+      "modalExtra": "에디션 8점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、ソフトウェア。.",
+      "modalMedium": "",
+      "modalExtra": "エディション8点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、动画和软件。.",
+      "modalMedium": "",
+      "modalExtra": "限量8件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة وبرمجيات.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 8 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, анимация и программное обеспечение.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 8 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन और सॉफ्टवेयर।.",
+      "modalMedium": "",
+      "modalExtra": "8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

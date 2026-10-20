@@ -1,0 +1,83 @@
+{
+  "title": "virgin apparition",
+  "year": "2006",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 3,
+  "video": "https://www.youtube.com/watch?v=hGxlPFvedWk",
+  "seriesLink": "",
+  "medium": "Watercolours, animation, software. Virgin appears when triggered by sensor.",
+  "modalMedium": "",
+  "modalExtra": "2008 Award winner and permanent collection Museum of Latin American Art, Long Beach, CA. Edition of 8 with 2 APs, videos and prints.",
+  "images": [
+    "/art/virgin-1.jpg",
+    "/art/virgin-3.jpg",
+    "/art/virgin-4.jpg",
+    "/art/virgin-6.jpg",
+    "/art/virgin-7.jpg",
+    "/art/virgin-8.jpg",
+    "/art/virgin-9.jpg",
+    "/art/virgin-10.jpg",
+    "/art/virgin-11.jpg",
+    "/art/virgin-12.jpg",
+    "/art/virgin-13.jpg",
+    "/art/virgin-14.jpg",
+    "/art/virgin-15.jpg",
+    "/art/virgin-16.jpg",
+    "/art/virgin-17.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación, software. La Virgen aparece cuando es activada por un sensor.",
+      "modalMedium": "",
+      "modalExtra": "Ganador de premio en 2008 y colección permanente del Museo de Arte Latinoamericano, Long Beach, CA."
+    },
+    "it": {
+      "medium": "Acquerelli, animazione, software. La Vergine appare quando viene attivata da un sensore.",
+      "modalMedium": "",
+      "modalExtra": "Premio 2008 e collezione permanente del Museum of Latin American Art, Long Beach, CA."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation, logiciel. La Vierge apparaît lorsqu'elle est déclenchée par un capteur.",
+      "modalMedium": "",
+      "modalExtra": "Prix 2008 et collection permanente du Musée d'Art Latino-Américain, Long Beach, CA."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation, Software. Die Jungfrau erscheint, wenn sie durch einen Sensor ausgelöst wird.",
+      "modalMedium": "",
+      "modalExtra": "Preisträger 2008 und Dauerausstellung im Museum of Latin American Art, Long Beach, CA."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 소프트웨어. 센서에 의해 트리거되면 성모가 나타납니다.",
+      "modalMedium": "",
+      "modalExtra": "2008년 수상작이며 롱비치 라틴 아메리카 미술관 영구 소장품."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、ソフトウェア。センサーによって作動すると聖母が現れます。.",
+      "modalMedium": "",
+      "modalExtra": "2008年受賞作、ロングビーチのラテンアメリカ美術館の常設コレクション."
+    },
+    "zh": {
+      "medium": "水彩、动画、软件。传感器触发时圣母显现。.",
+      "modalMedium": "",
+      "modalExtra": "2008年获奖作品，长滩拉丁美洲艺术博物馆永久收藏."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، برمجيات. تظهر العذراء عند تفعيلها بواسطة مستشعر.",
+      "modalMedium": "",
+      "modalExtra": "الفائز بجائزة 2008 ومقتنى دائم في متحف الفن الأمريكي اللاتيني، لونغ بيتش، كاليفورنيا."
+    },
+    "ru": {
+      "medium": "Акварель, анимация, программное обеспечение. Дева появляется при срабатывании датчика.",
+      "modalMedium": "",
+      "modalExtra": "Победитель премии 2008 года, постоянная коллекция Музея латиноамериканского искусства, Лонг-Бич, Калифорния."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, सॉफ्टवेयर। सेंसर द्वारा सक्रिय होने पर वर्जिन प्रकट होती है।.",
+      "modalMedium": "",
+      "modalExtra": "2008 पुरस्कार विजेता और लॉन्ग बीच, सीए के लैटिन अमेरिकी कला संग्रहालय का स्थायी संग्रह."
+    }
+  }
+}

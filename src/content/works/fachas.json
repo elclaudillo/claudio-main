@@ -1,0 +1,75 @@
+{
+  "title": "Fachas y Rojos",
+  "year": "2020",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=pgWUvtXIPjg&t=402s",
+  "seriesLink": "https://indd.adobe.com/view/1defd382-096e-44f6-a416-cf2f35922732",
+  "medium": "Fascist and Communist propaganda posters from the 1930s overwrite each other endlessly. Animations are triggered and hourly, with bullet holes matching the hour.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
+  "images": [
+    "/art/fachas-1.jpg",
+    "/art/fachas-2.jpg",
+    "/art/fachas-3.jpg",
+    "/art/fachas-4.jpg",
+    "/art/fachas-5.jpg",
+    "/art/fachas-6.jpg",
+    "/art/fachas-7.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Carteles de propaganda fascista y comunista de la década de 1930 se sobrescriben interminablemente unos a otros. Las animaciones se activan cada hora, con agujeros de bala que coinciden con la hora.",
+      "modalMedium": "",
+      "modalExtra": "Edición de 5 con 2 AP, videos y copias impresas."
+    },
+    "it": {
+      "medium": "Manifesti di propaganda fascista e comunista degli anni Trenta si sovrascrivono all'infinito l'un l'altro. Le animazioni si attivano ogni ora, con fori di proiettile che corrispondono all'ora.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 5 con 2 PA, video e stampe."
+    },
+    "fr": {
+      "medium": "Affiches de propagande fasciste et communiste des années 1930, se recouvrant sans cesse. Les animations sont déclenchées et horaires, avec des impacts de balles correspondant à l'heure.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 5 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Faschistische und kommunistische Propagandaplakate der 1930er Jahre, die sich endlos überschreiben. Animationen werden ausgelöst und stündlich gezeigt, mit Einschusslöchern passend zur Stunde.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 5 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "1930년대의 파시스트 및 공산주의 선전 포스터가 끊임없이 서로 덮어씁니다. 애니메이션은 트리거되고 매시간 나타나며, 총알구멍은 시간과 일치합니다.",
+      "modalMedium": "",
+      "modalExtra": "에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "1930年代のファシストと共産主義のプロパガンダポスターが、絶えず互いを上書きします。アニメーションはトリガーされ毎時発生し、弾痕は時刻と一致します。.",
+      "modalMedium": "",
+      "modalExtra": "エディション5点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "1930年代的法西斯与共产主义宣传海报，无休止地相互覆盖。动画按小时触发，弹孔与小时对应。.",
+      "modalMedium": "",
+      "modalExtra": "限量5件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ملصقات دعائية فاشية وشيوعية من ثلاثينيات القرن الماضي، تتراكب فوق بعضها البعض بلا انقطاع. الرسوم المتحركة مُفعّلة وتحدث كل ساعة، مع فتحات رصاص مطابقة للساعة.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Фашистские и коммунистические пропагандистские плакаты 1930-х годов, бесконечно перекрывающие друг друга. Анимации запускаются и происходят ежечасно, с пулевыми отверстиями, соответствующими часу.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 5 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "1930 के दशक के फासीवादी और साम्यवादी प्रचार पोस्टर, जो लगातार एक-दूसरे को ढकते रहते हैं। एनिमेशन सक्रिय और प्रति घंटा होते हैं, गोली के छेद घंटे से मेल खाते हैं।.",
+      "modalMedium": "",
+      "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

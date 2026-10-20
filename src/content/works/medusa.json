@@ -1,0 +1,77 @@
+{
+  "title": "medusa",
+  "year": "2023",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/shorts/JXPTv0V6wA0",
+  "seriesLink": "https://indd.adobe.com/view/a0d75045-00bc-4077-ab04-b9b713bb34f1",
+  "medium": "Watercolours, animation, portrait AI, video, audio, software. Generative clock with hour, minute, lunar, tidal and solar cycles.",
+  "modalMedium": "",
+  "modalExtra": "Original Mosaic 200 AD from Getty collection. Edition of 5 with 2 APs, videos and prints.",
+  "images": [
+    "/art/medusa-1.jpg",
+    "/art/medusa-2.jpg",
+    "/art/medusa-3.jpg",
+    "/art/medusa-4.jpg",
+    "/art/medusa-5.jpg",
+    "/art/medusa-6.jpg",
+    "/art/medusa-7.jpg",
+    "/art/medusa-8.jpg",
+    "/art/medusa-9.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación, IA de retrato, video, audio, software. Reloj generativo con ciclos de hora, minuto, lunar, de mareas y solar.",
+      "modalMedium": "",
+      "modalExtra": "Mosaico original del año 200 d.C. de la colección Getty. Edición de 5 con 2 AP, videos y copias impresas."
+    },
+    "it": {
+      "medium": "Acquerelli, animazione, IA di ritratto, video, audio, software. Orologio generativo con cicli di ora, minuto, lunare, di marea e solare.",
+      "modalMedium": "",
+      "modalExtra": "Mosaico originale del 200 d.C. dalla collezione Getty. Edizione di 5 con 2 PA, video e stampe."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation, IA de portrait, vidéo, audio, logiciel. Horloge générative avec cycles horaire, minute, lunaire, de marées et solaire.",
+      "modalMedium": "",
+      "modalExtra": "Mosaïque originale de 200 apr. J.-C. de la collection Getty. Édition de 5 avec 2 EA, vidéos et tirages. Toutes uniques."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation, Porträt-KI, Video, Audio, Software. Generative Uhr mit Stunden-, Minuten-, Mond-, Gezeiten- und Sonnenzyklen.",
+      "modalMedium": "",
+      "modalExtra": "Original-Mosaik aus dem Jahr 200 n. Chr. aus der Getty-Sammlung. Auflage von 5 mit 2 KA, Videos und Drucken. Alle Unikate."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 인물 AI, 비디오, 오디오, 소프트웨어. 시, 분, 달, 조수, 태양 주기가 있는 생성형 시계.",
+      "modalMedium": "",
+      "modalExtra": "게티 컬렉션의 서기 200년 원본 모자이크. 에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 모두 고유."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、肖像AI、映像、音声、ソフトウェア。時、分、月、潮、太陽のサイクルを持つジェネレーティブ時計。.",
+      "modalMedium": "",
+      "modalExtra": "ゲティ・コレクションの西暦200年のオリジナルモザイク。エディション5点、APS2点、映像とプリントを含む。すべて唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、动画、肖像AI、视频、音频、软件。带有时、分、月、潮汐和太阳周期的生成式时钟。.",
+      "modalMedium": "",
+      "modalExtra": "盖蒂收藏的公元200年原始马赛克。限量5件，附2件AP、视频和版画。全部独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، ذكاء اصطناعي للصور الشخصية، فيديو، صوت، برمجيات. ساعة توليدية بدورات الساعة والدقيقة والقمر والمد والشمس.",
+      "modalMedium": "",
+      "modalExtra": "فسيفساء أصلية من عام 200 ميلادي من مجموعة جيتي. إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. جميعها فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, анимация, ИИ портрета, видео, аудио, программное обеспечение. Генеративные часы с часовым, минутным, лунным, приливным и солнечным циклами.",
+      "modalMedium": "",
+      "modalExtra": "Оригинальная мозаика 200 года н.э. из коллекции Гетти. Тираж 5 экземпляров с 2 АП, видео и отпечатками. Все уникальны."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, पोर्ट्रेट AI, वीडियो, ऑडियो, सॉफ्टवेयर। घंटे, मिनट, चंद्र, ज्वारीय और सौर चक्रों वाली जनरेटिव घड़ी।.",
+      "modalMedium": "",
+      "modalExtra": "गेटी संग्रह से 200 ईस्वी का मूल मोज़ेक। 5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। सभी अद्वितीय।."
+    }
+  }
+}

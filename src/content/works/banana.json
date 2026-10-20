@@ -1,0 +1,86 @@
+{
+  "title": "Banana republican",
+  "year": "2010",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 5,
+  "video": "https://www.youtube.com/watch?v=BowFTStfYTc",
+  "seriesLink": "https://indd.adobe.com/view/79a90d05-a56b-4ab3-bb0c-56fea120613d",
+  "medium": "Watercolours, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
+  "modalMedium": "",
+  "modalExtra": "Real time RSS version is Flash AIR based. Generative random version in C++, non web is also available. Edition of 8 with 2 APs, videos and prints.",
+  "images": [
+    "/art/banana-1.jpg",
+    "/art/banana-2.jpg",
+    "/art/banana-3.jpg",
+    "/art/banana-4.jpg",
+    "/art/banana-5.jpg",
+    "/art/banana-6.jpg",
+    "/art/banana-7.jpg",
+    "/art/banana-8.jpg",
+    "/art/banana-9.jpg",
+    "/art/banana-10.jpg",
+    "/art/banana-11.jpg",
+    "/art/banana-12.jpg",
+    "/art/banana-13.jpg",
+    "/art/banana-14.jpg",
+    "/art/banana-15.jpg",
+    "/art/banana-16.jpg",
+    "/art/banana-17.jpg",
+    "/art/banana-18.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación, video, software. Un feed de clima RSS en vivo impulsa la obra en tiempo real. Humedad, nubosidad, precipitación, etc. se rastrean en cualquier parte del mundo.",
+      "modalMedium": "",
+      "modalExtra": "Exhibido en el Museo de Arte Contemporáneo de Taipéi, Taiwán, China, durante la Bienal Animamix."
+    },
+    "it": {
+      "medium": "Acquerelli, animazione, video e software. Guidato da un feed meteo RSS in diretta — ora del giorno, calore, umidità, nuvolosità, precipitazioni e altro sono tracciati in tempo reale ovunque nel mondo.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation, vidéo, logiciel. Un flux météo RSS en direct pilote l'œuvre en temps réel. Humidité, couverture nuageuse, précipitations, etc. sont suivies partout dans le monde.",
+      "modalMedium": "",
+      "modalExtra": "La version RSS en temps réel est basée sur Flash AIR. Une version aléatoire générative en C++, non web, est également disponible. Édition de 8 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation, Video, Software. Ein Live-RSS-Wetter-Feed steuert das Kunstwerk in Echtzeit. Luftfeuchtigkeit, Bewölkung, Niederschlag usw. werden weltweit verfolgt.",
+      "modalMedium": "",
+      "modalExtra": "Die Echtzeit-RSS-Version basiert auf Flash AIR. Eine generative Zufallsversion in C++, nicht webbasiert, ist ebenfalls verfügbar. Auflage von 8 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 비디오, 소프트웨어. 실시간 RSS 날씨 피드가 작품을 실시간으로 구동합니다. 습도, 구름량, 강수량 등이 전 세계 어디서나 추적됩니다.",
+      "modalMedium": "",
+      "modalExtra": "실시간 RSS 버전은 Flash AIR 기반입니다. 비웹 기반의 C++ 생성형 무작위 버전도 제공됩니다. 에디션 8점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、映像、ソフトウェア。リアルタイムのRSS天気フィードが作品をリアルタイムで駆動します。湿度、雲量、降水量などが世界中どこでも追跡されます。.",
+      "modalMedium": "",
+      "modalExtra": "リアルタイムRSSバージョンはFlash AIRベースです。非ウェブのC++ジェネレーティブ・ランダムバージョンも利用可能です。エディション8点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、动画、视频、软件。实时RSS天气数据实时驱动作品。湿度、云量、降水量等在世界任何地方被追踪。.",
+      "modalMedium": "",
+      "modalExtra": "实时RSS版本基于Flash AIR。也提供非网页版的C++生成随机版本。限量8件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، فيديو، برمجيات. يُشغّل العمل خلاصة طقس RSS مباشرة في الوقت الفعلي. تُرصد الرطوبة والغطاء السحابي والهطول وغيرها في أي مكان في العالم.",
+      "modalMedium": "",
+      "modalExtra": "النسخة المباشرة عبر RSS مبنية على Flash AIR. تتوفر أيضًا نسخة عشوائية توليدية بلغة C++ غير مرتبطة بالويب. إصدار من 8 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, анимация, видео, программное обеспечение. Живая RSS-лента погоды управляет произведением в реальном времени. Влажность, облачность, осадки и т.д. отслеживаются в любой точке мира.",
+      "modalMedium": "",
+      "modalExtra": "Версия RSS в реальном времени основана на Flash AIR. Также доступна генеративная случайная версия на C++ вне веба. Тираж 8 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, वीडियो, सॉफ्टवेयर। एक लाइव RSS मौसम फ़ीड कलाकृति को वास्तविक समय में संचालित करता है। नमी, बादल, वर्षा आदि दुनिया में कहीं भी ट्रैक की जाती है।.",
+      "modalMedium": "",
+      "modalExtra": "रियल-टाइम RSS संस्करण Flash AIR आधारित है। C++ में गैर-वेब जनरेटिव यादृच्छिक संस्करण भी उपलब्ध है। 8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

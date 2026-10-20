@@ -1,0 +1,10 @@
+---
+import Home from '../../components/Home.astro';
+import { langOrder, defaultLang } from '../../lib/site.js';
+
+export function getStaticPaths() {
+  return langOrder.filter((l) => l !== defaultLang).map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<Home lang={lang} />

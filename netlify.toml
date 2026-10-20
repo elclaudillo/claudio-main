@@ -1,0 +1,37 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Live status: the home page and /live/ ask YouTube's channel page which
+# broadcast is on air. Same-origin proxy avoids CORS.
+[[redirects]]
+  from = "/livecheck/:ts/:channel"
+  to = "https://www.youtube.com/channel/:channel/live"
+  status = 200
+  force = true
+
+# /live/ "Free Grab" and "Print" fetch the current stream thumbnail.
+[[redirects]]
+  from = "/snapx/:t/:id/:file"
+  to = "https://i.ytimg.com/vi/:id/:file"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/snap/:id/:file"
+  to = "https://i.ytimg.com/vi/:id/:file"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/live/*"
+  [headers.values]
+    Cache-Control = "no-cache"

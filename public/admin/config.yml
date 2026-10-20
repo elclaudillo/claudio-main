@@ -1,0 +1,426 @@
+# Dashboard for the site's artwork and text: https://sveltiacms.app
+# Opens at /admin/. Each save commits to the GitHub repo and Netlify rebuilds.
+# Locally (npm run dev, then http://localhost:4321/admin/) choose
+# "Work with Local Repository" and pick this project folder (Chrome or Edge).
+
+backend:
+  name: github
+  repo: OWNER/REPO # TODO: set once Claudio's GitHub repo exists
+  branch: main
+
+media_folder: art
+public_folder: /art
+site_url: https://claudiocastillo.netlify.app
+display_url: https://claudiocastillo.netlify.app
+
+collections:
+  - name: works
+    label: Artworks
+    label_singular: Artwork
+    description: >-
+      Each artwork is a card in Selected Works or Other work. Hidden works stay saved but
+      are not shown. Featured works also appear in the full-screen slideshow at the top.
+    folder: src/content/works
+    format: json
+    extension: json
+    create: true
+    delete: true
+    identifier_field: title
+    slug: "{{title}}"
+    summary: "{{title}} · {{year}} · {{section}}"
+    sortable_fields: [title, year]
+    view_filters:
+      - { label: Selected Works, field: section, pattern: selected }
+      - { label: Other work, field: section, pattern: other }
+      - { label: Visible, field: visible, pattern: true }
+      - { label: Hidden, field: visible, pattern: false }
+      - { label: Featured in slideshow, field: featured, pattern: true }
+    fields:
+      - { name: title, label: Title, widget: string, hint: "Shown in lowercase on the site." }
+      - { name: year, label: Year, widget: string, required: false }
+      - name: section
+        label: Section
+        widget: select
+        default: selected
+        options:
+          - { label: Selected Works, value: selected }
+          - { label: Other work, value: other }
+        hint: Selected Works is the main grid; Other work is the second grid below it.
+      - name: category
+        label: Category
+        widget: select
+        required: false
+        options:
+          - { label: Generative, value: generative }
+          - { label: Portrait, value: portrait }
+          - { label: Watercolour, value: watercolour }
+      - { name: visible, label: Visible on site, widget: boolean, default: true }
+      - name: featured
+        label: Featured in slideshow
+        widget: boolean
+        default: false
+        hint: The full-screen hero at the top of the home page cycles through featured works.
+      - name: heroOrder
+        label: Slideshow position
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Lower numbers come first in the slideshow. Leave empty to put it at the end.
+      - name: images
+        label: Images
+        label_singular: Image
+        widget: list
+        min: 1
+        hint: >-
+          The card shows one of these at random and keeps rotating through them.
+          Upload JPG or PNG files (under 10 MB). The site makes the web sizes itself.
+        field: { name: image, label: Image, widget: image }
+      - { name: video, label: Sample video link, widget: string, required: false, hint: "YouTube link opened by Play sample video. Leave empty for works without a video." }
+      - { name: seriesLink, label: Series link, widget: string, required: false, hint: "Optional. Shown in the detail window as \"See additional pieces in same series\"." }
+      - { name: medium, label: Card text, widget: text, hint: "Short description shown on the card." }
+      - { name: modalMedium, label: Detail text, widget: text, required: false, hint: "Longer description for the detail window. Leave empty to reuse the card text." }
+      - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false, hint: "e.g. Edition of 8 with 2 APs, videos and prints." }
+      - name: translations
+        label: Translations
+        widget: object
+        collapsed: true
+        required: false
+        hint: Leave any field empty to show the English text in that language.
+        fields:
+          - name: es
+            label: "Español"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: it
+            label: "Italiano"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: fr
+            label: "Français"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: de
+            label: "Deutsch"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: ko
+            label: "한국어"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: ja
+            label: "日本語"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: zh
+            label: "中文"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: ar
+            label: "العربية"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: ru
+            label: "Русский"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+          - name: hi
+            label: "हिन्दी"
+            widget: object
+            collapsed: true
+            required: false
+            fields:
+              - { name: medium, label: Card text, widget: text, required: false }
+              - { name: modalMedium, label: Detail text, widget: text, required: false }
+              - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
+
+  - name: media
+    label: Selected Media
+    label_singular: Link group
+    description: >-
+      Press links in the About section, grouped (Press releases, Interviews, ...).
+      Upload PDFs with the link field's file picker or paste a YouTube link.
+    folder: src/content/media
+    format: json
+    extension: json
+    create: true
+    delete: true
+    identifier_field: title
+    slug: "{{title}}"
+    summary: "{{order}}. {{title}}"
+    sortable_fields: [order, title]
+    media_folder: /public/press
+    public_folder: /press
+    fields:
+      - { name: title, label: Group title, widget: string }
+      - { name: order, label: Position, widget: number, value_type: int, default: 10, hint: "Lower numbers come first." }
+      - name: layout
+        label: Layout
+        widget: select
+        default: list
+        options:
+          - { label: "List (source + title)", value: list }
+          - { label: "Row of links (like Sotheby's / Miami Herald)", value: row }
+      - name: items
+        label: Links
+        label_singular: Link
+        widget: list
+        fields:
+          - { name: label, label: Title, widget: string }
+          - { name: source, label: Source, widget: string, required: false, hint: "Outlet or author, e.g. El Nuevo Herald." }
+          - { name: url, label: Link or PDF, widget: file, hint: "Upload a PDF, or paste a URL (YouTube, article, ...)." }
+
+  - name: mediaDocs
+    label: Media documents
+    label_singular: Document
+    description: Longer texts shown as expandable panels under Selected Media (Exhibitions, CV / Bio, Art statement).
+    folder: src/content/media-docs
+    format: frontmatter
+    extension: md
+    create: true
+    delete: true
+    identifier_field: title
+    slug: "{{title}}"
+    summary: "{{order}}. {{title}}"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: order, label: Position, widget: number, value_type: int, default: 10 }
+      - { name: body, label: Text, widget: markdown }
+
+  - name: site
+    label: Site text
+    description: Tagline, headings and About text for each language.
+    files:
+      - name: en
+        label: "English"
+        file: src/content/site/en.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: es
+        label: "Español"
+        file: src/content/site/es.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: it
+        label: "Italiano"
+        file: src/content/site/it.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: fr
+        label: "Français"
+        file: src/content/site/fr.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: de
+        label: "Deutsch"
+        file: src/content/site/de.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: ko
+        label: "한국어"
+        file: src/content/site/ko.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: ja
+        label: "日本語"
+        file: src/content/site/ja.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: zh
+        label: "中文"
+        file: src/content/site/zh.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: ar
+        label: "العربية"
+        file: src/content/site/ar.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: ru
+        label: "Русский"
+        file: src/content/site/ru.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }
+      - name: hi
+        label: "हिन्दी"
+        file: src/content/site/hi.json
+        fields:
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: navAbout, label: "Menu: About", widget: string }
+          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: worksHeading, label: Works heading, widget: string }
+          - { name: playVideo, label: Play video label, widget: string }
+          - { name: seriesLinkLabel, label: Series link label, widget: string }
+          - { name: otherWork, label: Other work heading, widget: string }
+          - { name: aboutHeading, label: About heading, widget: string }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
+          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: installNote, label: Install note, widget: string }

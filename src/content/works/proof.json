@@ -1,0 +1,74 @@
+{
+  "title": "proof of life",
+  "year": "2009",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 7,
+  "video": "https://www.youtube.com/watch?v=uLVA_T9mENo",
+  "seriesLink": "https://indd.adobe.com/view/79a90d05-a56b-4ab3-bb0c-56fea120613d",
+  "medium": "Real time fake news generator. A BBC RSS live news feed provides headlines and first paragraphs, whilst the palm tree tracks the stock market.",
+  "modalMedium": "Fake news generator. Real time news from the BBC provide live headlines and first paragraph, texts are completed with extracts from speeches by Obama, Trump and artist musings. Color of palm tree changes to red and green to track financial stocks during market hours.",
+  "modalExtra": "Edition of 8 with 2 APs, videos and prints.",
+  "images": [
+    "/art/proof-1.jpg",
+    "/art/proof-2.jpg",
+    "/art/proof-3.jpg",
+    "/art/proof-4.jpg",
+    "/art/proof-5.jpg",
+    "/art/proof-6.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Generador de noticias falsas en tiempo real. Un feed RSS de noticias en vivo de la BBC proporciona titulares y primeros párrafos, mientras la palmera rastrea el mercado de valores.",
+      "modalMedium": "",
+      "modalExtra": "Edición de 8 con 2 AP, videos y copias impresas."
+    },
+    "it": {
+      "medium": "Generatore di notizie false in tempo reale. Un feed RSS di notizie in diretta della BBC fornisce titoli e primi paragrafi, mentre la palma segue l'andamento del mercato azionario.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe."
+    },
+    "fr": {
+      "medium": "Générateur de fausses nouvelles en temps réel. Un flux RSS d'actualités en direct de la BBC fournit les titres et premiers paragraphes, tandis que le palmier suit le marché boursier.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 8 avec 2 EA, vidéos et tirages."
+    },
+    "de": {
+      "medium": "Echtzeit-Generator für Falschnachrichten. Ein Live-RSS-Nachrichtenfeed der BBC liefert Schlagzeilen und erste Absätze, während die Palme den Aktienmarkt verfolgt.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 8 mit 2 KA, Videos und Drucken."
+    },
+    "ko": {
+      "medium": "실시간 가짜 뉴스 생성기. BBC의 실시간 RSS 뉴스 피드가 헤드라인과 첫 문단을 제공하며, 야자수는 주식 시장을 추적합니다.",
+      "modalMedium": "",
+      "modalExtra": "에디션 8점, 2점의 AP, 비디오 및 프린트 포함."
+    },
+    "ja": {
+      "medium": "リアルタイムのフェイクニュース生成器。BBCのライブRSSニュースフィードが見出しと最初の段落を提供し、ヤシの木が株式市場を追跡します。",
+      "modalMedium": "",
+      "modalExtra": "エディション8点、APS2点、映像とプリントを含む。"
+    },
+    "zh": {
+      "medium": "实时假新闻生成器。BBC的实时RSS新闻源提供标题和首段内容，棕榈树则追踪股市走势。",
+      "modalMedium": "",
+      "modalExtra": "限量8件，附2件AP、视频和版画。"
+    },
+    "ar": {
+      "medium": "مولّد أخبار زائفة في الوقت الفعلي. توفّر خلاصة أخبار RSS مباشرة من بي بي سي العناوين والفقرات الأولى، بينما تتابع شجرة النخيل سوق الأسهم.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 8 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات."
+    },
+    "ru": {
+      "medium": "Генератор фейковых новостей в реальном времени. Живая RSS-лента новостей BBC предоставляет заголовки и первые абзацы, а пальма отслеживает биржевой рынок.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 8 экземпляров с 2 АП, видео и отпечатками."
+    },
+    "hi": {
+      "medium": "रीयल-टाइम फ़ेक न्यूज़ जनरेटर। बीबीसी का लाइव RSS न्यूज़ फ़ीड सुर्खियाँ और पहला पैराग्राफ़ प्रदान करता है, जबकि ताड़ का पेड़ शेयर बाज़ार को ट्रैक करता है।",
+      "modalMedium": "",
+      "modalExtra": "8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित।"
+    }
+  }
+}

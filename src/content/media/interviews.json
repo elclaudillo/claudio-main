@@ -1,0 +1,26 @@
+{
+  "title": "Interviews",
+  "order": 4,
+  "items": [
+    {
+      "label": "Revista de la noche con Margarita Rojo",
+      "source": "TV Martí",
+      "url": "https://www.youtube.com/watch?v=2zJurpGmQ6E"
+    },
+    {
+      "label": "Entrevista con Camilo",
+      "source": "CNN en Español",
+      "url": "https://www.youtube.com/watch?v=0PT84S5SBYM"
+    },
+    {
+      "label": "La Virgen en ferias de arte y museos",
+      "source": "Arquidiócesis de Miami",
+      "url": "/press/arquidiocesis-la-virgen-en-ferias-de-arte.pdf"
+    },
+    {
+      "label": "Arte inteligente en movimiento",
+      "source": "El Nuevo Herald",
+      "url": "/press/el-nuevo-herald-arte-inteligente-en-movimiento.pdf"
+    }
+  ]
+}

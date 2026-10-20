@@ -1,0 +1,83 @@
+{
+  "title": "van gogh generator",
+  "year": "2006",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 4,
+  "video": "https://www.youtube.com/watch?v=ooOZKzzrqpw&t=160s",
+  "seriesLink": "",
+  "medium": "Watercolours, animation, software.\nLunar and tidal cycles synchronized to location.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 8 with 2 APs, videos and prints. Exhibited at Museum of Contemporary Art, Shanghai, China during Animamix Biennale.",
+  "images": [
+    "/art/vangogh-1.jpg",
+    "/art/vangogh-2.jpg",
+    "/art/vangogh-3.jpg",
+    "/art/vangogh-4.jpg",
+    "/art/vangogh-6.jpg",
+    "/art/vangogh-7.jpg",
+    "/art/vangogh-8.jpg",
+    "/art/vangogh-9.jpg",
+    "/art/vangogh-11.jpg",
+    "/art/vangogh-12.jpg",
+    "/art/vangogh-13.jpg",
+    "/art/vangogh-14.jpg",
+    "/art/vangogh-15.jpg",
+    "/art/vangogh-18.jpg",
+    "/art/vangogh-19.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animación, software.\nCiclos lunares y de mareas sincronizados con la ubicación.",
+      "modalMedium": "",
+      "modalExtra": "Exhibido en el Museo de Arte Contemporáneo de Shanghái, China, durante la Bienal Animamix."
+    },
+    "it": {
+      "medium": "Acquerelli, animazione, software.\nCicli lunari e di marea sincronizzati alla località.",
+      "modalMedium": "",
+      "modalExtra": "Esposto al Museum of Contemporary Art di Shanghai, Cina, durante la Animamix Biennale."
+    },
+    "fr": {
+      "medium": "Aquarelles, animation, logiciel.\nCycles lunaires et de marées synchronisés à la localisation.",
+      "modalMedium": "",
+      "modalExtra": "Exposé au Musée d'Art Contemporain de Shanghai, Chine, lors de la Biennale Animamix."
+    },
+    "de": {
+      "medium": "Aquarelle, Animation, Software.\nMond- und Gezeitenzyklen synchronisiert mit dem Standort.",
+      "modalMedium": "",
+      "modalExtra": "Ausgestellt im Museum für zeitgenössische Kunst Shanghai, China, während der Animamix-Biennale."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 소프트웨어.\n위치에 동기화된 달과 조수 주기.",
+      "modalMedium": "",
+      "modalExtra": "애니마믹스 비엔날레 기간 중 중국 상하이 현대미술관에서 전시."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、ソフトウェア。\n位置情報に同期した月と潮の満ち引きのサイクル。.",
+      "modalMedium": "",
+      "modalExtra": "アニマミックス・ビエンナーレ期間中、中国上海現代美術館で展示."
+    },
+    "zh": {
+      "medium": "水彩、动画、软件。\n与地点同步的月相与潮汐周期。.",
+      "modalMedium": "",
+      "modalExtra": "于动漫双年展期间在中国上海当代艺术博物馆展出."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، برمجيات.\nدورات قمرية ومدّية متزامنة مع الموقع.",
+      "modalMedium": "",
+      "modalExtra": "عُرض في متحف الفن المعاصر في شنغهاي، الصين، خلال بينالي أنيماميكس."
+    },
+    "ru": {
+      "medium": "Акварель, анимация, программное обеспечение.\nЛунные и приливные циклы, синхронизированные с местоположением.",
+      "modalMedium": "",
+      "modalExtra": "Экспонировалось в Музее современного искусства Шанхая, Китай, во время биеннале Animamix."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, सॉफ्टवेयर।\nस्थान के अनुसार समन्वित चंद्र और ज्वारीय चक्र।.",
+      "modalMedium": "",
+      "modalExtra": "एनिमामिक्स बिएनाले के दौरान शंघाई, चीन के समकालीन कला संग्रहालय में प्रदर्शित."
+    }
+  }
+}

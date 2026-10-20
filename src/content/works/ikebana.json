@@ -1,0 +1,73 @@
+{
+  "title": "ikebana",
+  "year": "2026",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=R5ybYtbovqE&t=81s",
+  "seriesLink": "https://indd.adobe.com/view/1defd382-096e-44f6-a416-cf2f35922732",
+  "medium": "Generative 12 hour clock, photography, animation, software, generative audio.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 5 with 2 APs, videos and prints. Photographs by Rachel Levy.",
+  "images": [
+    "/art/ikebana-1.jpg",
+    "/art/ikebana-2.jpg",
+    "/art/ikebana-3.jpg",
+    "/art/ikebana-4.jpg",
+    "/art/ikebana-5.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Reloj generativo de 12 horas, fotografía, animación, software, audio generativo.",
+      "modalMedium": "",
+      "modalExtra": "Edición de 5 con 2 AP, videos y copias impresas. Fotografías de Rachel Levy."
+    },
+    "it": {
+      "medium": "Orologio generativo di 12 ore, fotografia, animazione, software, audio generativo.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 5 con 2 PA, video e stampe. Fotografie di Rachel Levy."
+    },
+    "fr": {
+      "medium": "Horloge générative de 12 heures, photographie, animation, logiciel, audio génératif.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 5 avec 2 EA, vidéos et tirages. Toutes uniques. Photographies de Rachel Levy."
+    },
+    "de": {
+      "medium": "Generative 12-Stunden-Uhr, Fotografie, Animation, Software, generatives Audio.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 5 mit 2 KA, Videos und Drucken. Alle Unikate. Fotografien von Rachel Levy."
+    },
+    "ko": {
+      "medium": "생성형 12시간 시계, 사진, 애니메이션, 소프트웨어, 생성 오디오.",
+      "modalMedium": "",
+      "modalExtra": "에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 모두 고유. 사진: Rachel Levy."
+    },
+    "ja": {
+      "medium": "ジェネレーティブ12時間時計、写真、アニメーション、ソフトウェア、生成オーディオ。",
+      "modalMedium": "",
+      "modalExtra": "エディション5点、APS2点、映像とプリントを含む。すべて唯一無二。.写真：Rachel Levy。"
+    },
+    "zh": {
+      "medium": "生成式12小时时钟、摄影、动画、软件、生成音频。",
+      "modalMedium": "",
+      "modalExtra": "限量5件，附2件AP、视频和版画。全部独一无二。.摄影：Rachel Levy。"
+    },
+    "ar": {
+      "medium": "ساعة توليدية مدتها 12 ساعة، تصوير، رسوم متحركة، برمجيات، صوت توليدي.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. جميعها فريدة. تصوير راشيل ليفي."
+    },
+    "ru": {
+      "medium": "Генеративные 12-часовые часы, фотография, анимация, программное обеспечение, генеративный звук.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 5 экземпляров с 2 АП, видео и отпечатками. Все уникальны. Фотографии Рэйчел Леви."
+    },
+    "hi": {
+      "medium": "जनरेटिव 12 घंटे की घड़ी, फोटोग्राफी, एनिमेशन, सॉफ्टवेयर, जनरेटिव ऑडियो।",
+      "modalMedium": "",
+      "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। सभी अद्वितीय।. फोटोग्राफी: Rachel Levy।"
+    }
+  }
+}

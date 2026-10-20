@@ -1,0 +1,39 @@
+---
+// Masonry grid of artwork cards, shuffled on every visit. Used for both
+// Selected Works and Other work. `idx` is the work's position in the page's
+// data list (src/scripts/home.js looks cards up by it).
+import { img } from '../lib/site.js';
+
+interface Item { idx: number; work: { title: string; year: string; video: string; medium: string; variants: string[] } }
+interface Props { items: Item[]; playVideo: string }
+const { items, playVideo } = Astro.props;
+---
+<div class="cc-works-grid">
+  {items.map(({ idx, work: w }) => (
+    <article class="cc-card" data-idx={idx} tabindex="0" role="button" aria-haspopup="dialog" aria-label={w.title}>
+      <div class="cc-card-img">
+        <img src={img('sm', w.variants[0])} alt={w.title} loading="lazy" decoding="async" data-card-img />
+      </div>
+      <div class="cc-card-body">
+        <div class="cc-title-row">
+          <h3>{w.title}</h3>
+          {w.year && <span class="cc-year">{w.year}</span>}
+        </div>
+        <div class="cc-medium">{w.medium}</div>
+        {w.video && <a class="cc-play" href={w.video} target="_blank" rel="noopener" data-stop>{playVideo}</a>}
+      </div>
+    </article>
+  ))}
+</div>
+<script is:inline>
+  // Random card order on every visit. Runs right after the grid is parsed,
+  // before first paint, so the original order never flashes.
+  (function () {
+    var grid = document.currentScript.previousElementSibling;
+    var cards = Array.prototype.slice.call(grid.children);
+    for (var i = cards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+    }
+    cards.forEach(function (c) { grid.appendChild(c); });
+  })();
+</script>

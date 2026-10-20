@@ -1,0 +1,82 @@
+{
+  "title": "pino",
+  "year": "2019",
+  "section": "selected",
+  "category": "generative",
+  "visible": true,
+  "featured": true,
+  "heroOrder": 6,
+  "video": "https://www.youtube.com/watch?v=5BjmV4yPXhU&t=7s",
+  "seriesLink": "https://indd.adobe.com/view/d8d26d70-f2df-4f02-84af-81b2a3d0e7cd",
+  "medium": "Watercolours, animations, videos, audio and software. 24 hour clock with lunar, tidal and solar cycles. Hourly, random and triggered animations. Tree turns 360 degrees every minute and in 24 hours. Number of flowers equal hour, East-West position of moon is minutes.",
+  "modalMedium": "",
+  "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
+  "images": [
+    "/art/pino-1.jpg",
+    "/art/pino-3.jpg",
+    "/art/pino-4.jpg",
+    "/art/pino-6.jpg",
+    "/art/pino-7.jpg",
+    "/art/pino-8.jpg",
+    "/art/pino-9.jpg",
+    "/art/pino-10.jpg",
+    "/art/pino-12.jpg",
+    "/art/pino-13.jpg",
+    "/art/pino-15.jpg",
+    "/art/pino-17.jpg",
+    "/art/pino-18.jpg",
+    "/art/pino-20.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Acuarelas, animaciones, videos, audio y software. Reloj de 24 horas con ciclos lunares, de mareas y solares. Animaciones por hora, aleatorias y activadas. El árbol gira 360 grados cada minuto y en 24 horas. El número de flores equivale a la hora, la posición este-oeste de la luna equivale a los minutos.",
+      "modalMedium": "",
+      "modalExtra": ""
+    },
+    "it": {
+      "medium": "Acquerelli, animazioni, video, audio e software. Orologio di 24 ore con cicli lunari, di marea e solari. Animazioni orarie, casuali e attivate. L'albero ruota di 360 gradi ogni minuto e nell'arco di 24 ore. Il numero di fiori corrisponde all'ora, la posizione est-ovest della luna corrisponde ai minuti.",
+      "modalMedium": "",
+      "modalExtra": "Edizione di 5 con 2 PA, video e stampe. Ognuna unica."
+    },
+    "fr": {
+      "medium": "Aquarelles, animations, vidéos, audio et logiciel. Horloge de 24 heures avec cycles lunaires, de marées et solaires. Animations horaires, aléatoires et déclenchées. L'arbre tourne à 360 degrés chaque minute et sur 24 heures. Le nombre de fleurs équivaut à l'heure, la position est-ouest de la lune équivaut aux minutes.",
+      "modalMedium": "",
+      "modalExtra": "Édition de 5 avec 2 EA, vidéos et tirages. Chacune unique."
+    },
+    "de": {
+      "medium": "Aquarelle, Animationen, Videos, Audio und Software. 24-Stunden-Uhr mit Mond-, Gezeiten- und Sonnenzyklen. Stündliche, zufällige und ausgelöste Animationen. Der Baum dreht sich jede Minute und über 24 Stunden um 360 Grad. Die Anzahl der Blumen entspricht der Stunde, die Ost-West-Position des Mondes entspricht den Minuten.",
+      "modalMedium": "",
+      "modalExtra": "Auflage von 5 mit 2 KA, Videos und Drucken. Jedes ein Unikat."
+    },
+    "ko": {
+      "medium": "수채화, 애니메이션, 비디오, 오디오 및 소프트웨어. 달, 조수, 태양 주기가 있는 24시간 시계. 매시간, 무작위 및 트리거되는 애니메이션. 나무는 매분 그리고 24시간 동안 360도 회전합니다. 꽃의 수는 시간을, 달의 동서 위치는 분을 나타냅니다.",
+      "modalMedium": "",
+      "modalExtra": "에디션 5점, 2점의 AP, 비디오 및 프린트 포함. 각각 고유."
+    },
+    "ja": {
+      "medium": "水彩画、アニメーション、映像、音声、ソフトウェア。月、潮、太陽のサイクルを持つ24時間時計。毎時、ランダム、トリガーされるアニメーション。木は毎分および24時間で360度回転します。花の数は時を、月の東西位置は分を表します。.",
+      "modalMedium": "",
+      "modalExtra": "エディション5点、APS2点、映像とプリントを含む。それぞれ唯一無二。."
+    },
+    "zh": {
+      "medium": "水彩、动画、视频、音频和软件。带有月相、潮汐和太阳周期的24小时时钟。每小时、随机及触发式动画。树木每分钟及24小时内旋转360度。花朵数量代表小时，月亮的东西位置代表分钟。.",
+      "modalMedium": "",
+      "modalExtra": "限量5件，附2件AP、视频和版画。每件独一无二。."
+    },
+    "ar": {
+      "medium": "ألوان مائية، رسوم متحركة، فيديوهات، صوت وبرمجيات. ساعة 24 ساعة بدورات قمرية ومدّية وشمسية. رسوم متحركة كل ساعة، عشوائية، ومُفعّلة. تدور الشجرة 360 درجة كل دقيقة وخلال 24 ساعة. عدد الزهور يمثل الساعة، وموقع القمر شرقًا-غربًا يمثل الدقائق.",
+      "modalMedium": "",
+      "modalExtra": "إصدار من 5 نسخ مع نسختين إضافيتين وفيديوهات ومطبوعات. كل واحدة فريدة."
+    },
+    "ru": {
+      "medium": "Акварель, анимации, видео, аудио и программное обеспечение. 24-часовые часы с лунными, приливными и солнечными циклами. Ежечасные, случайные и запускаемые анимации. Дерево поворачивается на 360 градусов каждую минуту и за 24 часа. Количество цветов равно часу, положение луны восток-запад равно минутам.",
+      "modalMedium": "",
+      "modalExtra": "Тираж 5 экземпляров с 2 АП, видео и отпечатками. Каждый уникален."
+    },
+    "hi": {
+      "medium": "जलरंग, एनिमेशन, वीडियो, ऑडियो और सॉफ्टवेयर। चंद्र, ज्वारीय और सौर चक्रों वाली 24 घंटे की घड़ी। प्रति घंटा, यादृच्छिक और सक्रिय एनिमेशन। पेड़ हर मिनट और 24 घंटे में 360 डिग्री घूमता है। फूलों की संख्या घंटे के बराबर है, चंद्रमा की पूर्व-पश्चिम स्थिति मिनट के बराबर है।.",
+      "modalMedium": "",
+      "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
+    }
+  }
+}

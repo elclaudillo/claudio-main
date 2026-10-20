@@ -1,0 +1,20 @@
+{
+  "tagline": "Art génératif — aquarelles, photographie, vidéo, animations, audio et logiciel.",
+  "navAbout": "À propos",
+  "navWorks": "Œuvres",
+  "worksHeading": "Œuvres Sélectionnées",
+  "playVideo": "▶ Voir la vidéo",
+  "seriesLinkLabel": "Voir d'autres pièces de la même série, même logique, images différentes →",
+  "aboutHeading": "À propos de l'œuvre",
+  "aboutQuote": "« On ne se baigne jamais deux fois dans le même fleuve. »",
+  "aboutQuoteAuthor": "Héraclite",
+  "about": [
+    "Claudio Castillo est un artiste multimédia qui fusionne l’aquarelle, la vidéo, la photographie, l’animation et le logiciel en une forme d’art qui prend vie : des visions cinétiques en perpétuelle évolution, où le changement est inévitable et se produit sous nos yeux.",
+    "Il part de versions numérisées de ses aquarelles, découpe chaque image en calques et anime chacun d’eux de multiples façons. Le logiciel ne fait que réordonner et enchaîner ces animations faites main — l’œuvre n’est pas générée par ordinateur, c’est de l’aquarelle et du collage animés —, si bien que la peinture se recompose sans fin en « peintures régénératives non linéaires » qui ne se répètent jamais.",
+    "Tandis que les images dérivent au hasard — eau, fleurs, pluie, lianes, racines, ciel —, l’horloge interne de l’ordinateur fait l’inverse : elle garde l’heure exacte et prédit les cycles naturels comme les phases de la lune et les marées. Certaines pièces puisent aussi dans des données en direct, de la météo aux gros titres et à la bourse, et répondent au monde en temps réel.",
+    "L’œuvre s’inscrit dans une longue lignée d’artistes qui travaillent avec le temps et le hasard, des 3 stoppages-étalon de Duchamp et des mobiles de Calder à Nam June Paik, John Cage et Brian Eno. Elle se regarde sur écran ou en projection, s’imprime, s’enregistre ou se diffuse : chaque instant est un original unique. L’« œuvre » elle-même n’est jamais achevée : elle continuera de se créer bien après la disparition de l’artiste."
+  ],
+  "selectedMedia": "Presse Sélectionnée",
+  "otherWork": "Autres œuvres",
+  "installNote": "Ajoutez cette page à votre écran d'accueil pour l'installer comme application."
+}

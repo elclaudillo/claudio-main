@@ -1,0 +1,20 @@
+{
+  "tagline": "Generative Kunst — Aquarelle, Fotografie, Video, Animationen, Audio und Software.",
+  "navAbout": "Über",
+  "navWorks": "Werke",
+  "worksHeading": "Ausgewählte Werke",
+  "playVideo": "▶ Beispielvideo ansehen",
+  "seriesLinkLabel": "Weitere Werke derselben Serie ansehen — gleiche Logik, andere Bilder →",
+  "aboutHeading": "Über das Werk",
+  "aboutQuote": "„Man kann nicht zweimal in denselben Fluss steigen.“",
+  "aboutQuoteAuthor": "Heraklit",
+  "about": [
+    "Claudio Castillo ist ein Multimedia-Künstler, der Aquarell, Video, Fotografie, Animation und Software zu einer Kunstform verbindet, die ein Eigenleben entwickelt: kinetische, sich ständig wandelnde Bilder, in denen Veränderung unvermeidlich ist und sich vor unseren Augen vollzieht.",
+    "Er beginnt mit digitalisierten Fassungen seiner Aquarelle, zerlegt jedes Bild in Ebenen und animiert jede Ebene auf vielfältige Weise. Die Software ordnet diese handgemachten Animationen nur neu und reiht sie aneinander – das Werk ist nicht computergeneriert, sondern animiertes Aquarell und Collage –, sodass sich das Gemälde endlos zu „nichtlinearen regenerativen Gemälden“ neu zusammensetzt, die sich nie wiederholen.",
+    "Während die Bilder zufällig dahintreiben – Wasser, Blumen, Regen, Ranken, Wurzeln, Himmel –, tut die interne Computeruhr das Gegenteil: Sie hält die genaue Zeit und berechnet natürliche Zyklen wie Mondphasen und Gezeiten. Manche Arbeiten nutzen zudem Live-Daten, vom Wetter über Schlagzeilen bis zur Börse, und reagieren in Echtzeit auf die Welt.",
+    "Das Werk steht in einer langen Reihe von Künstlern, die mit Zeit und Zufall arbeiten – von Duchamps 3 Kunststopf-Normalmaße und Calders Mobiles bis zu Nam June Paik, John Cage und Brian Eno. Es lässt sich auf einem Bildschirm oder als Projektion zeigen, drucken, aufzeichnen oder streamen – jeder Moment ein einzigartiges Original. Das „Werk“ selbst ist nie fertig: Es wird sich noch lange nach dem Künstler weiter erschaffen."
+  ],
+  "selectedMedia": "Ausgewählte Presse",
+  "otherWork": "Weitere Werke",
+  "installNote": "Fügen Sie diese Seite Ihrem Startbildschirm hinzu, um sie als App zu installieren."
+}
