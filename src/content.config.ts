@@ -49,6 +49,8 @@ const site = defineCollection({
     selectedMedia: z.string(),
     otherWork: z.string(),
     installNote: z.string(),
+    showAll: z.string().nullish().transform((s) => s || 'Show all'),
+    backToTop: z.string().nullish().transform((s) => s || 'Back to top'),
   }),
 });
 

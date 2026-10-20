@@ -254,6 +254,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: es
         label: "Español"
         file: src/content/site/es.json
@@ -271,6 +273,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: it
         label: "Italiano"
         file: src/content/site/it.json
@@ -288,6 +292,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: fr
         label: "Français"
         file: src/content/site/fr.json
@@ -305,6 +311,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: de
         label: "Deutsch"
         file: src/content/site/de.json
@@ -322,6 +330,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ko
         label: "한국어"
         file: src/content/site/ko.json
@@ -339,6 +349,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ja
         label: "日本語"
         file: src/content/site/ja.json
@@ -356,6 +368,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: zh
         label: "中文"
         file: src/content/site/zh.json
@@ -373,6 +387,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ar
         label: "العربية"
         file: src/content/site/ar.json
@@ -390,6 +406,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ru
         label: "Русский"
         file: src/content/site/ru.json
@@ -407,6 +425,8 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: hi
         label: "हिन्दी"
         file: src/content/site/hi.json
@@ -424,3 +444,5 @@ collections:
           - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: selectedMedia, label: Selected media heading, widget: string }
           - { name: installNote, label: Install note, widget: string }
+          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
+          - { name: backToTop, label: "Button: Back to top", widget: string, required: false }

@@ -168,6 +168,12 @@ export function initHome(data) {
     closeModal();
   });
 
+  // ---- back to top -------------------------------------------------------
+  // Shown once the hero is out of view.
+  const toTop = document.querySelector('[data-to-top]');
+  new IntersectionObserver(([e]) => toTop.classList.toggle('is-shown', !e.isIntersecting))
+    .observe(document.querySelector('.cc-top'));
+
   // ---- light / dark ------------------------------------------------------
   // The initial theme is set by the inline script in <head>. Choosing one
   // here is remembered; until then the site follows the system setting.

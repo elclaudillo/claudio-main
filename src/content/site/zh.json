@@ -16,5 +16,7 @@
   ],
   "selectedMedia": "精选媒体报道",
   "otherWork": "其他作品",
-  "installNote": "将此页面添加到主屏幕即可作为应用安装。"
+  "installNote": "将此页面添加到主屏幕即可作为应用安装。",
+  "showAll": "显示全部",
+  "backToTop": "返回顶部"
 }

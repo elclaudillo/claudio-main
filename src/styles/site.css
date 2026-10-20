@@ -213,6 +213,23 @@ button { font-family: "Inter", sans-serif; }
 /* ---- other work (second masonry grid) ----------------------------------- */
 .cc-other-works { border-top: 1px solid var(--rule); padding-top: 40px; }
 
+.cc-show-all-wrap { text-align: center; margin-top: 8px; }
+.cc-show-all { padding: 12px 22px; font-size: 0.7rem; }
+
+/* ---- back to top: appears once the hero has scrolled away ---------------- */
+.cc-to-top {
+  position: fixed; z-index: 40; inset-inline-end: max(18px, env(safe-area-inset-right));
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--surface); color: var(--heading); border: 1px solid var(--btn-border); box-shadow: 0 6px 18px var(--shadow);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.cc-to-top.is-shown { opacity: 1; visibility: visible; transform: none; }
+.cc-to-top:hover { color: #fff; background: var(--gold); border-color: var(--gold); }
+.cc-to-top:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.cc-to-top svg { width: 20px; height: 20px; fill: currentColor; }
+
 /* ---- about -------------------------------------------------------------- */
 .cc-about { padding: 56px 6vw 100px; background: var(--surface); }
 .cc-about .cc-heading { margin-bottom: 48px; }

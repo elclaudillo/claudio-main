@@ -1,14 +1,16 @@
 ---
 // Masonry grid of artwork cards, shuffled on every visit. Used for both
 // Selected Works and Other work. `idx` is the work's position in the page's
-// data list (src/scripts/home.js looks cards up by it).
+// data list (src/scripts/home.js looks cards up by it). With `limit`, only
+// that many cards show until the visitor presses "Show all".
 import { img } from '../lib/site.js';
 
 interface Item { idx: number; work: { title: string; year: string; video: string; medium: string; variants: string[] } }
-interface Props { items: Item[]; playVideo: string }
-const { items, playVideo } = Astro.props;
+interface Props { items: Item[]; playVideo: string; limit?: number; showAll?: string }
+const { items, playVideo, limit = 0, showAll = 'Show all' } = Astro.props;
+const capped = limit > 0 && items.length > limit;
 ---
-<div class="cc-works-grid">
+<div class="cc-works-grid" data-limit={capped ? limit : undefined}>
   {items.map(({ idx, work: w }) => (
     <article class="cc-card" data-idx={idx} tabindex="0" role="button" aria-haspopup="dialog" aria-label={w.title}>
       <div class="cc-card-img">
@@ -25,15 +27,33 @@ const { items, playVideo } = Astro.props;
     </article>
   ))}
 </div>
+{capped && (
+  <div class="cc-show-all-wrap" hidden>
+    <button class="cc-btn cc-show-all" type="button">{showAll}</button>
+  </div>
+)}
 <script is:inline>
-  // Random card order on every visit. Runs right after the grid is parsed,
-  // before first paint, so the original order never flashes.
+  // Random card order on every visit, then hide everything past the limit.
+  // Runs right after the grid is parsed, before first paint, so the original
+  // order never flashes. Without JavaScript every card simply shows.
   (function () {
-    var grid = document.currentScript.previousElementSibling;
+    var me = document.currentScript;
+    var grid = me.previousElementSibling.classList.contains('cc-works-grid')
+      ? me.previousElementSibling : me.previousElementSibling.previousElementSibling;
     var cards = Array.prototype.slice.call(grid.children);
     for (var i = cards.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1)), t = cards[i]; cards[i] = cards[j]; cards[j] = t;
     }
     cards.forEach(function (c) { grid.appendChild(c); });
+    var limit = Number(grid.dataset.limit);
+    if (!limit) return;
+    cards.forEach(function (c, k) { if (k >= limit) c.hidden = true; });
+    var wrap = grid.nextElementSibling;
+    wrap.hidden = false;
+    wrap.querySelector('button').addEventListener('click', function () {
+      cards.forEach(function (c) { c.hidden = false; });
+      wrap.remove();
+      if (cards[limit]) cards[limit].focus({ preventScroll: true });
+    });
   })();
 </script>
