@@ -80,7 +80,7 @@ collections:
           Upload JPG or PNG files (under 10 MB). The site makes the web sizes itself.
         field: { name: image, label: Image, widget: image }
       - { name: video, label: Sample video link, widget: string, required: false, hint: "YouTube link opened by Play sample video. Leave empty for works without a video." }
-      - { name: seriesLink, label: Series link, widget: string, required: false, hint: "Optional. Shown in the detail window as \"See additional pieces in same series\"." }
+      - { name: seriesLink, label: Series link, widget: string, required: false, hint: "Optional. A series page on this site (/series/<name>/, see Series) or any web address. Shown in the detail window as \"See additional pieces in same series\"." }
       - { name: medium, label: Card text, widget: text, hint: "Short description shown on the card." }
       - { name: modalMedium, label: Detail text, widget: text, required: false, hint: "Longer description for the detail window. Leave empty to reuse the card text." }
       - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false, hint: "e.g. Edition of 8 with 2 APs, videos and prints." }
@@ -235,6 +235,45 @@ collections:
       - { name: title, label: Title, widget: string }
       - { name: order, label: Position, widget: number, value_type: int, default: 10 }
       - { name: body, label: Text, widget: markdown }
+
+  - name: series
+    label: Series
+    label_singular: Series
+    description: >-
+      Pages at /series/<name>/ showing the other pieces in a series. An artwork links to one
+      by putting /series/<name>/ in its "Series link" field.
+    folder: src/content/series
+    format: json
+    create: true
+    delete: true
+    identifier_field: title
+    slug: "{{title}}"
+    summary: "{{title}} · /series/{{slug}}/"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: order, label: Position, widget: number, value_type: int, default: 10 }
+      - { name: intro, label: Introduction, widget: text, required: false }
+      - name: pieces
+        label: Pieces
+        label_singular: Piece
+        widget: list
+        summary: "{{fields.title}} {{fields.year}}"
+        fields:
+          - { name: title, label: Title, widget: string, hint: "Shown in lowercase on the site." }
+          - { name: year, label: Year, widget: string, required: false }
+          - { name: image, label: Image, widget: image }
+          - { name: video, label: Sample video (YouTube link), widget: string, required: false }
+          - { name: text, label: Description, widget: text, required: false }
+      - name: links
+        label: Extra links
+        label_singular: Link
+        widget: list
+        required: false
+        hint: Shown under the pieces, e.g. installation videos or press articles.
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: url, label: URL, widget: string }
 
   - name: live
     label: Live stream

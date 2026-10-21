@@ -1,0 +1,88 @@
+---
+// One page per series (src/content/series, edited in /admin): every piece
+// with its image, description and sample video. Works link here through
+// "See additional pieces in same series". English only, like the source.
+import '../../styles/site.css';
+import { getCollection } from 'astro:content';
+import { img } from '../../lib/site.js';
+
+export async function getStaticPaths() {
+  return (await getCollection('series')).map((e) => ({ params: { slug: e.id }, props: { series: e.data } }));
+}
+
+const { series } = Astro.props;
+// "/art/series-bonsai-pino.png" -> "series-bonsai-pino" (web sizes, see scripts/art-images.mjs)
+const imageName = (path) => path.split('/').pop().replace(/\.[^.]+$/, '');
+const external = (url) => /^https?:/.test(url);
+const title = `${series.title} series — Claudio Castillo`;
+const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
+const first = imageName(series.pieces[0].image);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script is:inline>
+    // Same theme rule as the home page: saved choice, else the system setting.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('cc-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <title>{title}</title>
+  <meta name="description" content={series.intro || `${series.title}: ${series.pieces.map((p) => p.title).join(', ')}.`}>
+  <meta property="og:title" content={title}>
+  <meta property="og:image" content={site + img('lg', first)}>
+  <link rel="icon" href="/icon-192.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="cc-nav cc-series-nav">
+  <a class="cc-series-back" href="/#works">← claudio castillo</a>
+</nav>
+
+<main class="cc-works cc-series">
+  <div class="cc-heading">
+    <p class="cc-series-kicker">Series</p>
+    <h2>{series.title}</h2>
+    <div class="cc-rule"></div>
+    {series.intro && <p class="cc-series-intro">{series.intro}</p>}
+  </div>
+
+  <div class="cc-series-grid">
+    {series.pieces.map((p) => (
+      <article class="cc-series-piece">
+        {p.video
+          ? <a class="cc-series-img" href={p.video} target="_blank" rel="noopener" aria-label={`${p.title}: play sample video`}>
+              <img src={img('sm', imageName(p.image))} alt={p.title} loading="lazy" decoding="async">
+            </a>
+          : <div class="cc-series-img"><img src={img('sm', imageName(p.image))} alt={p.title} loading="lazy" decoding="async"></div>}
+        <div class="cc-series-body">
+          <div class="cc-title-row">
+            <h3>{p.title}</h3>
+            {p.year && <span class="cc-year">{p.year}</span>}
+          </div>
+          {p.text && <p class="cc-medium">{p.text}</p>}
+          {p.video && <a class="cc-play" href={p.video} target="_blank" rel="noopener">▶ Play sample video</a>}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  {series.links.length > 0 && (
+    <div class="cc-series-links">
+      {series.links.map((l) => (
+        <a href={l.url} target={external(l.url) || l.url.endsWith('.pdf') ? '_blank' : undefined} rel="noopener">{l.label}&nbsp;→</a>
+      ))}
+    </div>
+  )}
+</main>
+
+</body>
+</html>

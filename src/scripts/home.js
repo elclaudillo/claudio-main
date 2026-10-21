@@ -51,7 +51,7 @@ export function initHome(data) {
   let openIdx = -1;
 
   // ---- cards -------------------------------------------------------------
-  // Cards are shuffled in the DOM; index them by work, not by position.
+  // Cards are grouped by section and category in the DOM; index them by work.
   const cards = [...document.querySelectorAll('.cc-card')]
     .sort((a, b) => Number(a.dataset.idx) - Number(b.dataset.idx));
   const cardImgs = cards.map((c) => c.querySelector('[data-card-img]'));
@@ -144,6 +144,8 @@ export function initHome(data) {
     $m('extra').hidden = !w.modalExtra;
     $m('series').href = w.seriesLink || '#';
     $m('series').hidden = !w.seriesLink;
+    // Series pages on this site open in place; outside links in a new tab.
+    $m('series').target = /^https?:/.test(w.seriesLink) ? '_blank' : '_self';
     // Watercolours have no sample video: no play link, image isn't a link.
     $m('video').href = w.video || '#';
     $m('video').hidden = !w.video;

@@ -1,0 +1,41 @@
+{
+  "title": "Religions",
+  "order": 1,
+  "intro": "",
+  "pieces": [
+    {
+      "title": "french windows",
+      "year": "2022",
+      "image": "/art/series-religions-french-windows.png",
+      "video": "https://www.youtube.com/watch?v=WqXTnZzhUPc",
+      "text": "Rose Windows: Morphing video of 13th century French rose windows is fed through an algorithm where hue values are regenerated in real time on 8 channels. Functional clock hands appear when triggered by motion. Audio is also generative with 8 tracks being composed in real time. Photo, video animation, predicted lunar phases. Software on computer, size variable. Edition of 5 with 2 APs. 24-hour videos edition of 30, unique prints."
+    },
+    {
+      "title": "alhambra",
+      "year": "2022",
+      "image": "/art/series-religions-alhambra.png",
+      "video": "https://www.youtube.com/watch?v=G5nfQN8VuXw",
+      "text": "Alhambra Tiles: Morphing video is fed through an algorithm where hue values are regenerated in real time on 8 channels. Functional clock hands appear when triggered by motion. Audio is also generative with 8 tracks being composed in real time. Photo, video animation, predicted lunar phases. Software on computer, size variable. Edition of 5 with 2 APs. 24-hour videos edition of 30, unique prints."
+    },
+    {
+      "title": "abracadabra",
+      "year": "2022",
+      "image": "/art/series-religions-abracadabra.png",
+      "video": "https://www.youtube.com/watch?v=KHmZIRXZrOY",
+      "text": "Abracadabra: Morphing video is fed through an algorithm where hue values are regenerated in real time on 8 channels. Functional clock hands appear when triggered by motion. Audio is also generative with 8 tracks being composed in real time. Photo, video animation, predicted lunar phases. Software on computer, size variable. Edition of 5 with 2 APs. 24-hour videos edition of 30, unique prints."
+    },
+    {
+      "title": "mandalas",
+      "year": "2022",
+      "image": "/art/series-religions-mandalas.png",
+      "video": "https://www.youtube.com/watch?v=nl48u0EHHz4",
+      "text": "Mandalas: Morphing video is fed through an algorithm where hue values are regenerated in real time on 8 channels. Functional clock hands appear when triggered by motion. Audio is also generative with 8 tracks being composed in real time. Photo, video animation, predicted lunar phases. Software on computer, size variable. Edition of 5 with 2 APs. 24-hour videos edition of 30, unique prints."
+    }
+  ],
+  "links": [
+    {
+      "label": "Lobby installation on large screen",
+      "url": "https://youtu.be/kgk9A-IZc6Q"
+    }
+  ]
+}

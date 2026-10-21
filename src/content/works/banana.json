@@ -7,7 +7,7 @@
   "featured": true,
   "heroOrder": 5,
   "video": "https://www.youtube.com/watch?v=BowFTStfYTc",
-  "seriesLink": "https://indd.adobe.com/view/79a90d05-a56b-4ab3-bb0c-56fea120613d",
+  "seriesLink": "/series/rss/",
   "medium": "Watercolours, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
   "modalMedium": "",
   "modalExtra": "Real time RSS version is Flash AIR based. Generative random version in C++, non web is also available. Edition of 8 with 2 APs, videos and prints.",

@@ -1,0 +1,45 @@
+{
+  "title": "Mosaics",
+  "order": 2,
+  "intro": "",
+  "pieces": [
+    {
+      "title": "bacchus",
+      "year": "2023",
+      "image": "/art/series-mosaics-bacchus.png",
+      "video": "https://www.youtube.com/watch?v=AOzRiIx-naA",
+      "text": "Portrait AI on Roman mosaic. Animation, video, watercolors, hue regeneration, software on computer. Hours, minutes, tides, and lunar/solar phases predicted. Touch-enabled. Original image AD 250–330, from a villa at Daphne near Antioch. Courtesy of the RISD Museum. Edition of 5 with 2 APs. 24-hour videos, edition of 30. Unique prints."
+    },
+    {
+      "title": "medusa",
+      "year": "2023",
+      "image": "/art/series-mosaics-medusa.png",
+      "video": "https://www.youtube.com/shorts/JXPTv0V6wA0",
+      "text": "Portrait AI on Roman mosaic. Animation, video, watercolors, hue regeneration, software on computer. Hours, minutes, tides, and lunar/solar phases predicted. Touch-enabled. Original image AD 115–150, Rome, Italy. Courtesy of the Getty Museum. Edition of 5 with 2 APs. 24-hour videos, edition of 30. Unique prints."
+    },
+    {
+      "title": "the prince",
+      "year": "2023",
+      "image": "/art/series-mosaics-the-prince.png",
+      "video": "https://www.youtube.com/shorts/n3LSXz1qZV8",
+      "text": "Portrait AI on Roman mosaic. Animation, video, watercolors, hue regeneration, software on computer. Hours, minutes, tides, and lunar/solar phases predicted. Touch-enabled. Original image AD 200, from a villa at Daphne near Antioch (modern Antakya, Turkey). Courtesy of the Princeton University Art Museum. Edition of 5 with 2 APs. 24-hour videos, edition of 30. Unique prints."
+    },
+    {
+      "title": "spring",
+      "year": "2023",
+      "image": "/art/series-mosaics-spring.png",
+      "video": "https://www.youtube.com/shorts/q9SVuHB8tYY",
+      "text": "Portrait AI on Roman mosaic. Animation, video, watercolors, hue regeneration, software on computer. Hours, minutes, tides, and lunar/solar phases predicted. Touch-enabled. Original image AD 200, from a villa at Daphne near Antioch (modern Antakya, Turkey). Courtesy of The Metropolitan Museum of Art, New York. Edition of 5 with 2 APs. 24-hour videos, edition of 30. Unique prints."
+    }
+  ],
+  "links": [
+    {
+      "label": "Lobby installation on LED",
+      "url": "https://youtu.be/zflvcvRImSY"
+    },
+    {
+      "label": "El Nuevo Herald article",
+      "url": "/press/el-nuevo-herald-roman-mosaics-2023.pdf"
+    }
+  ]
+}

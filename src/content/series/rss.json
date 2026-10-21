@@ -1,0 +1,36 @@
+{
+  "title": "RSS",
+  "order": 4,
+  "intro": "",
+  "pieces": [
+    {
+      "title": "banana republican",
+      "year": "2014",
+      "image": "/art/series-rss-banana-republican.png",
+      "video": "https://www.youtube.com/watch?v=BowFTStfYTc",
+      "text": "Real time weather RSS feed drives changes in the composition. Heat, humidity, wind, cloud cover etc. are tracked through the web. Flash based AIR application; a random generative non real time version is available in C++. Software on computer. Edition of 8 with 2 APs. Videos and prints."
+    },
+    {
+      "title": "gtmo",
+      "year": "2009",
+      "image": "/art/series-rss-gtmo.png",
+      "video": "https://www.youtube.com/watch?v=u3KC_4LzFx8",
+      "text": "Real time weather RSS feed drives changes in the composition. Heat, humidity, wind, cloud cover etc. are tracked through the web. Flash based AIR application; a random generative non real time version is available in C++. Software on computer. Edition of 8 with 2 APs. Videos and prints."
+    },
+    {
+      "title": "proof of life",
+      "year": "2009",
+      "image": "/art/series-rss-proof-of-life.png",
+      "video": "https://www.youtube.com/watch?v=uLVA_T9mENo",
+      "text": "A fake news generator. A BBC RSS feed provides a live news feed that is combined with additional texts from the artist, Obama and Trump to complete each article. Names of papers are now defunct US print media; they change when the news is updated. The tree in the foreground changes to red and green during market hours to reflect financial index changes. Software on computer. Edition of 5 with 2 APs. Videos and prints."
+    },
+    {
+      "title": "the money pit",
+      "year": "2008",
+      "image": "/art/series-rss-the-money-pit.png",
+      "video": "https://www.youtube.com/watch?v=INnuxyEvkx8",
+      "text": "Watercolors, video, animation and software. RSS financial live feed drives color changes on the iguana: red down, green up, neutral when the market is closed. Software on computer. Edition of 8 with 2 APs. Videos and prints."
+    }
+  ],
+  "links": []
+}

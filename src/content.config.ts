@@ -82,4 +82,24 @@ const mediaDocs = defineCollection({
   }),
 });
 
-export const collections = { works, site, media, mediaDocs };
+// Series pages (/series/<id>/): the other pieces in a work's series, opened
+// from "See additional pieces in same series". Imported once from the
+// artist's InDesign publications; edited in /admin since.
+const series = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/series' }),
+  schema: z.object({
+    title: z.string(),
+    order: z.number().default(99),
+    intro: text,
+    pieces: z.array(z.object({
+      title: z.string(),
+      year: z.union([z.string(), z.number()]).nullish().transform((y) => (y == null ? '' : String(y))),
+      image: z.string(),
+      video: text,
+      text,
+    })).min(1, 'A series needs at least one piece'),
+    links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+  }),
+});
+
+export const collections = { works, site, media, mediaDocs, series };
