@@ -17,6 +17,8 @@ const external = (url) => /^https?:/.test(url);
 const title = `${series.title} series — Claudio Castillo`;
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const first = imageName(series.pieces[0].image);
+// Squarest grid for the piece count: 4 -> 2x2, 6 -> 3x2, 9 -> 3x3.
+const cols = Math.max(Math.ceil(Math.sqrt(series.pieces.length)), Math.min(series.pieces.length, 2));
 ---
 <!doctype html>
 <html lang="en">
@@ -55,7 +57,7 @@ const first = imageName(series.pieces[0].image);
     {series.intro && <p class="cc-series-intro">{series.intro}</p>}
   </div>
 
-  <div class="cc-series-grid">
+  <div class="cc-series-grid" class:list={{ 'is-wide': cols > 2 }} style={`--cols: ${cols}`}>
     {series.pieces.map((p) => (
       <article class="cc-series-piece">
         {p.video
