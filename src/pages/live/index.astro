@@ -1,3 +1,8 @@
+---
+// Stream settings come from /admin (src/data/live.json).
+import { LIVE_CHANNEL, LIVE_VIDEO } from '../../lib/site.js';
+const liveConfig = JSON.stringify({ channel: LIVE_CHANNEL, video: LIVE_VIDEO }).replace(/</g, '\\u003c');
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,9 +124,11 @@
 
 <div id="printSheet"><img alt=""></div>
 
+<script type="application/json" id="live-config" set:html={liveConfig}></script>
 <script is:inline>
 (function () {
-  var CHANNEL = 'UCNop6_Z83rJdF_8Tpcss2Ug';
+  var CONFIG = JSON.parse(document.getElementById('live-config').textContent);
+  var CHANNEL = CONFIG.channel;
   var KEY = 'ccLiveVideoId';
   var BLANK = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7';
   var $ = function (id) { return document.getElementById(id); };
@@ -170,7 +177,8 @@
   } catch (e) { admin = adminParam === ADMIN_KEY; }
   if (admin) $('setupBtn').style.display = 'inline-flex';
 
-  var pinned = qId || stored();
+  // ?v= wins, then the broadcast pinned in /admin, else follow the channel.
+  var pinned = qId || parseId(CONFIG.video || '') || stored();
   var playerId = pinned;   // best-known live video id
 
   // localhost included so the stream also plays under `npm run dev`.
@@ -212,7 +220,11 @@
     fetch('/livecheck/' + Date.now() + '/' + CHANNEL, { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
       .then(function (t) {
-        var m = t.match(/<link\s+rel="canonical"\s+href="[^"]*[?&]v=([\w-]{11})/i)
+        // Current page format: live only if the view counter says so, and the
+        // broadcast is the watch page's own video (currentVideoEndpoint).
+        var watching = /"videoViewCountRenderer":\{[\s\S]{0,400}?"isLive":true/.test(t);
+        var m = (watching && t.match(/"currentVideoEndpoint":\{[\s\S]{0,600}?"watchEndpoint":\{"videoId":"([\w-]{11})"/))
+             || t.match(/<link\s+rel="canonical"\s+href="[^"]*[?&]v=([\w-]{11})/i)
              || t.match(/"videoDetails"\s*:\s*\{[^}]*?"videoId"\s*:\s*"([\w-]{11})"/)
              || t.match(/"isLiveNow"\s*:\s*true[\s\S]{0,4000}?"videoId"\s*:\s*"([\w-]{11})"/)
              || t.match(/"videoId"\s*:\s*"([\w-]{11})"[\s\S]{0,2000}?"isLiveNow"\s*:\s*true/);

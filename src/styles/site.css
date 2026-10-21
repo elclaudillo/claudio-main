@@ -107,6 +107,12 @@ button { font-family: "Inter", sans-serif; }
 .cc-nav-links { list-style: none; display: flex; gap: 16px; flex-shrink: 0; }
 .cc-nav-links a { text-decoration: none; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text); }
 .cc-nav-links a:hover { color: var(--nav-text-hover); }
+.cc-nav-links button {
+  cursor: pointer; background: none; border: none; padding: 0; font: inherit; font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text);
+}
+.cc-nav-links button:hover, .cc-nav-links button[aria-expanded="true"] { color: var(--nav-text-hover); }
+.cc-nav-links button::after { content: ' ▾'; font-size: 0.8em; }
 
 .cc-btn {
   cursor: pointer; text-decoration: none; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em;
@@ -121,6 +127,14 @@ button { font-family: "Inter", sans-serif; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-sun { display: block; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-moon { display: none; }
 .cc-live.is-live { color: #f6f1e7; background: #8a2a22; border-color: #8a2a22; animation: ccLivePulse 3.6s ease-in-out infinite; }
+/* Blinking dot, only while the channel is on air. */
+.cc-live-dot { display: none; }
+.cc-live.is-live .cc-live-dot {
+  display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #ff3b28;
+  margin-inline-end: 6px; vertical-align: 1px; box-shadow: 0 0 6px #ff3b28; animation: ccLiveBlink 1.2s steps(1, end) infinite;
+}
+@keyframes ccLiveBlink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cc-live.is-live .cc-live-dot { animation: none; } }
 @keyframes ccLivePulse {
   0%, 100% { background-color: #5e1712; border-color: #5e1712; box-shadow: 0 0 0 0 rgba(214,52,38,0.6); }
   50% { background-color: #d8392b; border-color: #d8392b; box-shadow: 0 0 0 8px rgba(214,52,38,0); }
@@ -138,9 +152,10 @@ button { font-family: "Inter", sans-serif; }
 }
 .cc-menu-contact a:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
 .cc-menu-contact svg { width: 15px; height: 15px; fill: currentColor; }
-.cc-menu-lang { min-width: 150px; overflow: hidden; }
-.cc-menu-lang a { display: block; width: 100%; text-align: left; padding: 9px 14px; font-size: 0.72rem; color: var(--text); text-decoration: none; }
-.cc-menu-lang a:hover, .cc-menu-lang a[aria-current] { background: var(--menu-hover-bg); color: var(--gold); }
+.cc-menu-lang, .cc-menu-list { min-width: 150px; overflow: hidden; }
+.cc-menu-lang a, .cc-menu-list a { display: block; width: 100%; text-align: left; padding: 9px 14px; font-size: 0.72rem; color: var(--text); text-decoration: none; }
+.cc-menu-lang a:hover, .cc-menu-lang a[aria-current], .cc-menu-list a:hover { background: var(--menu-hover-bg); color: var(--gold); }
+.cc-menu-works { left: 0; right: auto; }
 
 /* ---- hero --------------------------------------------------------------- */
 .cc-top { background-color: var(--hero-bg); color: #fff; }
@@ -216,6 +231,12 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- other work (second masonry grid) ----------------------------------- */
 .cc-other-works { border-top: 1px solid var(--rule); padding-top: 40px; }
+.cc-category { scroll-margin-top: 90px; }
+.cc-category + .cc-category { margin-top: 48px; }
+.cc-category-heading {
+  max-width: 1200px; margin: 0 auto 18px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold);
+}
 
 .cc-show-all-wrap { text-align: center; margin-top: 8px; }
 .cc-show-all { padding: 12px 22px; font-size: 0.7rem; }
@@ -300,7 +321,7 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- phones (from the design's 680px breakpoint) ------------------------ */
 @media (max-width: 680px) {
-  .cc-nav-links a { font-size: 0.64rem; }
+  .cc-nav-links a, .cc-nav-links button { font-size: 0.64rem; }
   .cc-btn { padding: 8px 9px; font-size: 0.62rem; }
   .cc-nav-right > .cc-theme-btn { width: 34px; height: 32px; padding: 0; }
   .cc-tagline { display: none; }

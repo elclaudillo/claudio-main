@@ -51,9 +51,12 @@ collections:
         widget: select
         required: false
         options:
+          - { label: Clocks, value: clock }
           - { label: Generative, value: generative }
-          - { label: Portrait, value: portrait }
-          - { label: Watercolour, value: watercolour }
+          - { label: Portraits, value: portrait }
+          - { label: Prints, value: print }
+          - { label: Watercolors, value: watercolour }
+        hint: Groups the work under Other work and in the Works menu. Empty means Generative.
       - { name: visible, label: Visible on site, widget: boolean, default: true }
       - name: featured
         label: Featured in slideshow
@@ -233,6 +236,25 @@ collections:
       - { name: order, label: Position, widget: number, value_type: int, default: 10 }
       - { name: body, label: Text, widget: markdown }
 
+  - name: live
+    label: Live stream
+    description: The YouTube stream behind the Live button and /live/. Changes go live after the site rebuilds (a minute or two).
+    files:
+      - name: live
+        label: Live stream
+        file: src/data/live.json
+        fields:
+          - name: channel
+            label: YouTube channel ID
+            widget: string
+            pattern: ['^UC[\w-]{22}$', 'A channel ID starts with UC and is 24 characters long']
+            hint: "The /live/ page follows whatever this channel is broadcasting. Find it in YouTube Studio → Settings → Channel → Advanced settings."
+          - name: video
+            label: Pinned broadcast link
+            widget: string
+            required: false
+            hint: "Optional. Paste a YouTube link (watch, youtu.be or /live/ URL) to always show that broadcast. Leave empty to follow the channel automatically."
+
   - name: site
     label: Site text
     description: Tagline, headings and About text for each language.
@@ -248,6 +270,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -267,6 +294,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -286,6 +318,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -305,6 +342,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -324,6 +366,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -343,6 +390,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -362,6 +414,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -381,6 +438,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -400,6 +462,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -419,6 +486,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -438,6 +510,11 @@ collections:
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
+          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }

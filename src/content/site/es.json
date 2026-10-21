@@ -16,6 +16,11 @@
   ],
   "selectedMedia": "Prensa Seleccionada",
   "otherWork": "Otras obras",
+  "catClock": "Relojes",
+  "catGenerative": "Generativo",
+  "catPortrait": "Retratos",
+  "catPrint": "Impresiones",
+  "catWatercolour": "Acuarelas",
   "installNote": "Agrega esta página a tu pantalla de inicio para instalarla como una app.",
   "showAll": "Ver todo",
   "backToTop": "Volver arriba"

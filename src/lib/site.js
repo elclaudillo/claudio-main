@@ -1,12 +1,14 @@
 // Content helpers. Works and per-language site text come from the content
 // collections edited in /admin (src/content/*); language list and social
-// links from src/data/site.json.
+// links from src/data/site.json; the live stream from src/data/live.json.
 import { getCollection } from 'astro:content';
 import site from '../data/site.json';
+import live from '../data/live.json';
 
 export const { langOrder, langNames, langFullNames, socialLinks } = site;
 export const defaultLang = 'en';
-export const LIVE_CHANNEL = 'UCNop6_Z83rJdF_8Tpcss2Ug';
+export const LIVE_CHANNEL = live.channel;
+export const LIVE_VIDEO = live.video || '';
 
 export const langPath = (lang) => (lang === defaultLang ? '/' : `/${lang}/`);
 
@@ -35,6 +37,7 @@ export async function works(lang) {
         video: w.video,
         seriesLink: w.seriesLink,
         section: w.section,
+        category: w.category || 'generative',
         featured: w.featured,
         heroOrder: w.heroOrder ?? Infinity,
         variants: w.images.map(imageName),

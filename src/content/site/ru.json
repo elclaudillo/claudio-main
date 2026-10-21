@@ -16,6 +16,11 @@
   ],
   "selectedMedia": "Избранная пресса",
   "otherWork": "Другие работы",
+  "catClock": "Часы",
+  "catGenerative": "Генеративное",
+  "catPortrait": "Портреты",
+  "catPrint": "Принты",
+  "catWatercolour": "Акварели",
   "installNote": "Добавьте эту страницу на главный экран, чтобы установить её как приложение.",
   "showAll": "Показать все",
   "backToTop": "Наверх"

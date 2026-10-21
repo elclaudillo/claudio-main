@@ -16,6 +16,11 @@
   ],
   "selectedMedia": "Selected Media",
   "otherWork": "Other work",
+  "catClock": "Clocks",
+  "catGenerative": "Generative",
+  "catPortrait": "Portraits",
+  "catPrint": "Prints",
+  "catWatercolour": "Watercolors",
   "installNote": "Add this page to your home screen to install it as an app.",
   "showAll": "Show all",
   "backToTop": "Back to top"

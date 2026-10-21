@@ -186,7 +186,8 @@ export function initHome(data) {
     btn.setAttribute('aria-expanded', String(open));
     menuOf(btn).hidden = !open;
   }));
-  document.addEventListener('click', (e) => { if (!e.target.closest('.cc-menu')) closeMenus(); });
+  // Outside a menu, or on one of its links (e.g. a Works category), close.
+  document.addEventListener('click', (e) => { if (!e.target.closest('.cc-menu') || e.target.closest('.cc-menu a')) closeMenus(); });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     closeMenus();
@@ -236,9 +237,11 @@ export function initHome(data) {
 
   // ---- live status -------------------------------------------------------
   // /livecheck/ proxies YouTube's /channel/<id>/live page (netlify.toml, and
-  // astro.config.mjs for local dev). Off air it canonicalises to the channel
-  // page; on air to watch?v=<id> with isLiveNow:true. Both must hold —
-  // thumbnails and stray flags linger after a stream ends.
+  // astro.config.mjs for local dev). Off air it is the channel page; on air a
+  // watch page. Older pages: canonical watch?v=<id> plus isLiveNow:true (both
+  // must hold — stray flags linger after a stream ends). Since Oct 2026 the
+  // canonical is "undefined" and the sign is the view counter's isLive:true
+  // ("N watching now").
   const liveBtn = document.querySelector('[data-live-btn]');
   function checkLive() {
     fetch(`/livecheck/${Date.now()}/${data.channel}`, { cache: 'no-store' })
@@ -248,7 +251,8 @@ export function initHome(data) {
         const isWatch = !!(canon && /[?&]v=[\w-]{11}/.test(canon[1]));
         const liveNow = /"isLiveNow"\s*:\s*true/.test(t);
         const ended = /"endTimestamp"\s*:/.test(t);
-        liveBtn.classList.toggle('is-live', isWatch && liveNow && !ended);
+        const watching = /"videoViewCountRenderer":\{[\s\S]{0,400}?"isLive":true/.test(t);
+        liveBtn.classList.toggle('is-live', (isWatch && liveNow && !ended) || watching);
       })
       .catch(() => liveBtn.classList.remove('is-live'));
   }

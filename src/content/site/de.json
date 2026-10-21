@@ -16,6 +16,11 @@
   ],
   "selectedMedia": "Ausgewählte Presse",
   "otherWork": "Weitere Werke",
+  "catClock": "Uhren",
+  "catGenerative": "Generativ",
+  "catPortrait": "Porträts",
+  "catPrint": "Drucke",
+  "catWatercolour": "Aquarelle",
   "installNote": "Fügen Sie diese Seite Ihrem Startbildschirm hinzu, um sie als App zu installieren.",
   "showAll": "Alle anzeigen",
   "backToTop": "Nach oben"

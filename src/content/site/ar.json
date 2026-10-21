@@ -16,6 +16,11 @@
   ],
   "selectedMedia": "صحافة مختارة",
   "otherWork": "أعمال أخرى",
+  "catClock": "ساعات",
+  "catGenerative": "توليدي",
+  "catPortrait": "بورتريهات",
+  "catPrint": "مطبوعات",
+  "catWatercolour": "ألوان مائية",
   "installNote": "أضف هذه الصفحة إلى شاشتك الرئيسية لتثبيتها كتطبيق.",
   "showAll": "عرض الكل",
   "backToTop": "العودة إلى الأعلى"
