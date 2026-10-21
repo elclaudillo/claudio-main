@@ -8,17 +8,41 @@
 const img = (size, name) => `/img/${size}/${name}.webp`;
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
 
-// Swap an <img> only once the new file has loaded, so nothing flashes blank.
-function swapWhenLoaded(el, src) {
-  if (el.getAttribute('src') === src || el.dataset.pending === src) return;
-  el.dataset.pending = src;
-  const pre = new Image();
-  pre.onload = pre.onerror = () => {
-    if (el.dataset.pending !== src) return;
-    el.src = src;
-    delete el.dataset.pending;
+// Fix a card's image frame to the shape of the first image it shows. Later
+// variants are letterboxed inside it, so the card never changes height and
+// the masonry columns never reshuffle under the visitor.
+function lockFrame(el) {
+  const frame = el.parentElement;
+  const lock = () => {
+    if (frame.classList.contains('is-locked') || !el.naturalWidth) return;
+    frame.style.aspectRatio = `${el.naturalWidth} / ${el.naturalHeight}`;
+    frame.classList.add('is-locked');
   };
-  pre.src = src;
+  if (el.complete) lock(); else el.addEventListener('load', lock, { once: true });
+}
+
+// Cross-fade a card to a new image: once the file has loaded, fade it in on
+// top, then hand it to the card's own <img> and drop the overlay.
+function fadeTo(el, src) {
+  if (el.getAttribute('src') === src || el.dataset.pending) return;
+  el.dataset.pending = src;
+  const over = new Image();
+  over.className = 'cc-card-fade';
+  over.alt = '';
+  over.onload = () => {
+    el.parentElement.appendChild(over);
+    requestAnimationFrame(() => requestAnimationFrame(() => over.classList.add('is-in')));
+  };
+  over.onerror = () => delete el.dataset.pending;
+  over.addEventListener('transitionend', (e) => {
+    if (e.propertyName !== 'opacity') return;
+    el.src = src;
+    el.decode().catch(() => {}).then(() => {
+      over.remove();
+      delete el.dataset.pending;
+    });
+  });
+  over.src = src;
 }
 
 export function initHome(data) {
@@ -36,7 +60,8 @@ export function initHome(data) {
   cardImgs.forEach((el, i) => {
     const src = img('sm', current[i]);
     // Not fetched yet (lazy, below the fold): just point it at the pick.
-    if (!el.complete) el.src = src; else swapWhenLoaded(el, src);
+    if (!el.complete) el.src = src; else fadeTo(el, src);
+    lockFrame(el);
   });
 
   const io = new IntersectionObserver((entries) => {
@@ -53,7 +78,7 @@ export function initHome(data) {
     if (document.hidden || openIdx !== -1) return;
     for (const i of visible) {
       current[i] = pick(works[i].variants);
-      swapWhenLoaded(cardImgs[i], img('sm', current[i]));
+      fadeTo(cardImgs[i], img('sm', current[i]));
     }
   }, 6000);
 

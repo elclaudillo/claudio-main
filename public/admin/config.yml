@@ -5,7 +5,7 @@
 
 backend:
   name: github
-  repo: OWNER/REPO # TODO: set once Claudio's GitHub repo exists
+  repo: elclaudillo/claudio-main
   branch: main
 
 media_folder: art

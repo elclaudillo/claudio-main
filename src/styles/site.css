@@ -169,8 +169,12 @@ button { font-family: "Inter", sans-serif; }
 }
 .cc-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px var(--shadow); }
 .cc-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-.cc-card-img { width: 100%; background: var(--card-img-bg); display: grid; place-items: center; overflow: hidden; }
+.cc-card-img { width: 100%; background: var(--card-img-bg); display: grid; place-items: center; overflow: hidden; position: relative; }
 .cc-card-img img { width: 100%; height: auto; display: block; object-fit: contain; }
+/* Once the frame has its shape (home.js), images fill it instead of sizing it. */
+.cc-card-img.is-locked img { position: absolute; inset: 0; height: 100%; }
+.cc-card-img .cc-card-fade { position: absolute; inset: 0; height: 100%; opacity: 0; transition: opacity .9s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-card-img .cc-card-fade.is-in { opacity: 1; }
 .cc-card-body { padding: 18px 20px 22px; position: relative; flex: 1; display: flex; flex-direction: column; }
 .cc-title-row { display: flex; align-items: baseline; gap: 10px; }
 .cc-card h3 { font-weight: 600; font-size: 1.15rem; color: var(--heading); text-transform: lowercase; }
