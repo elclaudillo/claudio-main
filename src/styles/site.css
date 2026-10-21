@@ -387,9 +387,9 @@ button { font-family: "Inter", sans-serif; }
 .cc-series-nav { min-height: 52px; }
 .cc-series-back { text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em; color: var(--nav-text); }
 .cc-series-back:hover { color: var(--nav-text-hover); }
-.cc-series { min-height: 100vh; background: var(--bg); }
+.cc-series-page { min-height: 100vh; background: var(--bg); }
 .cc-series-kicker { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.cc-series .cc-heading h2 { font-size: clamp(1.4rem, 3vw, 2rem); text-transform: lowercase; }
+.cc-series-page .cc-heading h2 { font-size: clamp(1.4rem, 3vw, 2rem); text-transform: lowercase; }
 .cc-series-intro { margin-top: 18px; color: var(--body); }
 .cc-series-grid {
   max-width: 1200px; margin: 0 auto; display: grid; gap: 34px;
