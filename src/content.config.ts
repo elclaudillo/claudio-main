@@ -60,6 +60,7 @@ const site = defineCollection({
     menuPortraits: z.string().nullish().transform((s) => s || 'Generative portraits'),
     menuRss: z.string().nullish().transform((s) => s || 'RSS Live feeds'),
     menuVideos: z.string().nullish().transform((s) => s || 'Videos'),
+    menuAiApps: z.string().nullish().transform((s) => s || 'AI Apps'),
     installNote: z.string(),
     showAll: z.string().nullish().transform((s) => s || 'Show all'),
     backToTop: z.string().nullish().transform((s) => s || 'Back to top'),

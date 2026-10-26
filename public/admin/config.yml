@@ -320,6 +320,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -350,6 +351,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -380,6 +382,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -410,6 +413,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -440,6 +444,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -470,6 +475,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -500,6 +506,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -530,6 +537,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -560,6 +568,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -590,6 +599,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -620,6 +630,7 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
