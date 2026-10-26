@@ -21,6 +21,12 @@
   "catPortrait": "肖像画",
   "catPrint": "プリント",
   "catWatercolour": "水彩画",
+  "menuSelected": "セレクション",
+  "menuAllGenerative": "ジェネレーティブ全作品",
+  "menuClocks": "ジェネレーティブ時計",
+  "menuPortraits": "ジェネレーティブ肖像",
+  "menuRss": "RSS ライブフィード",
+  "menuVideos": "動画",
   "installNote": "このページをホーム画面に追加してアプリとしてインストールできます。",
   "showAll": "すべて表示",
   "backToTop": "トップへ戻る"

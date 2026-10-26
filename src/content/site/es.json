@@ -21,6 +21,12 @@
   "catPortrait": "Retratos",
   "catPrint": "Impresiones",
   "catWatercolour": "Acuarelas",
+  "menuSelected": "Selección",
+  "menuAllGenerative": "Todo lo generativo",
+  "menuClocks": "Relojes generativos",
+  "menuPortraits": "Retratos generativos",
+  "menuRss": "RSS en vivo",
+  "menuVideos": "Videos",
   "installNote": "Agrega esta página a tu pantalla de inicio para instalarla como una app.",
   "showAll": "Ver todo",
   "backToTop": "Volver arriba"

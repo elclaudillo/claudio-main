@@ -21,6 +21,12 @@
   "catPortrait": "Портреты",
   "catPrint": "Принты",
   "catWatercolour": "Акварели",
+  "menuSelected": "Избранное",
+  "menuAllGenerative": "Всё генеративное",
+  "menuClocks": "Генеративные часы",
+  "menuPortraits": "Генеративные портреты",
+  "menuRss": "RSS-ленты в эфире",
+  "menuVideos": "Видео",
   "installNote": "Добавьте эту страницу на главный экран, чтобы установить её как приложение.",
   "showAll": "Показать все",
   "backToTop": "Наверх"

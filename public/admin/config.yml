@@ -304,16 +304,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -328,16 +334,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -352,16 +364,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -376,16 +394,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -400,16 +424,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -424,16 +454,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -448,16 +484,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -472,16 +514,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -496,16 +544,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -520,16 +574,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
@@ -544,16 +604,22 @@ collections:
         fields:
           - { name: tagline, label: Tagline, widget: string }
           - { name: navAbout, label: "Menu: About", widget: string }
-          - { name: navWorks, label: "Menu: Works", widget: string }
+          - { name: navWorks, label: "Menu: Work", widget: string }
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
           - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Works menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Works menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Works menu: Portraits", widget: string, required: false }
-          - { name: catPrint, label: "Works menu: Prints", widget: string, required: false }
-          - { name: catWatercolour, label: "Works menu: Watercolors", widget: string, required: false }
+          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
+          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
+          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
+          - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
+          - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
+          - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
+          - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
+          - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
+          - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }

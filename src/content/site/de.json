@@ -21,6 +21,12 @@
   "catPortrait": "Porträts",
   "catPrint": "Drucke",
   "catWatercolour": "Aquarelle",
+  "menuSelected": "Auswahl",
+  "menuAllGenerative": "Alles Generative",
+  "menuClocks": "Generative Uhren",
+  "menuPortraits": "Generative Porträts",
+  "menuRss": "RSS-Live-Feeds",
+  "menuVideos": "Videos",
   "installNote": "Fügen Sie diese Seite Ihrem Startbildschirm hinzu, um sie als App zu installieren.",
   "showAll": "Alle anzeigen",
   "backToTop": "Nach oben"

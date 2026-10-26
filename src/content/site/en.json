@@ -1,7 +1,7 @@
 {
   "tagline": "Generative art — watercolours, photography, video, animations, audio and software.",
   "navAbout": "About",
-  "navWorks": "Works",
+  "navWorks": "Work",
   "worksHeading": "Selected Works",
   "playVideo": "▶ Play sample video",
   "seriesLinkLabel": "See additional pieces in same series, same logic, different images →",
@@ -21,6 +21,12 @@
   "catPortrait": "Portraits",
   "catPrint": "Prints",
   "catWatercolour": "Watercolors",
+  "menuSelected": "Selected",
+  "menuAllGenerative": "All generative",
+  "menuClocks": "Generative clocks",
+  "menuPortraits": "Generative portraits",
+  "menuRss": "RSS Live feeds",
+  "menuVideos": "Videos",
   "installNote": "Add this page to your home screen to install it as an app.",
   "showAll": "Show all",
   "backToTop": "Back to top"

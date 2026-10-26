@@ -24,17 +24,21 @@ const byId = Object.fromEntries(works.map((w) => [w.id, w]));
 const items = works.map((work, idx) => ({ idx, work }));
 const selected = items.filter((i) => i.work.section === 'selected');
 const other = items.filter((i) => i.work.section === 'other');
-// Watercolors get their own section (first in the Works menu) right after Selected
-// Works; the rest of Other work is split by category (no category counts as
-// generative). Empty categories are left out of the page and the Works menu.
+// Watercolors get their own section right after Selected Works; the rest of
+// Other work is split by category (no category counts as generative). Clocks
+// and portraits also repeat matching Selected works, so their Work menu entries
+// show every piece; Generative would just repeat the Selected grid. Empty
+// categories are left out of the page and the Work menu.
 const watercolours = other.filter((i) => i.work.category === 'watercolour');
 const categories = [
-  { id: 'clocks', key: 'clock', label: t.catClock },
+  { id: 'clocks', key: 'clock', label: t.catClock, withSelected: true },
   { id: 'generative', key: 'generative', label: t.catGenerative },
-  { id: 'portraits', key: 'portrait', label: t.catPortrait },
+  { id: 'portraits', key: 'portrait', label: t.catPortrait, withSelected: true },
   { id: 'prints', key: 'print', label: t.catPrint },
-].map((c) => ({ ...c, items: other.filter((i) => i.work.category === c.key) }))
+].map((c) => ({ ...c, items: (c.withSelected ? items : other).filter((i) => i.work.category === c.key) }))
   .filter((c) => c.items.length);
+const hasCategory = (id) => categories.some((c) => c.id === id);
+const youtube = socialLinks.find((s) => s.label === 'YouTube');
 const firstHero = hero[0];
 
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
@@ -101,13 +105,16 @@ const pageData = {
       <li class="cc-menu-wrap">
         <button type="button" aria-expanded="false" aria-controls="works-menu" data-menu-btn>{t.navWorks}</button>
         <div class="cc-menu cc-menu-list cc-menu-works" id="works-menu" hidden>
-          <a href="#works">{t.worksHeading}</a>
+          <a href="#works">{t.menuSelected}</a>
+          {categories.length > 0 && <a href="#other-work">{t.menuAllGenerative}</a>}
+          {hasCategory('clocks') && <a href="#work-clocks">{t.menuClocks}</a>}
+          {hasCategory('portraits') && <a href="#work-portraits">{t.menuPortraits}</a>}
+          <a href="http://api.claudiocastillo.com/admin/" target="_blank" rel="noopener">{t.menuRss}</a>
           {watercolours.length > 0 && <a href="#watercolours">{t.catWatercolour}</a>}
-          {categories.map((c) => <a href={`#work-${c.id}`}>{c.label}</a>)}
+          {youtube && <a href={youtube.href} target="_blank" rel="noopener">{t.menuVideos}</a>}
         </div>
       </li>
     </ul>
-    <a class="cc-btn" href="http://api.claudiocastillo.com/admin/" target="_blank" rel="noopener">Login</a>
     <a class="cc-btn cc-live" href="/live/" data-live-btn><span class="cc-live-dot" aria-hidden="true"></span>Live</a>
     <div class="cc-menu-wrap">
       <button class="cc-btn" type="button" aria-label="Contact" aria-expanded="false" aria-controls="contact-menu" data-menu-btn>Contact</button>

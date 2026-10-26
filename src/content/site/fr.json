@@ -21,6 +21,12 @@
   "catPortrait": "Portraits",
   "catPrint": "Tirages",
   "catWatercolour": "Aquarelles",
+  "menuSelected": "Sélection",
+  "menuAllGenerative": "Tout le génératif",
+  "menuClocks": "Horloges génératives",
+  "menuPortraits": "Portraits génératifs",
+  "menuRss": "Flux RSS en direct",
+  "menuVideos": "Vidéos",
   "installNote": "Ajoutez cette page à votre écran d'accueil pour l'installer comme application.",
   "showAll": "Tout afficher",
   "backToTop": "Haut de page"

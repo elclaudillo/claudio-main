@@ -53,6 +53,13 @@ const site = defineCollection({
     catPortrait: z.string().nullish().transform((s) => s || 'Portraits'),
     catPrint: z.string().nullish().transform((s) => s || 'Prints'),
     catWatercolour: z.string().nullish().transform((s) => s || 'Watercolors'),
+    // Work menu labels.
+    menuSelected: z.string().nullish().transform((s) => s || 'Selected'),
+    menuAllGenerative: z.string().nullish().transform((s) => s || 'All generative'),
+    menuClocks: z.string().nullish().transform((s) => s || 'Generative clocks'),
+    menuPortraits: z.string().nullish().transform((s) => s || 'Generative portraits'),
+    menuRss: z.string().nullish().transform((s) => s || 'RSS Live feeds'),
+    menuVideos: z.string().nullish().transform((s) => s || 'Videos'),
     installNote: z.string(),
     showAll: z.string().nullish().transform((s) => s || 'Show all'),
     backToTop: z.string().nullish().transform((s) => s || 'Back to top'),
