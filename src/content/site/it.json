@@ -14,11 +14,6 @@
     "Mentre le immagini scorrono a caso — acqua, fiori, pioggia, rampicanti, radici, cielo — l’orologio interno del computer fa l’opposto: tiene l’ora esatta e prevede cicli naturali come le fasi lunari e le maree. Alcune opere attingono anche a dati in tempo reale, dal meteo ai titoli dei giornali alla borsa, e rispondono al mondo mentre accade.",
     "L’opera si inserisce in una lunga tradizione di artisti che lavorano con il tempo e il caso, dai 3 rammendi tipo di Duchamp e dai mobile di Calder fino a Nam June Paik, John Cage e Brian Eno. Si può guardare su schermo o in proiezione, stampare, registrare o trasmettere: ogni istante è un originale unico. L’«opera» in sé non è mai finita: continuerà a crearsi molto dopo la scomparsa dell’artista."
   ],
-  "selectedMedia": "Stampa Selezionata",
-  "otherWork": "Altre opere",
-  "catClock": "Orologi",
-  "catGenerative": "Generativo",
-  "catPortrait": "Ritratti",
   "catPrint": "Stampe",
   "catWatercolour": "Acquerelli",
   "menuSelected": "Selezione",
@@ -29,6 +24,7 @@
   "menuVideos": "Video",
   "menuAiApps": "App IA",
   "installNote": "Aggiungi questa pagina alla schermata home per installarla come app.",
-  "showAll": "Mostra tutto",
-  "backToTop": "Torna su"
+  "backToTop": "Torna su",
+  "artStatementLabel": "Dichiarazione d'artista",
+  "pressLabel": "Stampa"
 }

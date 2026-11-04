@@ -1,8 +1,8 @@
 {
   "title": "ikebana",
   "year": "2026",
-  "section": "selected",
-  "category": "generative",
+  "section": "other",
+  "category": "clock",
   "visible": true,
   "featured": false,
   "heroOrder": null,
@@ -69,5 +69,6 @@
       "modalMedium": "",
       "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। सभी अद्वितीय।. फोटोग्राफी: Rachel Levy।"
     }
-  }
+  },
+  "clockOrder": 21
 }

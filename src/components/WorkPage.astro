@@ -1,0 +1,27 @@
+---
+// A Work menu page: its slideshow, then the same pieces as cards.
+import Page from './Page.astro';
+import Slideshow from './Slideshow.astro';
+import WorkGrid from './WorkGrid.astro';
+import { strings, works as getWorks, workSections, sectionPath } from '../lib/site.js';
+
+interface Props { lang: string; id: string }
+const { lang, id } = Astro.props;
+const t = await strings(lang);
+const section = workSections.find((s) => s.id === id);
+const works = (await getWorks(lang)).filter(section.match);
+if (section.sort) works.sort(section.sort);
+const items = works.map((work, idx) => ({ idx, work }));
+const heading = t[section.label];
+---
+<Page lang={lang} path={sectionPath(id)} works={works} slides={works} pageTitle={heading}>
+  <Slideshow slides={works} playVideo={t.playVideo} />
+
+  <section id="works" class="cc-works">
+    <div class="cc-heading">
+      <h2>{heading}</h2>
+      <div class="cc-rule"></div>
+    </div>
+    <WorkGrid items={items} playVideo={t.playVideo} />
+  </section>
+</Page>

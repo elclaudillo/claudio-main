@@ -2,13 +2,13 @@
   "title": "gtmo landscape",
   "year": "2010",
   "section": "selected",
-  "category": "generative",
+  "category": "rss",
   "visible": true,
   "featured": true,
-  "heroOrder": 2,
+  "heroOrder": 9,
   "video": "https://www.youtube.com/watch?v=u3KC_4LzFx8",
   "seriesLink": "/series/rss/",
-  "medium": "Watercolours, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
+  "medium": "Watercolors, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
   "modalMedium": "",
   "modalExtra": "Edition of 8 with 2 APs, videos and prints.\nExhibited at Museum of Contemporary Art, Taipei, Taiwan, China during Animamix Biennale.",
   "images": [
@@ -37,9 +37,9 @@
       "modalExtra": "Exhibido en el Museo de Arte Contemporáneo de Taipéi, Taiwán, China, durante la Bienal Animamix."
     },
     "it": {
-      "medium": "Acquerelli, animazione, video, audio e software. Orologio di 24 ore con cicli lunari, di marea e solari.",
+      "medium": "Acquerelli, animazione, video e software. Guidato da un feed meteo RSS in diretta — ora del giorno, calore, umidità, nuvolosità, precipitazioni e altro sono tracciati in tempo reale ovunque nel mondo.",
       "modalMedium": "",
-      "modalExtra": "Edizione di 8 con 2 PA, video e stampe. Ognuna unica."
+      "modalExtra": "Edizione di 8 con 2 PA, video e stampe.\nEsposto al Museo d'Arte Contemporanea di Taipei, Taiwan, Cina, durante la Biennale Animamix."
     },
     "fr": {
       "medium": "Aquarelles, animation, vidéo, logiciel. Un flux météo RSS en direct pilote l'œuvre en temps réel. Humidité, couverture nuageuse, précipitations, etc. sont suivies partout dans le monde.",

@@ -14,11 +14,6 @@
     "Tandis que les images dérivent au hasard — eau, fleurs, pluie, lianes, racines, ciel —, l’horloge interne de l’ordinateur fait l’inverse : elle garde l’heure exacte et prédit les cycles naturels comme les phases de la lune et les marées. Certaines pièces puisent aussi dans des données en direct, de la météo aux gros titres et à la bourse, et répondent au monde en temps réel.",
     "L’œuvre s’inscrit dans une longue lignée d’artistes qui travaillent avec le temps et le hasard, des 3 stoppages-étalon de Duchamp et des mobiles de Calder à Nam June Paik, John Cage et Brian Eno. Elle se regarde sur écran ou en projection, s’imprime, s’enregistre ou se diffuse : chaque instant est un original unique. L’« œuvre » elle-même n’est jamais achevée : elle continuera de se créer bien après la disparition de l’artiste."
   ],
-  "selectedMedia": "Presse Sélectionnée",
-  "otherWork": "Autres œuvres",
-  "catClock": "Horloges",
-  "catGenerative": "Génératif",
-  "catPortrait": "Portraits",
   "catPrint": "Tirages",
   "catWatercolour": "Aquarelles",
   "menuSelected": "Sélection",
@@ -29,6 +24,7 @@
   "menuVideos": "Vidéos",
   "menuAiApps": "Applis IA",
   "installNote": "Ajoutez cette page à votre écran d'accueil pour l'installer comme application.",
-  "showAll": "Tout afficher",
-  "backToTop": "Haut de page"
+  "backToTop": "Haut de page",
+  "artStatementLabel": "Démarche artistique",
+  "pressLabel": "Presse"
 }

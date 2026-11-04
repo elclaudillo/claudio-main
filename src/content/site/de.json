@@ -14,11 +14,6 @@
     "Während die Bilder zufällig dahintreiben – Wasser, Blumen, Regen, Ranken, Wurzeln, Himmel –, tut die interne Computeruhr das Gegenteil: Sie hält die genaue Zeit und berechnet natürliche Zyklen wie Mondphasen und Gezeiten. Manche Arbeiten nutzen zudem Live-Daten, vom Wetter über Schlagzeilen bis zur Börse, und reagieren in Echtzeit auf die Welt.",
     "Das Werk steht in einer langen Reihe von Künstlern, die mit Zeit und Zufall arbeiten – von Duchamps 3 Kunststopf-Normalmaße und Calders Mobiles bis zu Nam June Paik, John Cage und Brian Eno. Es lässt sich auf einem Bildschirm oder als Projektion zeigen, drucken, aufzeichnen oder streamen – jeder Moment ein einzigartiges Original. Das „Werk“ selbst ist nie fertig: Es wird sich noch lange nach dem Künstler weiter erschaffen."
   ],
-  "selectedMedia": "Ausgewählte Presse",
-  "otherWork": "Weitere Werke",
-  "catClock": "Uhren",
-  "catGenerative": "Generativ",
-  "catPortrait": "Porträts",
   "catPrint": "Drucke",
   "catWatercolour": "Aquarelle",
   "menuSelected": "Auswahl",
@@ -29,6 +24,7 @@
   "menuVideos": "Videos",
   "menuAiApps": "KI-Apps",
   "installNote": "Fügen Sie diese Seite Ihrem Startbildschirm hinzu, um sie als App zu installieren.",
-  "showAll": "Alle anzeigen",
-  "backToTop": "Nach oben"
+  "backToTop": "Nach oben",
+  "artStatementLabel": "Künstlerisches Statement",
+  "pressLabel": "Presse"
 }

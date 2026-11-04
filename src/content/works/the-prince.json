@@ -1,0 +1,19 @@
+{
+  "title": "the prince",
+  "year": "2023",
+  "section": "other",
+  "category": "clock",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/shorts/n3LSXz1qZV8",
+  "seriesLink": "/series/mosaics/",
+  "medium": "Portrait AI on Roman mosaic. Animation, video, watercolors, hue regeneration, software on computer. Hours, minutes, tides, and lunar/solar phases predicted. Touch-enabled. Original image AD 200, from a villa at Daphne near Antioch (modern Antakya, Turkey). Courtesy of the Princeton University Art Museum. Edition of 5 with 2 APs. 24-hour videos, edition of 30. Unique prints.",
+  "modalMedium": "",
+  "modalExtra": "",
+  "images": [
+    "/art/series-mosaics-the-prince.png"
+  ],
+  "translations": {},
+  "clockOrder": 19
+}

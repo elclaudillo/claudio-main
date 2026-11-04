@@ -1,18 +1,19 @@
 {
-  "title": "Menstrual",
-  "year": "",
+  "title": "Menstrual / Fertility",
+  "year": "2019",
   "section": "other",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
   "featured": false,
   "heroOrder": null,
   "video": "https://www.youtube.com/watch?v=s6oweoRfO0M",
   "seriesLink": "",
-  "medium": "",
+  "medium": "Functional generative fertility clock. Predicted tidal and lunar phases. Moon takes 28 days to cross screen, changing color while doing so. Watercolors, animation, software. Software on computer. Edition of 5 with 2 APs.",
   "modalMedium": "",
   "modalExtra": "",
   "images": [
     "/art/menstrual.jpg"
   ],
-  "translations": {}
+  "translations": {},
+  "clockOrder": 8
 }

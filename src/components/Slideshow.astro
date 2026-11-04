@@ -1,0 +1,36 @@
+---
+// Opens every page: one slide per piece, each playing its YouTube sample video
+// (muted) with the description below, like the old site's Generative slider.
+// Pieces without a video show their image. src/scripts/slideshow.js runs it;
+// the first slide is rendered here so the page is complete without JavaScript.
+import { img } from '../lib/site.js';
+
+interface Props { slides: any[]; playVideo: string }
+const { slides, playVideo } = Astro.props;
+const first = slides[0];
+const many = slides.length > 1;
+---
+<div id="top" class="cc-top">
+  <div class="cc-show" data-show>
+    <div class="cc-show-stage" data-show-stage>
+      <img class="cc-show-img is-in" src={img('lg', first.variants[0])} alt={first.title} fetchpriority="high" data-show-img>
+      <a class="cc-show-link" href={first.video || undefined} target="_blank" rel="noopener" aria-label={`${first.title}: ${playVideo}`} hidden={!first.video} data-show-link></a>
+      {many && <button class="cc-show-arrow is-prev" type="button" aria-label="Previous piece" data-show-prev>‹</button>}
+      {many && <button class="cc-show-arrow is-next" type="button" aria-label="Next piece" data-show-next>›</button>}
+    </div>
+    <div class="cc-show-caption" aria-live="off">
+      <div class="cc-title-row">
+        <h2 data-show-title>{first.title}</h2>
+        <span class="cc-year" data-show-year>{first.year}</span>
+        {many && (
+          <span class="cc-show-controls">
+            <span class="cc-show-count" data-show-count>1 / {slides.length}</span>
+            <button class="cc-show-pause" type="button" aria-label="Pause slideshow" aria-pressed="false" data-show-pause>❚❚</button>
+          </span>
+        )}
+      </div>
+      <p class="cc-show-medium" data-show-medium>{first.medium}</p>
+      <a class="cc-play" href={first.video || undefined} target="_blank" rel="noopener" hidden={!first.video} data-show-play>{playVideo}</a>
+    </div>
+  </div>
+</div>

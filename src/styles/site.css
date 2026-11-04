@@ -1,6 +1,6 @@
 /* Light theme values come from Claudio's design (inline styles in the Claude
    Design export). Dark theme is a near-black "gallery wall" for the art.
-   The theme is set on <html data-theme> by the inline script in Home.astro:
+   The theme is set on <html data-theme> by the inline script in Page.astro:
    the visitor's saved choice, else their system setting. */
 :root {
   color-scheme: light;
@@ -66,7 +66,7 @@ body {
 /* Smooth theme switch; .cc-theme-ready is added after first paint so the
    page doesn't animate in from the wrong colours on load. */
 .cc-theme-ready body, .cc-theme-ready .cc-nav, .cc-theme-ready .cc-card, .cc-theme-ready section,
-.cc-theme-ready .cc-footer, .cc-theme-ready .cc-hero {
+.cc-theme-ready .cc-footer {
   transition: background-color .35s ease, color .35s ease, border-color .35s ease;
 }
 a { color: var(--gold); }
@@ -157,18 +157,40 @@ button { font-family: "Inter", sans-serif; }
 .cc-menu-lang a:hover, .cc-menu-lang a[aria-current], .cc-menu-list a:hover { background: var(--menu-hover-bg); color: var(--gold); }
 .cc-menu-works { left: 0; right: auto; }
 
-/* ---- hero --------------------------------------------------------------- */
+/* ---- slideshow (top of every page) ---------------------------------------- */
 .cc-top { background-color: var(--hero-bg); color: #fff; }
-.cc-hero {
-  width: 100%; height: 100dvh; min-height: 480px; background: var(--hero-bg);
-  display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+/* Fits the 16:9 stage and its caption in one screen under the nav. */
+.cc-show { --caption: 170px; width: min(100%, calc((100dvh - 64px - var(--caption)) * 16 / 9)); min-width: min(100%, 640px); margin: 0 auto; }
+.cc-show-stage { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.cc-show-img, .cc-show-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity 1s ease; }
+.cc-show-img { object-fit: contain; }
+.cc-show-img.is-in, .cc-show-player.is-in { opacity: 1; }
+.cc-show-player { pointer-events: none; }
+.cc-show-link { position: absolute; inset: 0; z-index: 2; }
+.cc-show-arrow {
+  position: absolute; z-index: 3; top: 50%; translate: 0 -50%; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.4); background: rgba(8,9,12,0.55); color: #fff; font-size: 1.6rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center; padding: 0 0 4px;
 }
-.cc-hero img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: opacity 2s ease; }
-.cc-hero .cc-hero-prev { position: absolute; inset: 0; margin: auto; opacity: 0; }
-.cc-hero .cc-hero-cur { position: relative; cursor: pointer; }
-.cc-hero-link { display: contents; }
+.cc-show-arrow:hover { background: var(--gold); border-color: var(--gold); }
+.cc-show-arrow:focus-visible, .cc-show-pause:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.cc-show-arrow.is-prev { inset-inline-start: 14px; }
+.cc-show-arrow.is-next { inset-inline-end: 14px; }
+.cc-show-caption { min-height: var(--caption); padding: 14px 20px 18px; }
+.cc-show-caption .cc-title-row { flex-wrap: wrap; }
+.cc-show-caption h2 { font-weight: 600; font-size: 1.15rem; color: #fff; text-transform: lowercase; }
+.cc-show-caption .cc-year { color: #e2bd6a; }
+.cc-show-controls { margin-inline-start: auto; display: inline-flex; align-items: center; gap: 12px; }
+.cc-show-count { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); font-variant-numeric: tabular-nums; }
+.cc-show-pause { cursor: pointer; background: none; border: none; color: rgba(255,255,255,0.75); font-size: 0.7rem; padding: 4px 6px; line-height: 1; }
+.cc-show-pause:hover { color: #fff; }
+.cc-show-medium { font-size: 0.88rem; color: rgba(255,255,255,0.82); margin-top: 6px; }
+.cc-show-caption .cc-play { color: #e2bd6a; border-bottom-color: #e2bd6a; margin-top: 8px; }
+.cc-show-caption .cc-play:hover { color: #fff; border-bottom-color: #fff; }
 
 /* ---- works -------------------------------------------------------------- */
+/* Menu links land below the sticky nav. */
+.cc-works, .cc-about { scroll-margin-top: 90px; }
 .cc-works { padding: 16px 6vw 100px; }
 .cc-heading { max-width: 720px; margin: 0 auto 24px; text-align: center; }
 .cc-heading h2 { font-weight: 600; letter-spacing: 0.01em; color: var(--heading); }
@@ -229,19 +251,7 @@ button { font-family: "Inter", sans-serif; }
   .cc-card:hover, .cc-card:hover .cc-card-img img { transform: none !important; }
 }
 
-/* ---- other work (second masonry grid) ----------------------------------- */
-.cc-other-works { border-top: 1px solid var(--rule); padding-top: 40px; }
-.cc-category { scroll-margin-top: 90px; }
-.cc-category + .cc-category { margin-top: 48px; }
-.cc-category-heading {
-  max-width: 1200px; margin: 0 auto 18px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--gold);
-}
-
-.cc-show-all-wrap { text-align: center; margin-top: 8px; }
-.cc-show-all { padding: 12px 22px; font-size: 0.7rem; }
-
-/* ---- back to top: appears once the hero has scrolled away ---------------- */
+/* ---- back to top: appears once the slideshow has scrolled away -------------- */
 .cc-to-top {
   position: fixed; z-index: 40; inset-inline-end: max(18px, env(safe-area-inset-right));
   bottom: calc(18px + env(safe-area-inset-bottom));
@@ -260,12 +270,6 @@ button { font-family: "Inter", sans-serif; }
 .cc-about .cc-heading { margin-bottom: 48px; }
 .cc-about .cc-heading h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .cc-about-body { max-width: 760px; margin: 0 auto; font-size: 1.08rem; color: var(--body); }
-.cc-about-body p { margin-bottom: 22px; }
-.cc-media { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--rule); }
-.cc-media-label { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-.cc-media-links { display: flex; gap: 24px; flex-wrap: wrap; }
-.cc-media-links a { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--gold); }
-.cc-media-links a:hover { color: var(--heading); }
 
 /* ---- footer ------------------------------------------------------------- */
 .cc-footer { padding: 50px 6vw calc(50px + env(safe-area-inset-bottom)); text-align: center; background: var(--footer-bg); color: var(--footer-text); font-size: 0.85rem; }
@@ -277,6 +281,8 @@ button { font-family: "Inter", sans-serif; }
 .cc-footer-social a:hover { background: var(--footer-icon); color: var(--footer-bg); border-color: var(--footer-icon); }
 .cc-footer-social svg { width: 22.4px; height: 22.4px; fill: currentColor; }
 .cc-install { max-width: 640px; margin: 26px auto 0; font-size: 0.8rem; color: var(--footer-note); }
+.cc-login { display: inline-block; margin-top: 14px; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--footer-note); text-decoration: none; }
+.cc-login:hover { color: var(--footer-icon); }
 
 /* ---- modal -------------------------------------------------------------- */
 .cc-overlay { position: fixed; inset: 0; background: rgba(11,15,20,0.86); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 4vh 4vw; }
@@ -326,8 +332,8 @@ button { font-family: "Inter", sans-serif; }
   .cc-nav-right > .cc-theme-btn { width: 34px; height: 32px; padding: 0; }
   .cc-tagline { display: none; }
   .cc-brand-name { --logo-scale: 0.52; }
-  .cc-hero { align-items: flex-start; height: auto; min-height: 62vh; }
-  .cc-hero img { max-height: 78vh; }
+  .cc-show { width: 100%; min-width: 0; }
+  .cc-show-arrow { width: 38px; height: 38px; }
   .cc-modal { max-height: 94vh; }
   .cc-modal-img { min-height: 260px; }
   .cc-modal-body { padding: 24px; }
@@ -340,16 +346,14 @@ button { font-family: "Inter", sans-serif; }
   .cc-btn { padding: 8px 7px; letter-spacing: 0.05em; }
 }
 
-/* ---- selected media: link groups + expandable documents ------------------ */
-.cc-media-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px 44px; margin-top: 34px; }
-.cc-media-group h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.cc-media-group ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.cc-media-group a { display: block; text-decoration: none; color: var(--body); font-size: 0.95rem; line-height: 1.45; }
-.cc-media-source { display: block; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
-.cc-media-title { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold) 55%, transparent); text-underline-offset: 3px; }
-.cc-media-group a:hover .cc-media-title { color: var(--heading); text-decoration-color: var(--heading); }
+/* ---- about: expandable boxes (art statement, press, exhibitions, cv) ------- */
+.cc-doc-body .cc-press { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.cc-press a { display: block; text-decoration: none; color: var(--body); line-height: 1.45; }
+.cc-press-source { display: block; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.cc-press-title { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold) 55%, transparent); text-underline-offset: 3px; }
+.cc-press a:hover .cc-press-title { color: var(--heading); text-decoration-color: var(--heading); }
 
-.cc-docs { margin-top: 40px; border-top: 1px solid var(--rule); }
+.cc-docs { border-top: 1px solid var(--rule); }
 .cc-doc { border-bottom: 1px solid var(--rule); }
 .cc-doc summary {
   cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
@@ -375,12 +379,12 @@ button { font-family: "Inter", sans-serif; }
 .cc-doc-body em { font-style: italic; }
 
 /* ---- about: lead paragraph + pull quote --------------------------------- */
-.cc-about-body .cc-about-lead { font-size: 1.32rem; line-height: 1.55; color: var(--heading); margin-bottom: 28px; }
+.cc-about-body .cc-about-lead { font-size: 1.2rem; line-height: 1.55; color: var(--heading); margin-bottom: 22px; }
 .cc-about-quote { margin: 38px 0; padding: 6px 0 6px 26px; border-left: 2px solid var(--gold); }
 .cc-about-quote p { margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-style: italic; line-height: 1.35; color: var(--heading); }
 .cc-about-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 @media (max-width: 680px) {
-  .cc-about-body .cc-about-lead { font-size: 1.15rem; }
+  .cc-about-body .cc-about-lead { font-size: 1.08rem; }
 }
 
 /* ---- series pages (/series/<id>/) ---------------------------------------- */

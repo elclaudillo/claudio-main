@@ -1,5 +1,5 @@
 {
-  "tagline": "Generative art — watercolours, photography, video, animations, audio and software.",
+  "tagline": "Generative art — watercolors, photography, video, animations, audio and software.",
   "navAbout": "About",
   "navWorks": "Work",
   "worksHeading": "Selected Works",
@@ -9,16 +9,11 @@
   "aboutQuote": "“You will not walk in the same river twice.”",
   "aboutQuoteAuthor": "Heraclitus",
   "about": [
-    "Claudio Castillo is a multimedia artist who fuses watercolour painting, video, photography, animation and software into an art form that takes on a life of its own: kinetic, ever-evolving visions in which change is inevitable and happens before our very eyes.",
-    "He begins with digitized versions of his watercolours, splits each image into layers and animates every layer in multiple ways. The software only rearranges and sequences these hand-made animations — the work is not computer-generated, it is animated watercolour and collage — so the painting recomposes itself endlessly into “non-linear regenerative paintings” that never repeat.",
+    "Claudio Castillo is a multimedia artist who fuses watercolor painting, video, photography, animation and software into an art form that takes on a life of its own: kinetic, ever-evolving visions in which change is inevitable and happens before our very eyes.",
+    "He begins with digitized versions of his watercolors, splits each image into layers and animates every layer in multiple ways. The software only rearranges and sequences these hand-made animations — the work is not computer-generated, it is animated watercolor and collage — so the painting recomposes itself endlessly into “non-linear regenerative paintings” that never repeat.",
     "While the imagery drifts at random — water, flowers, rain, vines, roots, sky — the computer’s internal clock does the opposite, keeping accurate time and predicting natural cycles such as the phases of the moon and the tides. Some pieces also draw on live data, from the weather to news headlines and the stock market, so the artwork responds to the world in real time.",
     "The work belongs to a long line of artists working with time and chance, from Duchamp’s 3 Standard Stoppages and Calder’s mobiles to Nam June Paik, John Cage and Brian Eno. It can be shown on a screen or projected, printed, recorded or streamed — each moment a unique original. The “work” itself is never done: it will keep creating itself long after the artist is gone."
   ],
-  "selectedMedia": "Selected Media",
-  "otherWork": "Other work",
-  "catClock": "Clocks",
-  "catGenerative": "Generative",
-  "catPortrait": "Portraits",
   "catPrint": "Prints",
   "catWatercolour": "Watercolors",
   "menuSelected": "Selected",
@@ -29,6 +24,7 @@
   "menuVideos": "Videos",
   "menuAiApps": "AI Apps",
   "installNote": "Add this page to your home screen to install it as an app.",
-  "showAll": "Show all",
-  "backToTop": "Back to top"
+  "backToTop": "Back to top",
+  "artStatementLabel": "Art statement",
+  "pressLabel": "Press"
 }

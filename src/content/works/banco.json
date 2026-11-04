@@ -2,13 +2,13 @@
   "title": "banco taino",
   "year": "2016",
   "section": "selected",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
-  "featured": false,
-  "heroOrder": null,
+  "featured": true,
+  "heroOrder": 5,
   "video": "https://www.youtube.com/watch?v=p0LGD9HKWSw&t=324s",
   "seriesLink": "",
-  "medium": "Watercolours, animations, videos, audio and software. 24 hour clock with lunar, tidal and solar cycles.",
+  "medium": "Watercolors, animations, videos, audio and software. 24 hour clock with lunar, tidal and solar cycles.",
   "modalMedium": "",
   "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
   "images": [
@@ -78,5 +78,6 @@
       "modalMedium": "",
       "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 2
 }

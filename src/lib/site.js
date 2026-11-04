@@ -12,6 +12,19 @@ export const LIVE_VIDEO = live.video || '';
 
 export const langPath = (lang) => (lang === defaultLang ? '/' : `/${lang}/`);
 
+// The Work menu's pages (/work/<id>/). Selected is the home page. A work can
+// show on several of these: alhambra is in Selected, All generative and Clocks.
+const byClockOrder = (a, b) => a.clockOrder - b.clockOrder || a.title.localeCompare(b.title);
+export const workSections = [
+  { id: 'all-generative', label: 'menuAllGenerative', match: (w) => ['clock', 'generative', 'rss'].includes(w.category) },
+  { id: 'clocks', label: 'menuClocks', match: (w) => w.category === 'clock', sort: byClockOrder },
+  { id: 'portraits', label: 'menuPortraits', match: (w) => w.category === 'portrait' },
+  { id: 'rss', label: 'menuRss', match: (w) => w.category === 'rss' },
+  { id: 'watercolors', label: 'catWatercolour', match: (w) => w.category === 'watercolour' },
+  { id: 'prints', label: 'catPrint', match: (w) => w.category === 'print' },
+];
+export const sectionPath = (id) => `work/${id}/`;
+
 export async function strings(lang) {
   const entries = await getCollection('site');
   return (entries.find((e) => e.id === lang) || entries.find((e) => e.id === defaultLang)).data;
@@ -40,6 +53,7 @@ export async function works(lang) {
         category: w.category || 'generative',
         featured: w.featured,
         heroOrder: w.heroOrder ?? Infinity,
+        clockOrder: w.clockOrder ?? Infinity,
         variants: w.images.map(imageName),
         medium: t.medium || w.medium,
         modalMedium: t.modalMedium || t.medium || enModal,
@@ -51,5 +65,18 @@ export async function works(lang) {
 // Hero slideshow: visible works marked "featured", in their hero order.
 export const heroWorks = (list) =>
   list.filter((w) => w.featured).sort((a, b) => a.heroOrder - b.heroOrder || a.title.localeCompare(b.title));
+
+// Selected Works: same order as the slideshow, then anything not positioned.
+export const selectedWorks = (list) =>
+  list.filter((w) => w.section === 'selected').sort((a, b) => a.heroOrder - b.heroOrder || a.title.localeCompare(b.title));
+
+// Muted, chromeless YouTube player for a sample video link. Keeps the link's
+// start time (watch?v=…&t=393s); loop needs the playlist parameter.
+export function videoEmbed(url) {
+  const id = url.match(/(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/)?.[1];
+  if (!id) return '';
+  const start = url.match(/[?&]t=(\d+)/)?.[1] || 0;
+  return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=${id}&start=${start}`;
+}
 
 export const img = (size, name) => `/img/${size}/${name}.webp`;

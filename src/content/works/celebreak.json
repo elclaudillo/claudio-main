@@ -1,0 +1,19 @@
+{
+  "title": "celebreak",
+  "year": "2024",
+  "section": "other",
+  "category": "clock",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://youtu.be/Db3Z-NX0tcY",
+  "seriesLink": "/series/duals/",
+  "medium": "Functional generative clock, each poster represents an hour. Fast changing posters represent future hours, slow changing represent hours past. 200 female and 200 male actors transform into each other in an endless progression. The black and white rectangle marks the hour and the minute within. Animation, photography, software. A digital display showing the hour and minute displays every 3 minutes or when triggered by motion. Software edition of 5 with 2 APs, 12 hour videos edition of 30, and unique prints.",
+  "modalMedium": "",
+  "modalExtra": "",
+  "images": [
+    "/art/series-duals-celebreak.png"
+  ],
+  "translations": {},
+  "clockOrder": 11
+}

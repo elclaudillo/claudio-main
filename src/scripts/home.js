@@ -1,9 +1,11 @@
-// Home page behaviour, ported from the original Claude Design component:
+// Home and Work page behaviour, ported from the original Claude Design component:
 //  - every card shows a random image from its series and re-picks every 6 s
-//  - the hero cross-fades through seven works every 5 s (2 s fade)
+//  - the slideshow at the top of the page (see slideshow.js)
 //  - clicking a card opens the detail modal
 //  - the Live button pulses while the YouTube channel is on air
 //  - Contact / language dropdowns
+
+import { initSlideshow } from './slideshow.js';
 
 const img = (size, name) => `/img/${size}/${name}.webp`;
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
@@ -51,14 +53,15 @@ export function initHome(data) {
   let openIdx = -1;
 
   // ---- cards -------------------------------------------------------------
-  // Cards are grouped by section and category in the DOM; index them by work.
-  const cards = [...document.querySelectorAll('.cc-card')]
-    .sort((a, b) => Number(a.dataset.idx) - Number(b.dataset.idx));
-  const cardImgs = cards.map((c) => c.querySelector('[data-card-img]'));
+  // A card's data-idx is its work; cards are matched by that, never by position.
+  const cards = [...document.querySelectorAll('.cc-card')];
+  const imgOf = (c) => c.querySelector('[data-card-img]');
+  const workOf = (c) => Number(c.dataset.idx);
   const visible = new Set();
 
-  cardImgs.forEach((el, i) => {
-    const src = img('sm', current[i]);
+  cards.forEach((c) => {
+    const el = imgOf(c);
+    const src = img('sm', current[workOf(c)]);
     // Not fetched yet (lazy, below the fold): just point it at the pick.
     if (!el.complete) el.src = src; else fadeTo(el, src);
     lockFrame(el);
@@ -66,8 +69,7 @@ export function initHome(data) {
 
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
-      const i = cards.indexOf(e.target);
-      if (e.isIntersecting) visible.add(i); else visible.delete(i);
+      if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
     }
   }, { rootMargin: '200px 0px' });
   cards.forEach((c) => io.observe(c));
@@ -76,54 +78,14 @@ export function initHome(data) {
   // nobody is looking at. They pick up a fresh variant once scrolled to.
   setInterval(() => {
     if (document.hidden || openIdx !== -1) return;
-    for (const i of visible) {
+    for (const c of visible) {
+      const i = workOf(c);
       current[i] = pick(works[i].variants);
-      fadeTo(cardImgs[i], img('sm', current[i]));
+      fadeTo(imgOf(c), img('sm', current[i]));
     }
   }, 6000);
 
-  // ---- hero --------------------------------------------------------------
-  const heroCur = document.querySelector('[data-hero-cur]');
-  const heroPrev = document.querySelector('[data-hero-prev]');
-  const heroLink = document.querySelector('[data-hero-link]');
-  const heroWorkIdx = data.hero.map((h) => works.findIndex((w) => w.id === h.id));
-  let heroIndex = Math.floor(Math.random() * data.hero.length);
-
-  const heroSrc = (k) => img('lg', current[heroWorkIdx[k]]);
-  const setHeroMeta = (k) => {
-    heroLink.href = data.hero[k].video;
-    heroCur.alt = works[heroWorkIdx[k]].title;
-  };
-
-  heroCur.src = heroSrc(heroIndex);
-  setHeroMeta(heroIndex);
-
-  let fading = false;
-  setInterval(() => {
-    if (document.hidden || fading) return;
-    const next = (heroIndex + 1) % data.hero.length;
-    const src = heroSrc(next);
-    const pre = new Image();
-    fading = true;
-    pre.onload = pre.onerror = () => {
-      heroPrev.style.transition = 'none';
-      heroPrev.src = heroCur.currentSrc || heroCur.src;
-      heroPrev.style.opacity = '1';
-      heroCur.style.transition = 'none';
-      heroCur.style.opacity = '0';
-      heroCur.src = src;
-      heroIndex = next;
-      setHeroMeta(next);
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        heroPrev.style.transition = '';
-        heroCur.style.transition = '';
-        heroPrev.style.opacity = '0';
-        heroCur.style.opacity = '1';
-        fading = false;
-      }));
-    };
-    pre.src = src;
-  }, 5000);
+  initSlideshow(works, data.slides, img);
 
   // ---- modal -------------------------------------------------------------
   const overlay = document.querySelector('[data-overlay]');
@@ -188,7 +150,7 @@ export function initHome(data) {
     btn.setAttribute('aria-expanded', String(open));
     menuOf(btn).hidden = !open;
   }));
-  // Outside a menu, or on one of its links (e.g. a Works category), close.
+  // Outside a menu, or on one of its links, close.
   document.addEventListener('click', (e) => { if (!e.target.closest('.cc-menu') || e.target.closest('.cc-menu a')) closeMenus(); });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
@@ -197,7 +159,7 @@ export function initHome(data) {
   });
 
   // ---- back to top -------------------------------------------------------
-  // Shown once the hero is out of view.
+  // Shown once the slideshow is out of view.
   const toTop = document.querySelector('[data-to-top]');
   new IntersectionObserver(([e]) => toTop.classList.toggle('is-shown', !e.isIntersecting))
     .observe(document.querySelector('.cc-top'));

@@ -1,11 +1,11 @@
 {
-  "title": "Fachas y Rojos",
+  "title": "Fachas y Rojos / TikTok",
   "year": "2020",
   "section": "selected",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
-  "featured": false,
-  "heroOrder": null,
+  "featured": true,
+  "heroOrder": 12,
   "video": "https://www.youtube.com/watch?v=pgWUvtXIPjg&t=402s",
   "seriesLink": "/series/duals/",
   "medium": "Fascist and Communist propaganda posters from the 1930s overwrite each other endlessly. Animations are triggered and hourly, with bullet holes matching the hour.",
@@ -71,5 +71,6 @@
       "modalMedium": "",
       "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 9
 }

@@ -18,8 +18,8 @@ collections:
     label: Artworks
     label_singular: Artwork
     description: >-
-      Each artwork is a card in Selected Works or Other work. Hidden works stay saved but
-      are not shown. Featured works also appear in the full-screen slideshow at the top.
+      Each artwork is a card on the home page (Selected Works) and/or a Work menu page,
+      depending on its section and category. Hidden works stay saved but are not shown.
     folder: src/content/works
     format: json
     extension: json
@@ -45,7 +45,7 @@ collections:
         options:
           - { label: Selected Works, value: selected }
           - { label: Other work, value: other }
-        hint: Selected Works is the main grid; Other work is the second grid below it.
+        hint: Selected Works also shows on the home page. Every work shows on its category's Work page either way.
       - name: category
         label: Category
         widget: select
@@ -55,21 +55,31 @@ collections:
           - { label: Generative, value: generative }
           - { label: Portraits, value: portrait }
           - { label: Prints, value: print }
+          - { label: RSS Live feeds, value: rss }
           - { label: Watercolors, value: watercolour }
-        hint: Groups the work under Other work and in the Works menu. Empty means Generative.
+        hint: >-
+          Which Work menu page shows it. All generative shows Clocks, Generative and RSS together;
+          Portraits, Prints and Watercolors stay on their own pages. Empty means Generative.
       - { name: visible, label: Visible on site, widget: boolean, default: true }
       - name: featured
         label: Featured in slideshow
         widget: boolean
         default: false
-        hint: The full-screen hero at the top of the home page cycles through featured works.
+        hint: The slideshow at the top of the home page plays featured works. Work pages play all their pieces.
       - name: heroOrder
         label: Slideshow position
         widget: number
         value_type: int
         min: 1
         required: false
-        hint: Lower numbers come first in the slideshow. Leave empty to put it at the end.
+        hint: Order in the home slideshow and Selected Works. Lower numbers come first; empty goes last.
+      - name: clockOrder
+        label: Position on Clocks page
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: Order on the Clocks page. Lower numbers come first; empty goes last, by title.
       - name: images
         label: Images
         label_singular: Image
@@ -79,7 +89,7 @@ collections:
           The card shows one of these at random and keeps rotating through them.
           Upload JPG or PNG files (under 10 MB). The site makes the web sizes itself.
         field: { name: image, label: Image, widget: image }
-      - { name: video, label: Sample video link, widget: string, required: false, hint: "YouTube link opened by Play sample video. Leave empty for works without a video." }
+      - { name: video, label: Sample video link, widget: string, required: false, hint: "YouTube link. Plays muted in the slideshow and opens from Play sample video; add &t=90s to start partway through. Leave empty for works without a video." }
       - { name: seriesLink, label: Series link, widget: string, required: false, hint: "Optional. A series page on this site (/series/<name>/, see Series) or any web address. Shown in the detail window as \"See additional pieces in same series\"." }
       - { name: medium, label: Card text, widget: text, hint: "Short description shown on the card." }
       - { name: modalMedium, label: Detail text, widget: text, required: false, hint: "Longer description for the detail window. Leave empty to reuse the card text." }
@@ -182,46 +192,31 @@ collections:
               - { name: modalMedium, label: Detail text, widget: text, required: false }
               - { name: modalExtra, label: Edition and exhibitions, widget: text, required: false }
 
-  - name: media
-    label: Selected Media
-    label_singular: Link group
-    description: >-
-      Press links in the About section, grouped (Press releases, Interviews, ...).
-      Upload PDFs with the link field's file picker or paste a YouTube link.
-    folder: src/content/media
-    format: json
-    extension: json
-    create: true
-    delete: true
-    identifier_field: title
-    slug: "{{title}}"
-    summary: "{{order}}. {{title}}"
-    sortable_fields: [order, title]
+  - name: press
+    label: Press
+    description: The Press box in About. One list; the site sorts it by date, newest first.
     media_folder: /public/press
     public_folder: /press
-    fields:
-      - { name: title, label: Group title, widget: string }
-      - { name: order, label: Position, widget: number, value_type: int, default: 10, hint: "Lower numbers come first." }
-      - name: layout
-        label: Layout
-        widget: select
-        default: list
-        options:
-          - { label: "List (source + title)", value: list }
-          - { label: "Row of links (like Sotheby's / Miami Herald)", value: row }
-      - name: items
-        label: Links
-        label_singular: Link
-        widget: list
+    files:
+      - name: press
+        label: Press list
+        file: src/content/press/press.json
         fields:
-          - { name: label, label: Title, widget: string }
-          - { name: source, label: Source, widget: string, required: false, hint: "Outlet or author, e.g. El Nuevo Herald." }
-          - { name: url, label: Link or PDF, widget: file, hint: "Upload a PDF, or paste a URL (YouTube, article, ...)." }
+          - name: items
+            label: Press items
+            label_singular: Press item
+            widget: list
+            summary: "{{fields.date}} {{fields.source}}: {{fields.label}}"
+            fields:
+              - { name: date, label: Date, widget: string, required: false, pattern: ['^(\d{4}(-\d{2}(-\d{2})?)?)?$', 'Use YYYY-MM-DD, YYYY-MM or YYYY'], hint: "2023-12-07, 2023-12 or 2023. Items with no date go at the end." }
+              - { name: source, label: Source, widget: string, required: false, hint: "Outlet or author, e.g. El Nuevo Herald." }
+              - { name: label, label: Title, widget: string }
+              - { name: url, label: Link or PDF, widget: file, hint: "Upload a PDF, or paste a URL (YouTube, article, ...)." }
 
   - name: mediaDocs
     label: Media documents
     label_singular: Document
-    description: Longer texts shown as expandable panels under Selected Media (Exhibitions, CV / Bio, Art statement).
+    description: Longer texts shown as boxes in About, after Art statement and Press (Exhibitions, CV / Bio).
     folder: src/content/media-docs
     format: frontmatter
     extension: md
@@ -296,7 +291,7 @@ collections:
 
   - name: site
     label: Site text
-    description: Tagline, headings and About text for each language.
+    description: Tagline, headings and the Art statement for each language.
     files:
       - name: en
         label: "English"
@@ -308,26 +303,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: es
         label: "Español"
@@ -339,26 +330,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: it
         label: "Italiano"
@@ -370,26 +357,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: fr
         label: "Français"
@@ -401,26 +384,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: de
         label: "Deutsch"
@@ -432,26 +411,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ko
         label: "한국어"
@@ -463,26 +438,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ja
         label: "日本語"
@@ -494,26 +465,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: zh
         label: "中文"
@@ -525,26 +492,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ar
         label: "العربية"
@@ -556,26 +519,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ru
         label: "Русский"
@@ -587,26 +546,22 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: hi
         label: "हिन्दी"
@@ -618,24 +573,20 @@ collections:
           - { name: worksHeading, label: Works heading, widget: string }
           - { name: playVideo, label: Play video label, widget: string }
           - { name: seriesLinkLabel, label: Series link label, widget: string }
-          - { name: otherWork, label: Other work heading, widget: string }
-          - { name: catClock, label: "Work menu: Clocks", widget: string, required: false }
-          - { name: catGenerative, label: "Work menu: Generative", widget: string, required: false }
-          - { name: catPortrait, label: "Work menu: Portraits", widget: string, required: false }
           - { name: catPrint, label: "Work menu: Prints", widget: string, required: false }
           - { name: catWatercolour, label: "Work menu: Watercolors", widget: string, required: false }
           - { name: menuSelected, label: "Work menu: Selected", widget: string, required: false }
           - { name: menuAllGenerative, label: "Work menu: All generative", widget: string, required: false }
           - { name: menuClocks, label: "Work menu: Generative clocks", widget: string, required: false }
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
-          - { name: menuRss, label: "Work menu: RSS Live feeds (Login link)", widget: string, required: false }
+          - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
           - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
           - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
-          - { name: about, label: About paragraphs, hint: "The first paragraph is shown larger as an introduction.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: selectedMedia, label: Selected media heading, widget: string }
+          - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
+          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
-          - { name: showAll, label: "Button: Show all (other work)", widget: string, required: false }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }

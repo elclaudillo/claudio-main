@@ -4,8 +4,8 @@
   "section": "selected",
   "category": "clock",
   "visible": true,
-  "featured": false,
-  "heroOrder": null,
+  "featured": true,
+  "heroOrder": 11,
   "video": "https://www.youtube.com/watch?v=U8hsCdSBgcw&t=6s",
   "seriesLink": "/series/religions/",
   "medium": "Mosaic morphing linear video is regenerated on hue values. Lunar cycle on top, hour hands appear when triggered by sensor.",
@@ -70,5 +70,6 @@
       "modalMedium": "",
       "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 14
 }

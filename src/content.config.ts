@@ -19,10 +19,11 @@ const works = defineCollection({
     title: z.string(),
     year: z.union([z.string(), z.number()]).nullish().transform((y) => (y == null ? "" : String(y))),
     section: z.enum(['selected', 'other']).default('selected'),
-    category: z.enum(['clock', 'generative', 'portrait', 'print', 'watercolour']).nullish(),
+    category: z.enum(['clock', 'generative', 'portrait', 'print', 'rss', 'watercolour']).nullish(),
     visible: z.boolean().default(true),
     featured: z.boolean().default(false),
     heroOrder: z.number().nullish(),
+    clockOrder: z.number().nullish(),
     video: z.union([z.string().url(), z.literal('')]).nullish().transform((s) => s ?? ''),
     seriesLink: text,
     medium: z.string(),
@@ -46,11 +47,8 @@ const site = defineCollection({
     aboutQuote: text,
     aboutQuoteAuthor: text,
     about: z.array(z.string()),
-    selectedMedia: z.string(),
-    otherWork: z.string(),
-    catClock: z.string().nullish().transform((s) => s || 'Clocks'),
-    catGenerative: z.string().nullish().transform((s) => s || 'Generative'),
-    catPortrait: z.string().nullish().transform((s) => s || 'Portraits'),
+    artStatementLabel: z.string().nullish().transform((s) => s || 'Art statement'),
+    pressLabel: z.string().nullish().transform((s) => s || 'Press'),
     catPrint: z.string().nullish().transform((s) => s || 'Prints'),
     catWatercolour: z.string().nullish().transform((s) => s || 'Watercolors'),
     // Work menu labels.
@@ -62,21 +60,19 @@ const site = defineCollection({
     menuVideos: z.string().nullish().transform((s) => s || 'Videos'),
     menuAiApps: z.string().nullish().transform((s) => s || 'AI Apps'),
     installNote: z.string(),
-    showAll: z.string().nullish().transform((s) => s || 'Show all'),
     backToTop: z.string().nullish().transform((s) => s || 'Back to top'),
   }),
 });
 
-// Selected Media (About section): link groups and long documents.
-const media = defineCollection({
-  loader: glob({ pattern: '*.json', base: './src/content/media' }),
+// Press (About section): one list, sorted by date when the page is built.
+// Dates are YYYY-MM-DD, YYYY-MM or YYYY; undated items go at the end.
+const press = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/press' }),
   schema: z.object({
-    title: z.string(),
-    order: z.number().default(99),
-    layout: z.enum(['row', 'list']).default('list'),
     items: z.array(z.object({
-      label: z.string(),
+      date: z.union([z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/, 'Use YYYY-MM-DD, YYYY-MM or YYYY'), z.literal('')]).nullish().transform((d) => d ?? ''),
       source: text,
+      label: z.string(),
       url: z.string(),
     })).default([]),
   }),
@@ -110,4 +106,4 @@ const series = defineCollection({
   }),
 });
 
-export const collections = { works, site, media, mediaDocs, series };
+export const collections = { works, site, press, mediaDocs, series };

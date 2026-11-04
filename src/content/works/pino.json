@@ -1,14 +1,14 @@
 {
-  "title": "pino",
+  "title": "pino / Bonsai",
   "year": "2019",
   "section": "selected",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
   "featured": true,
-  "heroOrder": 6,
+  "heroOrder": 8,
   "video": "https://www.youtube.com/watch?v=5BjmV4yPXhU&t=7s",
   "seriesLink": "/series/bonsai/",
-  "medium": "Watercolours, animations, videos, audio and software. 24 hour clock with lunar, tidal and solar cycles. Hourly, random and triggered animations. Tree turns 360 degrees every minute and in 24 hours. Number of flowers equal hour, East-West position of moon is minutes.",
+  "medium": "Watercolors, animations, videos, audio and software. 24 hour clock with lunar, tidal and solar cycles. Hourly, random and triggered animations. Tree turns 360 degrees every minute and in 24 hours. Number of flowers equal hour, East-West position of moon is minutes.",
   "modalMedium": "",
   "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
   "images": [
@@ -78,5 +78,6 @@
       "modalMedium": "",
       "modalExtra": "5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 3
 }

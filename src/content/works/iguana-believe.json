@@ -1,18 +1,19 @@
 {
   "title": "Iguana Believe",
-  "year": "",
+  "year": "2020",
   "section": "other",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
   "featured": false,
   "heroOrder": null,
   "video": "https://www.youtube.com/watch?v=Gj8YR1K5Q28",
   "seriesLink": "",
-  "medium": "",
+  "medium": "Functional clock. Hour is represented by roman numeral on doorway and by number of posters on the wall, minutes are represented by East West position of religious figure behind wall, moon takes one month to cross screen. Watercolors, animation, video and software. Software on computer. Edition of 5 with 2 APs.",
   "modalMedium": "",
   "modalExtra": "",
   "images": [
     "/art/iguana-believe.jpg"
   ],
-  "translations": {}
+  "translations": {},
+  "clockOrder": 7
 }

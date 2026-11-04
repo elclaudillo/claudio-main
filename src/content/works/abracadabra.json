@@ -1,0 +1,19 @@
+{
+  "title": "abracadabra",
+  "year": "2022",
+  "section": "other",
+  "category": "clock",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=KHmZIRXZrOY",
+  "seriesLink": "/series/religions/",
+  "medium": "Abracadabra: Morphing video is fed through an algorithm where hue values are regenerated in real time on 8 channels. Functional clock hands appear when triggered by motion. Audio is also generative with 8 tracks being composed in real time. Photo, video animation, predicted lunar phases. Software on computer, size variable. Edition of 5 with 2 APs. 24-hour videos edition of 30, unique prints.",
+  "modalMedium": "",
+  "modalExtra": "",
+  "images": [
+    "/art/series-religions-abracadabra.png"
+  ],
+  "translations": {},
+  "clockOrder": 15
+}

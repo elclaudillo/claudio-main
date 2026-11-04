@@ -14,11 +14,6 @@
     "Mientras las imágenes derivan al azar —agua, flores, lluvia, enredaderas, raíces, cielo—, el reloj interno de la computadora hace lo contrario: mantiene la hora exacta y predice ciclos naturales como las fases de la luna y las mareas. Algunas piezas también se alimentan de datos en vivo, del clima a los titulares de noticias y la bolsa, y responden al mundo en tiempo real.",
     "La obra se inscribe en una larga tradición de artistas que trabajan con el tiempo y el azar, desde los 3 zurcidos patrón de Duchamp y los móviles de Calder hasta Nam June Paik, John Cage y Brian Eno. Puede verse en pantalla o proyectada, impresa, grabada o transmitida: cada instante, un original único. La «obra» en sí nunca termina: seguirá creándose mucho después de que el artista ya no esté."
   ],
-  "selectedMedia": "Prensa Seleccionada",
-  "otherWork": "Otras obras",
-  "catClock": "Relojes",
-  "catGenerative": "Generativo",
-  "catPortrait": "Retratos",
   "catPrint": "Impresiones",
   "catWatercolour": "Acuarelas",
   "menuSelected": "Selección",
@@ -29,6 +24,7 @@
   "menuVideos": "Videos",
   "menuAiApps": "Apps de IA",
   "installNote": "Agrega esta página a tu pantalla de inicio para instalarla como una app.",
-  "showAll": "Ver todo",
-  "backToTop": "Volver arriba"
+  "backToTop": "Volver arriba",
+  "artStatementLabel": "Declaración artística",
+  "pressLabel": "Prensa"
 }

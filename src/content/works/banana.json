@@ -1,14 +1,14 @@
 {
-  "title": "Banana republican",
+  "title": "Banana republican / Banana Weather",
   "year": "2010",
   "section": "selected",
-  "category": "generative",
+  "category": "rss",
   "visible": true,
   "featured": true,
-  "heroOrder": 5,
+  "heroOrder": 10,
   "video": "https://www.youtube.com/watch?v=BowFTStfYTc",
   "seriesLink": "/series/rss/",
-  "medium": "Watercolours, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
+  "medium": "Watercolors, animation, video, software. Generative, random C++ version and AIR real time version. RSS weather drives artwork in real time. Humidity, cloud cover precipitation etc are tracked anywhere in world.",
   "modalMedium": "",
   "modalExtra": "Real time RSS version is Flash AIR based. Generative random version in C++, non web is also available. Edition of 8 with 2 APs, videos and prints.",
   "images": [
@@ -35,7 +35,7 @@
     "es": {
       "medium": "Acuarelas, animación, video, software. Un feed de clima RSS en vivo impulsa la obra en tiempo real. Humedad, nubosidad, precipitación, etc. se rastrean en cualquier parte del mundo.",
       "modalMedium": "",
-      "modalExtra": "Exhibido en el Museo de Arte Contemporáneo de Taipéi, Taiwán, China, durante la Bienal Animamix."
+      "modalExtra": "La versión RSS en tiempo real está basada en Flash AIR. También está disponible una versión aleatoria generativa en C++, no web. Edición de 8 con 2 AP, videos y copias impresas."
     },
     "it": {
       "medium": "Acquerelli, animazione, video e software. Guidato da un feed meteo RSS in diretta — ora del giorno, calore, umidità, nuvolosità, precipitazioni e altro sono tracciati in tempo reale ovunque nel mondo.",

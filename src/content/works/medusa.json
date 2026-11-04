@@ -2,13 +2,13 @@
   "title": "medusa",
   "year": "2023",
   "section": "selected",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
-  "featured": false,
-  "heroOrder": null,
+  "featured": true,
+  "heroOrder": 13,
   "video": "https://www.youtube.com/shorts/JXPTv0V6wA0",
   "seriesLink": "/series/mosaics/",
-  "medium": "Watercolours, animation, portrait AI, video, audio, software. Generative clock with hour, minute, lunar, tidal and solar cycles.",
+  "medium": "Watercolors, animation, portrait AI, video, audio, software. Generative clock with hour, minute, lunar, tidal and solar cycles.",
   "modalMedium": "",
   "modalExtra": "Original Mosaic 200 AD from Getty collection. Edition of 5 with 2 APs, videos and prints.",
   "images": [
@@ -73,5 +73,6 @@
       "modalMedium": "",
       "modalExtra": "गेटी संग्रह से 200 ईस्वी का मूल मोज़ेक। 5 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। सभी अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 18
 }

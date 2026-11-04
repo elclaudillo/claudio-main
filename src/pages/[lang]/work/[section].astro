@@ -1,0 +1,11 @@
+---
+import WorkPage from '../../../components/WorkPage.astro';
+import { langOrder, defaultLang, workSections } from '../../../lib/site.js';
+
+export function getStaticPaths() {
+  return langOrder.filter((l) => l !== defaultLang)
+    .flatMap((lang) => workSections.map((s) => ({ params: { lang, section: s.id } })));
+}
+const { lang, section } = Astro.params;
+---
+<WorkPage lang={lang} id={section} />

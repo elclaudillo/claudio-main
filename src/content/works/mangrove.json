@@ -1,0 +1,19 @@
+{
+  "title": "mangrove",
+  "year": "2022",
+  "section": "other",
+  "category": "clock",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=Podk5ztfsWo",
+  "seriesLink": "/series/bonsai/",
+  "medium": "Generative clock. Watercolors, video, animation, and software. Functional clock. Predicted lunar, tidal, and solar phases. The moon’s east–west position represents minutes. The amount of flowers on the tree represents hours. The tree turns 360 degrees every day, every minute, or when triggered by motion. Hourly animations. Software on computer. Edition of 5 with 2 APs. Videos and prints.",
+  "modalMedium": "",
+  "modalExtra": "",
+  "images": [
+    "/art/series-bonsai-mangrove.png"
+  ],
+  "translations": {},
+  "clockOrder": 5
+}

@@ -2,13 +2,13 @@
   "title": "altars",
   "year": "2019",
   "section": "selected",
-  "category": "generative",
+  "category": "clock",
   "visible": true,
   "featured": true,
-  "heroOrder": 1,
+  "heroOrder": 3,
   "video": "https://www.youtube.com/watch?v=5w6s8QWcOMY&t=202s",
   "seriesLink": "",
-  "medium": "Watercolours, video, photography, software\n24 hour clock with lunar and solar cycles. \nRandom, hourly and triggered animations.",
+  "medium": "Watercolors, video, photography, software\n24 hour clock with lunar and solar cycles. \nRandom, hourly and triggered animations.",
   "modalMedium": "",
   "modalExtra": "Edition of 8 with 2 APs, videos and prints.",
   "images": [
@@ -92,5 +92,6 @@
       "modalMedium": "",
       "modalExtra": "8 प्रतियों का संस्करण, 2 एपी, वीडियो और प्रिंट सहित। प्रत्येक अद्वितीय।."
     }
-  }
+  },
+  "clockOrder": 1
 }

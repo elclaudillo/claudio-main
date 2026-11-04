@@ -1,16 +1,13 @@
 ---
-// Masonry grid of artwork cards, in title order. Used for Selected Works and
-// for each category of Other work. `idx` is the work's position in the page's
-// data list (src/scripts/home.js looks cards up by it). With `limit`, only
-// that many cards show until the visitor presses "Show all".
+// Masonry grid of artwork cards, in the order given. `idx` is the work's
+// position in the page's data list (src/scripts/home.js looks cards up by it).
 import { img } from '../lib/site.js';
 
 interface Item { idx: number; work: { title: string; year: string; video: string; medium: string; variants: string[] } }
-interface Props { items: Item[]; playVideo: string; limit?: number; showAll?: string }
-const { items, playVideo, limit = 0, showAll = 'Show all' } = Astro.props;
-const capped = limit > 0 && items.length > limit;
+interface Props { items: Item[]; playVideo: string }
+const { items, playVideo } = Astro.props;
 ---
-<div class="cc-works-grid" data-limit={capped ? limit : undefined}>
+<div class="cc-works-grid">
   {items.map(({ idx, work: w }) => (
     <article class="cc-card" data-idx={idx} tabindex="0" role="button" aria-haspopup="dialog" aria-label={w.title}>
       <div class="cc-card-img">
@@ -27,28 +24,3 @@ const capped = limit > 0 && items.length > limit;
     </article>
   ))}
 </div>
-{capped && (
-  <div class="cc-show-all-wrap" hidden>
-    <button class="cc-btn cc-show-all" type="button">{showAll}</button>
-  </div>
-)}
-<script is:inline>
-  // Hide everything past the limit. Runs right after the grid is parsed,
-  // before first paint. Without JavaScript every card simply shows.
-  (function () {
-    var me = document.currentScript;
-    var grid = me.previousElementSibling.classList.contains('cc-works-grid')
-      ? me.previousElementSibling : me.previousElementSibling.previousElementSibling;
-    var cards = Array.prototype.slice.call(grid.children);
-    var limit = Number(grid.dataset.limit);
-    if (!limit) return;
-    cards.forEach(function (c, k) { if (k >= limit) c.hidden = true; });
-    var wrap = grid.nextElementSibling;
-    wrap.hidden = false;
-    wrap.querySelector('button').addEventListener('click', function () {
-      cards.forEach(function (c) { c.hidden = false; });
-      wrap.remove();
-      if (cards[limit]) cards[limit].focus({ preventScroll: true });
-    });
-  })();
-</script>

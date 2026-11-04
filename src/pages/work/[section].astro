@@ -1,0 +1,9 @@
+---
+import WorkPage from '../../components/WorkPage.astro';
+import { workSections } from '../../lib/site.js';
+
+export function getStaticPaths() {
+  return workSections.map((s) => ({ params: { section: s.id } }));
+}
+---
+<WorkPage lang="en" id={Astro.params.section} />
