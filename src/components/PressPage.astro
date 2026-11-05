@@ -1,0 +1,44 @@
+---
+// The Press page: every item from /admin → Press, newest first, undated at the
+// end. Dates stay as typed in /admin, so a year on its own sorts after that
+// year's full dates. Items with no link show as a picture with a caption.
+import Page from './Page.astro';
+import { getCollection } from 'astro:content';
+import { strings, langPath } from '../lib/site.js';
+
+interface Props { lang: string }
+const { lang } = Astro.props;
+const t = await strings(lang);
+const press = (await getCollection('press')).flatMap((e) => e.data.items)
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+const pressDate = (d) => (d.length > 4
+  ? new Intl.DateTimeFormat(lang, { year: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(d))
+  : d);
+const opens = (url) => (url ? { href: url, target: '_blank', rel: 'noopener' } : {});
+---
+<Page lang={lang} path="press/" works={[]} slides={[]} pageTitle={t.pressLabel} image={press.find((i) => i.image)?.image}>
+  <section id="works" class="cc-works cc-press-page">
+    <a class="cc-press-home" href={langPath(lang)}>← {t.backToHome}</a>
+    <div class="cc-heading">
+      <h2>{t.pressLabel}</h2>
+      <div class="cc-rule"></div>
+    </div>
+    <ul class="cc-press">
+      {press.map((i) => {
+        // The title's link stretches over the whole card (see site.css).
+        const Title = i.url ? 'a' : 'span';
+        return (
+          <li class:list={['cc-press-card', { 'is-link': i.url }]}>
+            {i.image && <div class="cc-press-pic"><img src={i.image} alt="" loading="lazy" decoding="async"></div>}
+            <div class="cc-press-body">
+              {i.logo && <span class="cc-press-logo"><img src={i.logo} alt="" loading="lazy" decoding="async"></span>}
+              {(i.source || i.date) && <span class="cc-press-source">{[i.source, i.date && pressDate(i.date)].filter(Boolean).join(' · ')}</span>}
+              <Title class="cc-press-title" {...opens(i.url)}>{i.label}</Title>
+              {i.extraUrl && <a class="cc-play" href={i.extraUrl} target="_blank" rel="noopener">{i.extraLabel || i.extraUrl}</a>}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+</Page>

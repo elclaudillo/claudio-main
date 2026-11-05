@@ -194,7 +194,7 @@ collections:
 
   - name: press
     label: Press
-    description: The Press box in About. One list; the site sorts it by date, newest first.
+    description: The Press page (/press/). One list; the site sorts it by date, newest first.
     media_folder: /public/press
     public_folder: /press
     files:
@@ -211,12 +211,16 @@ collections:
               - { name: date, label: Date, widget: string, required: false, pattern: ['^(\d{4}(-\d{2}(-\d{2})?)?)?$', 'Use YYYY-MM-DD, YYYY-MM or YYYY'], hint: "2023-12-07, 2023-12 or 2023. Items with no date go at the end." }
               - { name: source, label: Source, widget: string, required: false, hint: "Outlet or author, e.g. El Nuevo Herald." }
               - { name: label, label: Title, widget: string }
-              - { name: url, label: Link or PDF, widget: file, hint: "Upload a PDF, or paste a URL (YouTube, article, ...)." }
+              - { name: url, label: Link or PDF, widget: file, required: false, hint: "Upload a PDF, or paste a URL (YouTube, article, ...). Leave empty to show just the picture and caption." }
+              - { name: image, label: Picture, widget: image, required: false, hint: "A photo, or a picture of the article's first page." }
+              - { name: logo, label: Publication logo, widget: image, required: false }
+              - { name: extraUrl, label: Second link, widget: file, required: false, hint: "Optional, e.g. the English version or a video." }
+              - { name: extraLabel, label: Second link text, widget: string, required: false, hint: "e.g. English, Video." }
 
   - name: mediaDocs
     label: Media documents
     label_singular: Document
-    description: Longer texts shown as boxes in About, after Art statement and Press (Exhibitions, CV / Bio).
+    description: Longer texts shown as boxes in About, after Art statement and the Press link (Exhibitions, CV / Bio).
     folder: src/content/media-docs
     format: frontmatter
     extension: md
@@ -317,7 +321,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: es
@@ -344,7 +349,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: it
@@ -371,7 +377,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: fr
@@ -398,7 +405,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: de
@@ -425,7 +433,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ko
@@ -452,7 +461,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ja
@@ -479,7 +489,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: zh
@@ -506,7 +517,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ar
@@ -533,7 +545,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: ru
@@ -560,7 +573,8 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }
       - name: hi
@@ -587,6 +601,7 @@ collections:
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
-          - { name: pressLabel, label: "About box: Press", widget: string, required: false }
+          - { name: pressLabel, label: "Press link and page heading", widget: string, required: false }
+          - { name: backToHome, label: "Press page: Back to home", widget: string, required: false }
           - { name: installNote, label: Install note, widget: string }
           - { name: backToTop, label: "Button: Back to top", widget: string, required: false }

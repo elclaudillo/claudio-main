@@ -1,0 +1,9 @@
+---
+import PressPage from '../../../components/PressPage.astro';
+import { langOrder, defaultLang } from '../../../lib/site.js';
+
+export function getStaticPaths() {
+  return langOrder.filter((l) => l !== defaultLang).map((lang) => ({ params: { lang } }));
+}
+---
+<PressPage lang={Astro.params.lang} />

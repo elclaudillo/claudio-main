@@ -3,18 +3,11 @@ import Page from './Page.astro';
 import Slideshow from './Slideshow.astro';
 import WorkGrid from './WorkGrid.astro';
 import { getCollection, render } from 'astro:content';
-import { strings, works as getWorks, heroWorks, selectedWorks } from '../lib/site.js';
+import { strings, works as getWorks, heroWorks, selectedWorks, langPath } from '../lib/site.js';
 
 interface Props { lang: string }
 const { lang } = Astro.props;
 const t = await strings(lang);
-// Press: newest first, undated at the end. Dates stay as typed in /admin, so
-// a year on its own sorts after that year's full dates.
-const press = (await getCollection('press')).flatMap((e) => e.data.items)
-  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-const pressDate = (d) => (d.length > 4
-  ? new Intl.DateTimeFormat(lang, { year: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(d))
-  : d);
 const mediaDocs = await Promise.all((await getCollection('mediaDocs')).sort((a, b) => a.data.order - b.data.order)
   .map(async (e) => ({ title: e.data.title, Content: (await render(e)).Content })));
 const works = selectedWorks(await getWorks(lang));
@@ -36,7 +29,7 @@ const items = works.map((work, idx) => ({ idx, work }));
 
   <section id="about" class="cc-about">
     <div class="cc-heading">
-      <h2>{t.aboutHeading}</h2>
+      
       <div class="cc-rule"></div>
     </div>
     <div class="cc-about-body cc-docs">
@@ -56,21 +49,7 @@ const items = works.map((work, idx) => ({ idx, work }));
           ))}
         </div>
       </details>
-      <details class="cc-doc">
-        <summary>{t.pressLabel}</summary>
-        <div class="cc-doc-body">
-          <ul class="cc-press">
-            {press.map((i) => (
-              <li>
-                <a href={i.url} target="_blank" rel="noopener">
-                  {(i.source || i.date) && <span class="cc-press-source">{[i.source, i.date && pressDate(i.date)].filter(Boolean).join(' · ')}</span>}
-                  <span class="cc-press-title">{i.label}&nbsp;→</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </details>
+      <a class="cc-doc cc-doc-link" href={`${langPath(lang)}press/`}>{t.pressLabel}<span aria-hidden="true">→</span></a>
       {mediaDocs.map(({ title, Content }) => (
         <details class="cc-doc">
           <summary>{title}</summary>

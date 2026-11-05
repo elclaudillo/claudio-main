@@ -2,14 +2,15 @@
 // Shell shared by the home page and the Work pages: head, nav, footer, the
 // detail window and the page script. `works` is this page's own list; cards
 // and the slideshow point into it. `slides` is the slideshow's part of it.
+// Pages without a slideshow pass `image` for the page's preview picture.
 import '../styles/site.css';
 import {
   langOrder, langNames, langFullNames, socialLinks, defaultLang, LIVE_CHANNEL,
   langPath, strings, workSections, sectionPath, videoEmbed, img,
 } from '../lib/site.js';
 
-interface Props { lang: string; path?: string; works: any[]; slides: any[]; pageTitle?: string }
-const { lang, path = '', works, slides, pageTitle } = Astro.props;
+interface Props { lang: string; path?: string; works: any[]; slides: any[]; pageTitle?: string; image?: string }
+const { lang, path = '', works, slides, pageTitle, image } = Astro.props;
 const t = await strings(lang);
 const home = langPath(lang);
 const youtube = socialLinks.find((s) => s.label === 'YouTube');
@@ -19,7 +20,7 @@ const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const canonical = site + langPath(lang) + path;
 const title = pageTitle ? `${pageTitle} — Claudio Castillo` : 'Claudio Castillo — Non-Repeating Generative Art';
 const description = 'Claudio Castillo — generative watercolor artist. Functional clocks and ever-evolving artworks built from hand-painted watercolors, animation and software.';
-const firstImage = img('lg', slides[0].variants[0]);
+const firstImage = image || img('lg', slides[0].variants[0]);
 
 // Everything the browser script needs; card text is also rendered as HTML.
 const pageData = {

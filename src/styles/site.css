@@ -162,7 +162,7 @@ button { font-family: "Inter", sans-serif; }
 /* Fits the 16:9 stage and its caption in one screen under the nav. */
 .cc-show { --caption: 170px; width: min(100%, calc((100dvh - 64px - var(--caption)) * 16 / 9)); min-width: min(100%, 640px); margin: 0 auto; }
 .cc-show-stage { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
-.cc-show-img, .cc-show-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity 1s ease; }
+.cc-show-img, .cc-show-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .5s ease; }
 .cc-show-img { object-fit: contain; }
 .cc-show-img.is-in, .cc-show-player.is-in { opacity: 1; }
 .cc-show-player { pointer-events: none; }
@@ -346,13 +346,28 @@ button { font-family: "Inter", sans-serif; }
   .cc-btn { padding: 8px 7px; letter-spacing: 0.05em; }
 }
 
-/* ---- about: expandable boxes (art statement, press, exhibitions, cv) ------- */
-.cc-doc-body .cc-press { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
-.cc-press a { display: block; text-decoration: none; color: var(--body); line-height: 1.45; }
-.cc-press-source { display: block; font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
-.cc-press-title { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold) 55%, transparent); text-underline-offset: 3px; }
-.cc-press a:hover .cc-press-title { color: var(--heading); text-decoration-color: var(--heading); }
+/* ---- press page ----------------------------------------------------------- */
+.cc-press { list-style: none; margin: 0 auto; padding: 0; max-width: 1200px; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 34px 28px; }
+.cc-press-home { display: block; width: fit-content; margin: 28px auto 0; text-decoration: none; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--nav-text); }
+.cc-press-home:hover { color: var(--gold); }
+.cc-press-card { position: relative; display: flex; flex-direction: column; min-width: 0; background: var(--surface); }
+.cc-press-pic { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #000; }
+.cc-press-pic img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-press-card.is-link:hover .cc-press-pic img { transform: scale(1.03); }
+.cc-press-body { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 16px 18px; text-align: center; }
+/* Logos come on all sorts of backgrounds: a white chip keeps them readable in both themes. */
+.cc-press-logo { display: inline-flex; align-items: center; height: 38px; padding: 4px 8px; background: #fff; border-radius: 2px; }
+.cc-press-logo img { display: block; max-height: 30px; max-width: 150px; object-fit: contain; }
+.cc-press-source { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+.cc-press-title { color: var(--body); font-size: 0.9rem; line-height: 1.45; text-decoration: none; }
+/* The title's link covers the whole card; the second link sits above it. */
+a.cc-press-title::after { content: ""; position: absolute; inset: 0; }
+a.cc-press-title:focus-visible { outline: none; }
+a.cc-press-title:focus-visible::after { outline: 2px solid var(--gold); outline-offset: 2px; }
+.cc-press-card.is-link:hover .cc-press-title { color: var(--heading); }
+.cc-press-body .cc-play { position: relative; z-index: 1; align-self: center; border-bottom: 0; }
 
+/* ---- about: expandable boxes (art statement, exhibitions, cv) ------------- */
 .cc-docs { border-top: 1px solid var(--rule); }
 .cc-doc { border-bottom: 1px solid var(--rule); }
 .cc-doc summary {
@@ -360,6 +375,11 @@ button { font-family: "Inter", sans-serif; }
   padding: 16px 0; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--heading);
 }
 .cc-doc summary::-webkit-details-marker { display: none; }
+.cc-doc-link {
+  display: flex; justify-content: space-between; align-items: center; padding: 16px 0; text-decoration: none;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--heading);
+}
+.cc-doc-link span { font-size: 1.2rem; font-weight: 400; color: var(--gold); }
 .cc-doc summary::after { content: "+"; font-size: 1.2rem; font-weight: 400; color: var(--gold); transition: transform .25s ease; }
 .cc-doc[open] summary::after { transform: rotate(45deg); }
 .cc-doc summary:hover { color: var(--gold); }

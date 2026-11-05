@@ -7,6 +7,7 @@
 const VIDEO_MS = 20000; // time on a piece with a sample video
 const STILL_MS = 6000; // time on a piece without one
 const PLAYER_DELAY_MS = 1500; // YouTube's spinner stays hidden behind the image
+const FADE_MS = 500; // matches the .cc-show-img transition in site.css
 
 export function initSlideshow(works, slideIdx, img) {
   const root = document.querySelector('[data-show]');
@@ -22,6 +23,7 @@ export function initSlideshow(works, slideIdx, img) {
   let player = null;
   let image = $('img');
   let change = 0; // guards against an image finishing after a newer slide started
+  let swapping = false; // between slides: go() restarts the slide when it's done
 
   const work = () => works[slideIdx[index]];
 
@@ -32,6 +34,7 @@ export function initSlideshow(works, slideIdx, img) {
 
   // Start or stop the current slide to match the page state.
   function sync() {
+    if (swapping) return;
     clearTimeout(timer);
     const running = !paused && onScreen && !document.hidden;
     if (!running) { dropPlayer(); return; }
@@ -63,25 +66,33 @@ export function initSlideshow(works, slideIdx, img) {
     }
   }
 
+  // Fade the current slide out to the black stage, then the next one in. The
+  // pieces have different shapes, so a cross-fade would leave the old image
+  // showing around the edges of the new one.
   function go(k) {
     index = (k + count) % count;
     const w = work();
     const ticket = ++change;
     clearTimeout(timer);
-    dropPlayer();
-    setCaption(w);
+    swapping = true;
     const next = new Image();
     next.className = 'cc-show-img';
     next.alt = w.title;
     next.decoding = 'async';
     next.onload = next.onerror = () => {
       if (ticket !== change) return;
-      const old = image;
-      old.after(next);
-      image = next;
-      requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add('is-in')));
-      setTimeout(() => old.remove(), 1200);
-      sync();
+      setCaption(w);
+      image.classList.remove('is-in');
+      if (player) player.classList.remove('is-in');
+      setTimeout(() => {
+        if (ticket !== change) return;
+        dropPlayer();
+        image.replaceWith(next);
+        image = next;
+        requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add('is-in')));
+        swapping = false;
+        sync();
+      }, FADE_MS);
     };
     next.src = img('lg', w.variants[0]);
   }

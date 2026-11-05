@@ -49,6 +49,7 @@ const site = defineCollection({
     about: z.array(z.string()),
     artStatementLabel: z.string().nullish().transform((s) => s || 'Art statement'),
     pressLabel: z.string().nullish().transform((s) => s || 'Press'),
+    backToHome: z.string().nullish().transform((s) => s || 'Back to home'),
     catPrint: z.string().nullish().transform((s) => s || 'Prints'),
     catWatercolour: z.string().nullish().transform((s) => s || 'Watercolors'),
     // Work menu labels.
@@ -64,7 +65,7 @@ const site = defineCollection({
   }),
 });
 
-// Press (About section): one list, sorted by date when the page is built.
+// Press page: one list, sorted by date when the page is built.
 // Dates are YYYY-MM-DD, YYYY-MM or YYYY; undated items go at the end.
 const press = defineCollection({
   loader: glob({ pattern: '*.json', base: './src/content/press' }),
@@ -73,7 +74,11 @@ const press = defineCollection({
       date: z.union([z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/, 'Use YYYY-MM-DD, YYYY-MM or YYYY'), z.literal('')]).nullish().transform((d) => d ?? ''),
       source: text,
       label: z.string(),
-      url: z.string(),
+      url: text, // empty: shown as a picture with a caption
+      logo: text,
+      image: text,
+      extraLabel: text, // an optional second link, e.g. English or Video
+      extraUrl: text,
     })).default([]),
   }),
 });

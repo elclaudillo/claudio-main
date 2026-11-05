@@ -1,100 +1,400 @@
 {
   "items": [
     {
+      "date": "2026-05",
+      "source": "CubaNet · William Navarrete",
+      "label": "Claudio Castillo Guerrero, Visual Artist: “Change for Cuba May Be Near”",
+      "url": "/press/cubanet-navarrete-interview.pdf",
+      "logo": "/press/logos/cubane.webp",
+      "image": "/press/img/cubanet-navarrete-interview.webp"
+    },
+    {
+      "date": "2026-05-01",
+      "source": "Diario Las Américas",
+      "label": "Exposición colectiva explora la identidad de Florida desde el arte contemporáneo en Miami",
+      "url": "/press/diario-las-americas-expo-florida-2026.pdf",
+      "logo": "/press/logos/daner.webp",
+      "image": "/press/img/diario-las-americas-expo-florida-2026.webp"
+    },
+    {
       "date": "2023-12-07",
       "source": "El Nuevo Herald · Grace Piney",
-      "label": "Artificial Intelligence: New edge of contemporary art",
-      "url": "/press/grace-piney-artificial-intelligence-new-edge-of-contemporary-art.pdf"
+      "label": "Inteligencia Artificial: ¿nueva arista del arte contemporáneo?",
+      "url": "/press/el-nuevo-herald-roman-mosaics-2023.pdf",
+      "logo": "/press/logos/nuevo.webp",
+      "image": "/press/img/el-nuevo-herald-roman-mosaics-2023.webp",
+      "extraLabel": "English",
+      "extraUrl": "/press/grace-piney-artificial-intelligence-new-edge-of-contemporary-art.pdf"
+    },
+    {
+      "date": "2022-07-09",
+      "source": "Studio Visits With Sophie",
+      "label": "Studio visit with Sophie de la Plaine",
+      "url": "https://www.youtube.com/watch?v=-96DHtaedck",
+      "logo": "",
+      "image": "/press/img/studio-visits-with-sophie-studio-visit-with-sophie-de-la-pla.webp"
+    },
+    {
+      "date": "2022",
+      "source": "Sotheby’s Institute of Art",
+      "label": "Inaugural issue of The Currency, Spring 2022",
+      "url": "/press-sothebys.pdf",
+      "logo": "/press/logos/soth1.webp",
+      "image": "/press/img/sotheby-s-institute-of-art-inaugural-issue-of-the-currency-s.webp"
+    },
+    {
+      "date": "2020-04",
+      "source": "El Nuevo Herald",
+      "label": "‘El arte salva’, una exposición virtual por el Día de la Tierra",
+      "url": "/press/el-nuevo-herald-el-arte-salva-2020.pdf",
+      "logo": "/press/logos/elnuevo.webp",
+      "image": "/press/img/el-nuevo-herald-el-arte-salva-2020.webp"
+    },
+    {
+      "date": "2019",
+      "source": "El Nuevo Herald",
+      "label": "Miami Beach rastreando museos",
+      "url": "/press/el-nuevo-herald-miami-beach-rastreando-museos.pdf",
+      "logo": "/press/logos/elnuevo.webp",
+      "image": "/press/img/el-nuevo-herald-miami-beach-rastreando-museos.webp"
+    },
+    {
+      "date": "2019",
+      "source": "Miami Today",
+      "label": "Miami Today",
+      "url": "/press/miami-today-2019.pdf",
+      "logo": "/press/logos/miatoday.webp",
+      "image": "/press/img/miami-today-2019.webp"
+    },
+    {
+      "date": "2019",
+      "source": "Diario de Cuba",
+      "label": "Claudio Castillo expone su ‘arte generativo’ en Miami",
+      "url": "/press/diario-de-cuba-arte-generativo-en-miami.pdf",
+      "logo": "/press/logos/ddc.webp",
+      "image": "/press/img/diario-de-cuba-arte-generativo-en-miami.webp"
+    },
+    {
+      "date": "2019",
+      "source": "El Nuevo Herald",
+      "label": "Arte retando al tiempo",
+      "url": "/press/el-nuevo-herald-arte-retando-al-tiempo.pdf",
+      "logo": "/press/logos/elnuevo.webp",
+      "image": "/press/img/el-nuevo-herald-arte-retando-al-tiempo.webp"
+    },
+    {
+      "date": "2019",
+      "source": "Miami Art Zine",
+      "label": "Museum opens Special Exhibition",
+      "url": "/press/miami-art-zine-museum-opens-special-exhibition.pdf",
+      "logo": "/press/logos/zine.webp",
+      "image": "/press/img/miami-art-zine-museum-opens-special-exhibition.webp"
+    },
+    {
+      "date": "2019-01",
+      "source": "Miami Design Preservation League",
+      "label": "Claudio Castillo, Generative Art",
+      "url": "/press/press-release-mdpl-welcome-center-2019.pdf",
+      "logo": "/press/logos/capture.webp",
+      "image": "/press/img/press-release-mdpl-welcome-center-2019.webp"
+    },
+    {
+      "date": "2018",
+      "source": "Diario Las Américas",
+      "label": "Claudio Castillo, el arte de provocar al tiempo",
+      "url": "/press/diario-las-americas-el-arte-de-provocar-al-tiempo.pdf",
+      "logo": "/press/logos/diarioa.webp",
+      "image": "/press/img/diario-las-americas-el-arte-de-provocar-al-tiempo.webp"
+    },
+    {
+      "date": "2018-03-05",
+      "source": "14ymedio",
+      "label": "El arte efímero y a la vez eterno de Claudio Castillo gracias a la informática",
+      "url": "/press/14ymedio-el-arte-efimero-y-a-la-vez-eterno.pdf",
+      "logo": "/press/logos/14ymedio.webp",
+      "image": "/press/img/14ymedio-el-arte-efimero-y-a-la-vez-eterno.webp"
+    },
+    {
+      "date": "2018-02",
+      "source": "TV Martí",
+      "label": "La revista de la noche con Margarita Rojo. Entrevista de 13 minutos con el artista",
+      "url": "https://www.youtube.com/watch?v=2zJurpGmQ6E",
+      "logo": "/press/logos/marti.webp",
+      "image": "/press/img/tv-marti-la-revista-de-la-noche-con-margarita-rojo-entrevist.webp"
+    },
+    {
+      "date": "2018-01-11",
+      "source": "CNN en Español",
+      "label": "Entrevista con Camilo. 33 minutos con el artista",
+      "url": "https://www.youtube.com/watch?v=0PT84S5SBYM",
+      "logo": "/press/logos/cnn2.webp",
+      "image": "/press/img/cnn-en-espanol-entrevista-con-camilo-33-minutos-con-el-artis.webp"
     },
     {
       "date": "2017-12-27",
-      "source": "Arquidiócesis de Miami",
-      "label": "La Virgen en ferias de arte y museos",
-      "url": "/press/arquidiocesis-la-virgen-en-ferias-de-arte.pdf"
+      "source": "Arquidiócesis de Miami · Grace Piney",
+      "label": "La Virgen de la Caridad en ferias de arte y museos",
+      "url": "/press/arquidiocesis-la-virgen-en-ferias-de-arte.pdf",
+      "logo": "/press/logos/arch-1.webp",
+      "image": "/press/img/arquidiocesis-la-virgen-en-ferias-de-arte.webp"
     },
     {
       "date": "2017-12-19",
       "source": "El Nuevo Herald",
-      "label": "Arte inteligente en movimiento",
-      "url": "/press/el-nuevo-herald-arte-inteligente-en-movimiento.pdf"
+      "label": "Claudio Castillo: Arte inteligente en movimiento",
+      "url": "/press/el-nuevo-herald-arte-inteligente-en-movimiento.pdf",
+      "logo": "/press/logos/elnuevo.webp",
+      "image": "/press/img/el-nuevo-herald-arte-inteligente-en-movimiento.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Cuban Art News",
+      "label": "Miami Art Week: Cuban Art in Museums, Art Spaces, Galleries",
+      "url": "/press/cuban-art-news-miami-art-week-2017.pdf",
+      "logo": "/press/logos/cartnews-1.webp",
+      "image": "/press/img/cuban-art-news-miami-art-week-2017.webp"
+    },
+    {
+      "date": "2017-12-08",
+      "source": "Univision",
+      "label": "Obra de un artista cubano ocupa la icónica fachada de un hotel de Florida durante la Semana de Arte en Miami",
+      "url": "/press/univision-obra-de-un-artista-cubano-fachada-hotel.pdf",
+      "logo": "/press/logos/uni.webp",
+      "image": "/press/img/univision-obra-de-un-artista-cubano-fachada-hotel.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Ahomina · Leyla Sharabi",
+      "label": "Claudio Castillo: Generative Artist",
+      "url": "/press/ahomina-claudio-castillo-generative-artist.pdf",
+      "logo": "/press/logos/ahomina.webp",
+      "image": "/press/img/ahomina-claudio-castillo-generative-artist.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Martí",
+      "label": "Cubanoamericano con la obra de mayores dimensiones en Art Basel Miami",
+      "url": "/press/marti-la-obra-de-mayores-dimensiones-art-basel.pdf",
+      "logo": "/press/logos/marti.webp",
+      "image": "/press/img/marti-la-obra-de-mayores-dimensiones-art-basel.webp",
+      "extraLabel": "Video",
+      "extraUrl": "https://www.youtube.com/watch?v=-tUb0q031aU"
+    },
+    {
+      "date": "2017-12-05",
+      "source": "W Radio · EFE",
+      "label": "Obra de cubano releva a famosas bailarinas en la fachada de hotel en Miami",
+      "url": "/press/w-radio-obra-de-cubano-fachada-hotel.pdf",
+      "logo": "/press/logos/wradio.webp",
+      "image": "/press/img/w-radio-obra-de-cubano-fachada-hotel.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Sumarium · EFE",
+      "label": "Una obra de un cubano releva a famosas bailarinas en la entrada de un hotel en Miami",
+      "url": "/press/sumarium-obra-de-un-cubano-fachada-hotel.pdf",
+      "logo": "/press/logos/suma.webp",
+      "image": "/press/img/sumarium-obra-de-un-cubano-fachada-hotel.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "CiberCuba",
+      "label": "Una composición creada especialmente para la enorme fachada",
+      "url": "",
+      "logo": "/press/logos/ciber.webp",
+      "image": "/press/img/cibercuba-una-composicion-creada-especialmente-para-la-enorm.webp"
+    },
+    {
+      "date": "2017",
+      "source": "El Nuevo Herald",
+      "label": "¿Qué hacer en Miami? Arte y entretenimiento",
+      "url": "/press/el-nuevo-herald-que-hacer-en-miami.pdf",
+      "logo": "/press/logos/elnuevo.webp",
+      "image": "/press/img/el-nuevo-herald-que-hacer-en-miami.webp"
+    },
+    {
+      "date": "2017-09",
+      "source": "Diario de Cuba",
+      "label": "De la pintura a lo digital: Claudio Castillo exhibe su arte generativo en Miami",
+      "url": "/press/diario-de-cuba-de-la-pintura-a-lo-digital.pdf",
+      "logo": "/press/logos/diario.webp",
+      "image": "/press/img/diario-de-cuba-de-la-pintura-a-lo-digital.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Hoy · EFE",
+      "label": "Obra de cubano releva a famosas bailarinas en la fachada de hotel en Miami",
+      "url": "/press/hoy-la-obra-de-cubano-fachada-hotel.pdf",
+      "logo": "/press/logos/hoy.webp",
+      "image": "/press/img/hoy-la-obra-de-cubano-fachada-hotel.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "Indulge",
+      "label": "5 artists whose work you have to see during Miami Art Week",
+      "url": "/press/indulge-5-artists-miami-art-week.pdf",
+      "logo": "/press/logos/indulge.webp",
+      "image": "/press/img/indulge-5-artists-miami-art-week.webp"
+    },
+    {
+      "date": "2017-11",
+      "source": "Diario Las Américas",
+      "label": "El arte del cubanoamericano Claudio Castillo llega al Miami Hispanic Arts Center",
+      "url": "/press/diario-las-americas-miami-hispanic-arts-center.pdf",
+      "logo": "/press/logos/diarioa-1.webp",
+      "image": "/press/img/diario-las-americas-miami-hispanic-arts-center.webp"
+    },
+    {
+      "date": "2017-12",
+      "source": "El Blog de Montaner",
+      "label": "Claudio Castillo: Arte inteligente en movimiento",
+      "url": "/press/montaner-arte-inteligente-en-movimiento.pdf",
+      "logo": "/press/logos/montaner.webp",
+      "image": "/press/img/montaner-arte-inteligente-en-movimiento.webp"
+    },
+    {
+      "date": "2017",
+      "source": "Miami Hispanic Cultural Arts Center",
+      "label": "Video report",
+      "url": "https://www.youtube.com/watch?v=eBhv8SmQBTQ",
+      "logo": "/press/logos/mhcac.webp",
+      "image": "/press/img/miami-hispanic-cultural-arts-center-video-report.webp"
+    },
+    {
+      "date": "2017-11",
+      "source": "Diario de Cuba",
+      "label": "Claudio Castillo cierra el año con dos exposiciones monumentales en solitario",
+      "url": "/press/diario-de-cuba-cierra-el-ano-con-dos-exposiciones.pdf",
+      "logo": "/press/logos/diario.webp",
+      "image": "/press/img/diario-de-cuba-cierra-el-ano-con-dos-exposiciones.webp"
+    },
+    {
+      "date": "2017-11",
+      "source": "Martí",
+      "label": "Artista cubanoamericano Claudio Castillo expone en Miami",
+      "url": "/press/marti-claudio-castillo-expone-en-miami.pdf",
+      "logo": "/press/logos/marti.webp",
+      "image": "/press/img/marti-claudio-castillo-expone-en-miami.webp"
+    },
+    {
+      "date": "2015",
+      "source": "Martí Noticias · Grace Piney",
+      "label": "La negación del arte contemporáneo",
+      "url": "/press/marti-la-negacion-del-arte-contemporaneo.pdf",
+      "logo": "/press/logos/marti.webp",
+      "image": "/press/img/marti-la-negacion-del-arte-contemporaneo.webp"
+    },
+    {
+      "date": "",
+      "source": "Martí",
+      "label": "Virgen de la Caridad que desaparece podrá ser visitada en la Ermita",
+      "url": "",
+      "logo": "/press/logos/marti.webp",
+      "image": "/press/img/marti-virgen-de-la-caridad-que-desaparece-podra-ser-visitada.webp"
+    },
+    {
+      "date": "2008-10-27",
+      "source": "Museum of Latin American Art",
+      "label": "Miami artist Claudio Castillo wins MoLAA awards in the category of Video and Photography",
+      "url": "/press/molaa-awards-2008.pdf",
+      "logo": "/press/logos/molaa.webp",
+      "image": "/press/img/molaa-awards-2008.webp"
+    },
+    {
+      "date": "2012",
+      "source": "The Creators Project",
+      "label": "Art aficionados from around the globe descended onto Miami",
+      "url": "/press/creators-project-miami-2012.pdf",
+      "logo": "/press/logos/crea.webp",
+      "image": "/press/img/creators-project-miami-2012.webp"
+    },
+    {
+      "date": "2007",
+      "source": "El País",
+      "label": "El arte latinoamericano irrumpe en China",
+      "url": "/press/el-pais-el-arte-latinoamericano-irrumpe-en-china.pdf",
+      "logo": "/press/logos/pais.webp",
+      "image": "/press/img/el-pais-el-arte-latinoamericano-irrumpe-en-china.webp"
+    },
+    {
+      "date": "2010-04-26",
+      "source": "The Latin American Art Journal",
+      "label": "Miami, art capital of Latin America",
+      "url": "/press/latin-american-art-journal-2010.pdf",
+      "logo": "/press/logos/aamer.webp",
+      "image": "/press/img/latin-american-art-journal-2010.webp"
+    },
+    {
+      "date": "",
+      "source": "Univision · CIRCA Puerto Rico",
+      "label": "Video report",
+      "url": "https://www.youtube.com/watch?v=zFAn1r5ezdc",
+      "logo": "/press/logos/uni2-1.webp",
+      "image": "/press/img/univision-circa-puerto-rico-video-report.webp"
+    },
+    {
+      "date": "2007-05",
+      "source": "Vogue China",
+      "label": "Chinese Vogue, May 2007",
+      "url": "",
+      "logo": "/press/logos/vogue.webp",
+      "image": "/press/img/vogue-china-chinese-vogue-may-2007.webp"
+    },
+    {
+      "date": "",
+      "source": "Diva · Reuters",
+      "label": "Video report",
+      "url": "https://www.youtube.com/watch?v=37u-500go6Q",
+      "logo": "/press/logos/diva.webp",
+      "image": "/press/img/diva-reuters-video-report.webp"
     },
     {
       "date": "2017-12-04",
       "source": "InterContinental Miami",
       "label": "Nota de prensa, expo Dic 2017 Art Basel InterContinental",
-      "url": "/press/press-release-art-basel-intercontinental-dec-2017.pdf"
+      "url": "/press/press-release-art-basel-intercontinental-dec-2017.pdf",
+      "logo": "",
+      "image": "/press/img/intercontinental-miami-nota-de-prensa-expo-dic-2017-art-base.webp"
     },
     {
       "date": "2017-11-07",
       "source": "InterContinental Miami",
       "label": "Nota de prensa, expo Nov–Dic 2017 (ballet + InterContinental)",
-      "url": "/press/press-release-ballet-intercontinental-nov-dec-2017.pdf"
+      "url": "/press/press-release-ballet-intercontinental-nov-dec-2017.pdf",
+      "logo": "",
+      "image": "/press/img/intercontinental-miami-nota-de-prensa-expo-nov-dic-2017-ball.webp"
     },
     {
       "date": "2017-09-04",
       "source": "InterContinental Miami",
       "label": "Nota de prensa, expo Sept 2017 InterContinental",
-      "url": "/press/press-release-intercontinental-sept-2017.pdf"
-    },
-    {
-      "date": "",
-      "source": "",
-      "label": "Sotheby’s",
-      "url": "/press-sothebys.pdf"
-    },
-    {
-      "date": "",
-      "source": "Martí Noticias · Grace Piney",
-      "label": "La negación del arte contemporáneo",
-      "url": "/press/marti-la-negacion-del-arte-contemporaneo.pdf"
+      "url": "/press/press-release-intercontinental-sept-2017.pdf",
+      "logo": "",
+      "image": "/press/img/intercontinental-miami-nota-de-prensa-expo-sept-2017-interco.webp"
     },
     {
       "date": "",
       "source": "University of South Florida",
       "label": "Revista Surco Sur",
-      "url": "/press/surco-sur-university-of-south-florida.pdf"
+      "url": "/press/surco-sur-university-of-south-florida.pdf",
+      "logo": "",
+      "image": "/press/img/university-of-south-florida-revista-surco-sur.webp"
     },
     {
       "date": "",
-      "source": "TV Martí",
-      "label": "Revista de la noche con Margarita Rojo",
-      "url": "https://www.youtube.com/watch?v=2zJurpGmQ6E"
-    },
-    {
-      "date": "",
-      "source": "CNN en Español",
-      "label": "Entrevista con Camilo",
-      "url": "https://www.youtube.com/watch?v=0PT84S5SBYM"
-    },
-    {
-      "date": "",
-      "source": "TV Martí",
-      "label": "Video report",
-      "url": "https://www.youtube.com/watch?v=-tUb0q031aU"
-    },
-    {
-      "date": "",
-      "source": "Miami Hispanic Cultural Arts Center",
-      "label": "Video report",
-      "url": "https://www.youtube.com/watch?v=eBhv8SmQBTQ"
-    },
-    {
-      "date": "",
-      "source": "Univision",
-      "label": "Video report",
-      "url": "https://www.youtube.com/watch?v=zFAn1r5ezdc"
-    },
-    {
-      "date": "",
-      "source": "Reuters",
-      "label": "Video report",
-      "url": "https://www.youtube.com/watch?v=37u-500go6Q"
+      "source": "René Gómez Manzano",
+      "label": "¿Puedo opinar? (cover)",
+      "url": "",
+      "logo": "",
+      "image": "/press/img/rene-gomez-manzano-puedo-opinar-cover.webp"
     },
     {
       "date": "",
       "source": "YouTube playlist",
       "label": "Videos: recordings of excerpts from the generative process",
-      "url": "https://www.youtube.com/playlist?list=PLf5akUTrPVieY2Gu0tjhn6NEVbw5yalR5"
+      "url": "https://www.youtube.com/playlist?list=PLf5akUTrPVieY2Gu0tjhn6NEVbw5yalR5",
+      "logo": "",
+      "image": "/press/img/youtube-playlist-videos-recordings-of-excerpts-from-the-gene.webp"
     }
   ]
 }

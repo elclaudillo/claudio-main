@@ -2,7 +2,7 @@
 
 Static rebuild of Claudio Castillo's Claude Design site (claudiocastillo.netlify.app),
 built with [Astro](https://astro.build). The home page is the slideshow, Selected Works and About;
-each Work menu item has its own page (`/work/all-generative/`, `clocks`, `portraits`, `rss`, `watercolors`, `prints`).
+each Work menu item has its own page (`/work/all-generative/`, `clocks`, `portraits`, `rss`, `watercolors`, `prints`), and `/press/` lists the press.
 Every page is plain HTML with its text included, in 11 languages (`/`, `/es/`, `/it/`, `/fr/`, `/de/`, `/ko/`, `/ja/`,
 `/zh/`, `/ar/`, `/ru/`, `/hi/`), plus the `/live/` stream page.
 
@@ -21,7 +21,7 @@ Artworks and site text are edited at **/admin/** ([Sveltia CMS](https://sveltiac
 For each artwork: section (Selected Works or Other work), category, title, year, images, video and series links, card/detail text,
 translations, **Visible on site**, **Featured in slideshow**, slideshow position and position on the Clocks page.
 There's also a *Site text* section (tagline, headings, Art statement) for every language,
-*Press* (one list, sorted by date on the site) and *Media documents* (Exhibitions, CV / Bio).
+*Press* (one list with pictures, sorted by date on `/press/`) and *Media documents* (Exhibitions, CV / Bio).
 
 The category decides which Work page shows a piece. All generative shows Clocks, Generative and RSS together; Portraits,
 Prints and Watercolors stay on their own pages. A piece known by two names has both in its title (`pino / Bonsai`).
@@ -43,10 +43,10 @@ Prints and Watercolors stay on their own pages. A piece known by two names has b
 | Content schemas (a bad save fails the build, not the live site) | `src/content.config.ts` |
 | Dashboard fields | `public/admin/config.yml` |
 | Press list / About documents (dashboard) | `src/content/press/press.json`, `src/content/media-docs/*.md` |
-| Press PDFs (moved off the old WordPress server) | `public/press/` |
+| Press PDFs, pictures and logos (moved off the old WordPress server) | `public/press/`, `public/press/img/`, `public/press/logos/` |
 | Languages and social links | `src/data/site.json` |
 | Page shell (head, nav, footer, detail window) | `src/components/Page.astro` |
-| Home page / Work pages | `src/components/Home.astro`, `src/components/WorkPage.astro` |
+| Home / Work / Press pages | `src/components/Home.astro`, `WorkPage.astro`, `PressPage.astro` |
 | Which works each Work page shows | `workSections` in `src/lib/site.js` |
 | Styles (values from the original design) | `src/styles/site.css` |
 | Slideshow | `src/components/Slideshow.astro`, `src/scripts/slideshow.js` |

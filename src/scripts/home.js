@@ -159,10 +159,10 @@ export function initHome(data) {
   });
 
   // ---- back to top -------------------------------------------------------
-  // Shown once the slideshow is out of view.
+  // Shown once the slideshow, or the heading of a page without one, is out of view.
   const toTop = document.querySelector('[data-to-top]');
   new IntersectionObserver(([e]) => toTop.classList.toggle('is-shown', !e.isIntersecting))
-    .observe(document.querySelector('.cc-top'));
+    .observe(document.querySelector('.cc-top, .cc-heading'));
 
   // ---- light / dark ------------------------------------------------------
   // The initial theme is set by the inline script in <head>. Choosing one

@@ -26,5 +26,6 @@
   "installNote": "このページをホーム画面に追加してアプリとしてインストールできます。",
   "backToTop": "トップへ戻る",
   "artStatementLabel": "アーティストステートメント",
-  "pressLabel": "プレス"
+  "pressLabel": "プレス",
+  "backToHome": "ホームに戻る"
 }
