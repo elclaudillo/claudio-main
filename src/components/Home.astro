@@ -1,6 +1,6 @@
 ---
 import Page from './Page.astro';
-import Slideshow from './Slideshow.astro';
+import Hero from './Hero.astro';
 import WorkGrid from './WorkGrid.astro';
 import { getCollection, render } from 'astro:content';
 import { strings, works as getWorks, heroWorks, selectedWorks, langPath } from '../lib/site.js';
@@ -12,12 +12,12 @@ const mediaDocs = await Promise.all((await getCollection('mediaDocs')).sort((a, 
   .map(async (e) => ({ title: e.data.title, Content: (await render(e)).Content })));
 const works = selectedWorks(await getWorks(lang));
 const featured = heroWorks(works);
-// Nothing featured: fall back to every Selected work rather than an empty slideshow.
+// Nothing featured: fall back to every Selected work rather than an empty hero.
 const slides = featured.length ? featured : works;
 const items = works.map((work, idx) => ({ idx, work }));
 ---
 <Page lang={lang} works={works} slides={slides}>
-  <Slideshow slides={slides} playVideo={t.playVideo} />
+  <Hero slides={slides} />
 
   <section id="works" class="cc-works">
     <div class="cc-heading">

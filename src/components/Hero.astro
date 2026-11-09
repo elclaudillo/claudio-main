@@ -1,0 +1,19 @@
+---
+// Home page opener, as in the original design mockup: full-height still
+// images of the Selected works, cross-fading (src/scripts/hero.js). No video
+// players here, so it stays light and smooth on phones; the Work pages keep
+// the video slideshow (Slideshow.astro).
+import { img } from '../lib/site.js';
+
+interface Props { slides: any[] }
+const { slides } = Astro.props;
+const first = slides[0];
+---
+<div id="top" class="cc-top">
+  <div class="cc-hero">
+    <img class="cc-hero-prev" alt="" aria-hidden="true" data-hero-prev>
+    <a class="cc-hero-link" href={first.video || undefined} target="_blank" rel="noopener" data-hero-link>
+      <img class="cc-hero-cur" src={img('lg', first.variants[0])} alt={first.title} fetchpriority="high" data-hero-cur>
+    </a>
+  </div>
+</div>

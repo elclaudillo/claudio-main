@@ -82,29 +82,68 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- nav ---------------------------------------------------------------- */
 .cc-nav {
-  position: sticky; top: 0; z-index: 50; min-height: 12px;
-  display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 12.8px;
-  padding: calc(6px + env(safe-area-inset-top)) 5vw 6px 5vw;
+  position: sticky; top: 0; z-index: 50;
+  /* One row: logo on the left; main links, then icons, on the right. */
+  display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 8px 36px;
+  grid-template-areas: "brand links right";
+  padding: calc(8px + env(safe-area-inset-top)) 5vw 8px 5vw;
   background: var(--nav-bg); border-bottom: 1px solid var(--nav-border);
 }
-.cc-brand { display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; min-width: 0; }
-/* The Edge Animate stage is 558×60; scale sets the logo size. */
-.cc-brand-name {
-  --logo-scale: 0.58;
-  position: relative; display: block; width: calc(558px * var(--logo-scale)); height: calc(60px * var(--logo-scale));
-  overflow: hidden; text-decoration: none; color: transparent;
+.cc-brand { grid-area: brand; }
+.cc-logo { width: max-content; }
+/* Letter tiles from the old site: the logo (Logo.astro, logo.js) and the nav
+   labels (Tiles.astro). --tile sets the size; each letter's colour is --c. */
+.cc-logo { --tile: var(--h); position: relative; display: block; height: var(--tile); overflow: hidden; text-decoration: none; }
+.cc-word { display: flex; }
+.cc-logo .cc-word { position: absolute; left: 0; top: 0; opacity: 0; }
+.cc-logo .cc-word.is-active { opacity: 1; position: relative; }
+.cc-word > span {
+  position: relative; display: block; width: var(--tile); height: var(--tile); line-height: var(--tile);
+  text-align: center; text-transform: uppercase; font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: calc(var(--tile) * 0.72); font-weight: 700; color: #fff;
+  transform: translate(-1000%); transition: transform .3s ease-in-out .2s;
 }
-.cc-brand-name iframe {
-  position: absolute; left: 0; top: 0; width: 558px; height: 60px; border: 0; background: transparent;
-  transform: scale(var(--logo-scale)); transform-origin: left top; pointer-events: none;
-  filter: brightness(1.75) saturate(0.85) opacity(0.8);
+.cc-word.is-active > span { transform: translate(0); }
+/* Each tile arrives in its colour and settles to grey, as on the old site. */
+.cc-word > span::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; box-sizing: border-box;
+  background: var(--c); border: 2px solid #fff; opacity: .8; transition: background 1s ease-in-out .2s, opacity 1s ease-in-out .2s;
 }
-.cc-tagline {
-  font-style: italic; font-size: 0.6rem; line-height: 1.1; color: var(--tagline);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%;
+.cc-word.is-active > span::before { background: #6d6868; opacity: 1; }
+/* Hover: the colours come back. */
+a:hover .cc-word > span::before, button:hover .cc-word > span::before,
+button[aria-expanded="true"] .cc-word > span::before { background: var(--c); transition-duration: .3s; transition-delay: 0s; }
+.cc-word > span.is-whole { width: auto; padding: 0 .45em; text-transform: none; }
+/* The first eight letters overshoot and bounce back, one after another. */
+.cc-word.is-active > span:nth-child(1) { z-index: 30; animation: cc-run8 .4s ease-in-out 0s; }
+.cc-word.is-active > span:nth-child(2) { z-index: 40; animation: cc-run7 .4s ease-in-out .15s; }
+.cc-word.is-active > span:nth-child(3) { z-index: 50; animation: cc-run6 .4s ease-in-out .3s; }
+.cc-word.is-active > span:nth-child(4) { z-index: 60; animation: cc-run5 .4s ease-in-out .45s; }
+.cc-word.is-active > span:nth-child(5) { z-index: 70; animation: cc-run4 .4s ease-in-out .6s; }
+.cc-word.is-active > span:nth-child(6) { z-index: 80; animation: cc-run3 .4s ease-in-out .75s; }
+.cc-word.is-active > span:nth-child(7) { z-index: 90; animation: cc-run2 .4s ease-in-out .9s; }
+.cc-word.is-active > span:nth-child(8) { z-index: 100; animation: cc-run .4s ease-in-out 1.05s; }
+@keyframes cc-run { 0% { transform: translate(-1000%); } 100% { transform: translate(0); } }
+@keyframes cc-run2 { 0% { transform: translate(-1000%); } 75% { transform: translate(100%); } 100% { transform: translate(0); } }
+@keyframes cc-run3 { 0% { transform: translate(-1000%); } 75% { transform: translate(200%); } 100% { transform: translate(0); } }
+@keyframes cc-run4 { 0% { transform: translate(-1000%); } 75% { transform: translate(300%); } 100% { transform: translate(0); } }
+@keyframes cc-run5 { 0% { transform: translate(-1000%); } 75% { transform: translate(400%); } 100% { transform: translate(0); } }
+@keyframes cc-run6 { 0% { transform: translate(-1000%); } 75% { transform: translate(500%); } 100% { transform: translate(0); } }
+@keyframes cc-run7 { 0% { transform: translate(-1000%); } 75% { transform: translate(600%); } 100% { transform: translate(0); } }
+@keyframes cc-run8 { 0% { transform: translate(-1000%); } 75% { transform: translate(700%); } 100% { transform: translate(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .cc-word > span, .cc-word > span::before { transition: none; animation: none !important; }
 }
-.cc-nav-right { display: flex; align-items: center; gap: 12.8px; flex-shrink: 0; flex-wrap: nowrap; margin-left: auto; justify-content: flex-end; }
-.cc-nav-links { list-style: none; display: flex; gap: 16px; flex-shrink: 0; }
+/* Icons and theme switch share the right cell; the icons leave room for it. */
+.cc-nav-tools { grid-area: right; justify-self: end; display: flex; align-items: center; gap: 8px; margin-inline-end: calc(var(--icon) + 8px); }
+.cc-nav > .cc-theme-btn { grid-area: right; justify-self: end; }
+/* Nav labels in tiles: no box or padding of their own. */
+.cc-tiled { display: inline-flex; align-items: center; padding: 0; border: 0; background: none; letter-spacing: 0; text-decoration: none; }
+/* On air: the Live tiles pulse red instead of the button. */
+.cc-live.cc-tiled.is-live { background: none; animation: none; }
+.cc-live.is-live .cc-word > span::before { animation: ccTilePulse 3.6s ease-in-out infinite; opacity: 1; }
+@keyframes ccTilePulse { 0%, 100% { background: #5e1712; } 50% { background: #d8392b; } }
+.cc-nav-links { --tile: var(--h); grid-area: links; list-style: none; display: flex; justify-content: center; align-items: center; gap: 28px; }
 .cc-nav-links a { text-decoration: none; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text); }
 .cc-nav-links a:hover { color: var(--nav-text-hover); }
 .cc-nav-links button {
@@ -112,7 +151,6 @@ button { font-family: "Inter", sans-serif; }
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text);
 }
 .cc-nav-links button:hover, .cc-nav-links button[aria-expanded="true"] { color: var(--nav-text-hover); }
-.cc-nav-links button::after { content: ' ▾'; font-size: 0.8em; }
 
 .cc-btn {
   cursor: pointer; text-decoration: none; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em;
@@ -121,8 +159,25 @@ button { font-family: "Inter", sans-serif; }
 }
 .cc-btn:hover { color: var(--nav-text-hover); border-color: var(--btn-border-hover); }
 .cc-lang-btn { line-height: 1; padding-top: 10px; padding-bottom: 10px; }
-.cc-theme-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 34px; padding: 0; }
-.cc-theme-btn svg { width: 16px; height: 16px; fill: currentColor; }
+/* Header icons as letter tiles: square, white border, grey, each lighting up
+   in a tile colour on hover. --icon is the size (the logo's tile size). */
+/* --h: one height for everything in the header (logo tiles, link tiles, icons). */
+.cc-nav { --h: 30px; --icon: var(--h); }
+.cc-nav .cc-theme-btn, .cc-nav .cc-icon-btn, .cc-nav .cc-lang-btn {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
+  width: var(--icon); height: var(--icon); min-width: var(--icon); padding: 0;
+  border: 2px solid #fff; border-radius: 0; background: #6d6868; color: #fff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-weight: 700; font-size: calc(var(--icon) * 0.4); letter-spacing: 0.02em;
+  transition: background .3s ease;
+}
+.cc-nav .cc-lang-btn { width: auto; padding: 0 calc(var(--icon) * 0.18); font-size: calc(var(--icon) * 0.5); }
+/* Wrappers lay out like their contents, so no text baseline nudges them down. */
+.cc-nav .cc-menu-wrap, .cc-nav-links li { display: flex; align-items: center; }
+.cc-theme-btn svg, .cc-icon-btn svg { width: 55%; height: 55%; fill: currentColor; }
+.cc-nav .cc-icon-btn[aria-label="Contact"]:hover, .cc-nav .cc-icon-btn[aria-expanded="true"] { background: #2e629b; }
+.cc-nav a.cc-icon-btn:hover { background: #4f7c46; }
+.cc-nav .cc-lang-btn:hover, .cc-nav .cc-lang-btn[aria-expanded="true"] { background: #90422d; }
+.cc-nav .cc-theme-btn:hover { background: #d85225; }
 .cc-theme-btn .cc-icon-sun { display: none; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-sun { display: block; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-moon { display: none; }
@@ -159,8 +214,18 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- slideshow (top of every page) ---------------------------------------- */
 .cc-top { background-color: var(--hero-bg); color: #fff; }
+/* Home hero (Hero.astro): still images cross-fading, as in the mockup. */
+.cc-hero {
+  width: 100%; height: 90dvh; min-height: 480px; background: var(--hero-bg);
+  display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
+}
+.cc-hero img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: opacity 2s ease; }
+.cc-hero .cc-hero-prev { position: absolute; inset: 0; margin: auto; opacity: 0; }
+.cc-hero .cc-hero-cur { position: relative; }
+.cc-hero-link { display: contents; }
+.cc-hero-link[href] .cc-hero-cur { cursor: pointer; }
 /* Fits the 16:9 stage and its caption in one screen under the nav. */
-.cc-show { --caption: 170px; width: min(100%, calc((100dvh - 64px - var(--caption)) * 16 / 9)); min-width: min(100%, 640px); margin: 0 auto; }
+.cc-show { --caption: 170px; width: min(100%, calc((100dvh - var(--nav-h) - var(--caption)) * 16 / 9)); min-width: min(100%, 640px); margin: 0 auto; }
 .cc-show-stage { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
 .cc-show-img, .cc-show-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .5s ease; }
 .cc-show-img { object-fit: contain; }
@@ -190,7 +255,7 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- works -------------------------------------------------------------- */
 /* Menu links land below the sticky nav. */
-.cc-works, .cc-about { scroll-margin-top: 90px; }
+.cc-works, .cc-about { scroll-margin-top: calc(var(--nav-h) + 25px); }
 .cc-works { padding: 16px 6vw 100px; }
 .cc-heading { max-width: 720px; margin: 0 auto 24px; text-align: center; }
 .cc-heading h2 { font-weight: 600; letter-spacing: 0.01em; color: var(--heading); }
@@ -281,8 +346,6 @@ button { font-family: "Inter", sans-serif; }
 .cc-footer-social a:hover { background: var(--footer-icon); color: var(--footer-bg); border-color: var(--footer-icon); }
 .cc-footer-social svg { width: 22.4px; height: 22.4px; fill: currentColor; }
 .cc-install { max-width: 640px; margin: 26px auto 0; font-size: 0.8rem; color: var(--footer-note); }
-.cc-login { display: inline-block; margin-top: 14px; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--footer-note); text-decoration: none; }
-.cc-login:hover { color: var(--footer-icon); }
 
 /* ---- modal -------------------------------------------------------------- */
 .cc-overlay { position: fixed; inset: 0; background: rgba(11,15,20,0.86); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 4vh 4vw; }
@@ -304,35 +367,57 @@ button { font-family: "Inter", sans-serif; }
   color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start;
 }
 
-/* ---- small laptops: tighter one-row nav --------------------------------- */
-@media (max-width: 1180px) {
-  .cc-brand-name { --logo-scale: 0.5; }
-  .cc-nav-right { gap: 9px; }
-  .cc-tagline { max-width: 300px; }
+/* Header height, for the slideshow and the scroll stops: one row, two rows. */
+:root { --nav-h: 56px; }
+@media (max-width: 1200px) { :root { --nav-h: 100px; } }
+@media (max-width: 1440px) { :root:has(.cc-nav.is-long) { --nav-h: 100px; } }
+
+/* ---- laptops: one row, a size down --------------------------------------- */
+@media (max-width: 1600px) {
+  .cc-nav { --h: 25px; }
+  .cc-nav-links { gap: 22px; }
 }
 
-/* ---- tablets and phones: two-row header --------------------------------- */
-/* Row 1: logo + theme toggle. Row 2: links and buttons, right-aligned. */
-@media (max-width: 1000px) {
-  /* row-gap 4px ×2 around the zero-height line break = 8px between rows */
-  .cc-nav { flex-wrap: wrap; gap: 4px 7px; }
-  .cc-nav::after { content: ""; order: 2; flex-basis: 100%; height: 0; }
-  .cc-nav-right { display: contents; }
-  .cc-nav-right > * { order: 3; }
-  .cc-nav-links { margin-left: auto; gap: 12px; }
-  .cc-nav-right > .cc-theme-btn { order: 1; margin-left: auto; align-self: flex-start; }
-  .cc-brand-name { --logo-scale: 0.55; }
-  .cc-tagline { max-width: none; }
+@media (min-width: 681px) and (max-width: 1800px) {
+  .cc-nav.is-long { --h: 25px; }
+  .cc-nav.is-long .cc-nav-links { gap: 22px; }
 }
+
+/* ---- small laptops and tablets: two rows ---------------------------------- */
+/* Row 1: logo, icons, theme. Row 2: the main links, centred. Long labels
+   (French, Russian) need two rows sooner. */
+@media (max-width: 1200px) {
+  .cc-nav { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand tools theme" "links links links"; gap: 8px 8px; }
+  .cc-nav-tools { grid-area: tools; margin-inline-end: 0; }
+  .cc-nav > .cc-theme-btn { grid-area: theme; }
+}
+@media (max-width: 1440px) {
+  .cc-nav.is-long { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand tools theme" "links links links"; gap: 8px 8px; }
+  .cc-nav.is-long .cc-nav-tools { grid-area: tools; margin-inline-end: 0; }
+  .cc-nav.is-long > .cc-theme-btn { grid-area: theme; }
+}
+
 
 /* ---- phones (from the design's 680px breakpoint) ------------------------ */
 @media (max-width: 680px) {
-  .cc-nav-links a, .cc-nav-links button { font-size: 0.64rem; }
-  .cc-btn { padding: 8px 9px; font-size: 0.62rem; }
-  .cc-nav-right > .cc-theme-btn { width: 34px; height: 32px; padding: 0; }
-  .cc-tagline { display: none; }
-  .cc-brand-name { --logo-scale: 0.52; }
+  /* Header: theme stays by the logo; the other icons join the links on row 2. */
+  .cc-nav { grid-template-areas: "brand brand theme" "links tools tools"; gap: 8px 6px; padding-bottom: 8px; }
+  /* Each row has one height: row 1 the logo's (--h), row 2 the links' (--lt).
+     Row-2 tiles fill the row: 90vw less gaps, shared by --n letters (Page.astro)
+     plus about 6.5 tiles' worth of link gaps and icons. */
+  .cc-nav { --h: 18px; --lt: clamp(11px, calc((90vw - 18px) / (var(--n) + 6.5)), 18px); }
+  .cc-nav > .cc-theme-btn { --icon: var(--h); }
+  .cc-nav-links { --tile: var(--lt); justify-content: flex-start; gap: calc(var(--tile) * 0.5); }
+  .cc-nav-tools { --icon: var(--lt); gap: 6px; }
+  /* Long labels (French, Russian): the icons move to a third row. */
+  .cc-nav.is-long { grid-template-areas: "brand brand theme" "links links links" "tools tools tools"; --lt: clamp(11px, calc(90vw / (var(--n) + 3)), 18px); }
+  .cc-nav.is-long .cc-nav-tools { justify-content: flex-end; }
+  /* Small icons, normal-sized touch targets. */
+  .cc-nav .cc-btn { position: relative; }
+  .cc-nav .cc-btn::after { content: ""; position: absolute; inset: -8px -3px; }
   .cc-show { width: 100%; min-width: 0; }
+  .cc-hero { align-items: flex-start; height: auto; min-height: 0; }
+  .cc-hero img { max-height: 78vh; }
   .cc-show-arrow { width: 38px; height: 38px; }
   .cc-modal { max-height: 94vh; }
   .cc-modal-img { min-height: 260px; }
@@ -341,9 +426,14 @@ button { font-family: "Inter", sans-serif; }
   .cc-card { margin-bottom: 28px; }
 }
 @media (max-width: 380px) {
-  .cc-brand-name { --logo-scale: 0.47; }
-  .cc-nav-links { gap: 9px; }
-  .cc-btn { padding: 8px 7px; letter-spacing: 0.05em; }
+  .cc-nav { --h: 16px; }
+}
+/* Smallest phones (320px). */
+@media (max-width: 340px) {
+  /* Icons on a third row here for every language. */
+  .cc-nav { grid-template-areas: "brand brand theme" "links links links" "tools tools tools"; }
+  .cc-nav-tools { justify-content: flex-end; }
+  .cc-nav, .cc-nav.is-long { --h: 14px; --lt: clamp(11px, calc(90vw / (var(--n) + 3)), 18px); }
 }
 
 /* ---- press page ----------------------------------------------------------- */

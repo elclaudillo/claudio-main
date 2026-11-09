@@ -1,0 +1,27 @@
+---
+// Header logo from the old WordPress theme (notes/castillo_theme.zip): words
+// spelled in coloured letter tiles that fly in from the left, one word at a
+// time, every 15 s (src/scripts/logo.js). Letters and colours are the old
+// header's. The first word is shown on load so the name is never missing.
+interface Props { home: string }
+const { home } = Astro.props;
+const colours: Record<string, string> = {
+  darkgreen: '#4f7c46', green: '#53b616', rast: '#90422d', blue: '#2e629b',
+  red: '#b3161f', darkred: '#8d2129', yellow: '#e1d620', orange: '#d85225',
+};
+const words: [string, string][][] = [
+  [['C', 'yellow'], ['L', 'rast'], ['A', 'green'], ['U', 'orange'], ['D', 'blue'], ['I', 'blue'], ['O', 'darkgreen'], [' ', 'orange'],
+   ['C', 'blue'], ['A', 'rast'], ['S', 'darkgreen'], ['T', 'yellow'], ['I', 'darkred'], ['L', 'red'], ['L', 'orange'], ['O', 'darkgreen']],
+  [['W', 'blue'], ['A', 'rast'], ['T', 'darkgreen'], ['E', 'yellow'], ['R', 'blue'], ['C', 'darkred'], ['O', 'red'], ['L', 'orange'], ['O', 'darkgreen'], ['R', 'yellow'], ['S', 'blue']],
+  [['A', 'blue'], ['N', 'rast'], ['I', 'darkgreen'], ['M', 'yellow'], ['A', 'blue'], ['T', 'darkred'], ['I', 'red'], ['O', 'orange'], ['N', 'darkgreen']],
+  [['V', 'blue'], ['I', 'darkgreen'], ['D', 'darkgreen'], ['E', 'orange'], ['O', 'rast']],
+  [['S', 'blue'], ['O', 'rast'], ['F', 'darkgreen'], ['T', 'yellow'], ['W', 'blue'], ['A', 'darkred'], ['R', 'red'], ['E', 'orange']],
+];
+---
+<a href={home} class="cc-logo" aria-label="Claudio Castillo" data-logo>
+  {words.map((w, i) => (
+    <span class:list={['cc-word', i === 0 && 'is-active']} aria-hidden="true">
+      {w.map(([ch, c]) => <span style={`--c:${colours[c]}`}>{ch}</span>)}
+    </span>
+  ))}
+</a>

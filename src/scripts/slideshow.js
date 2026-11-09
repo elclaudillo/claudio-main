@@ -1,12 +1,15 @@
 // The slideshow at the top of every page (components/Slideshow.astro): one
 // slide per piece. The piece's image shows first and the YouTube player fades
-// in over it, so a slow or blocked video still leaves the art on screen. It
+// in over it only once the video has been playing for a few seconds, past
+// YouTube's title/logo overlay and the buffering jump at the start. A slow or
+// blocked video just leaves the art on screen. It
 // only runs while it's on screen, and not at all if the visitor prefers
 // reduced motion (the arrows still work, showing the images).
 
 const VIDEO_MS = 20000; // time on a piece with a sample video
 const STILL_MS = 6000; // time on a piece without one
-const PLAYER_DELAY_MS = 1500; // YouTube's spinner stays hidden behind the image
+const REVEAL_MS = 3500; // playing this long before the player shows: YouTube's title bar has faded by then
+const ORIGIN = 'https://www.youtube-nocookie.com';
 const FADE_MS = 500; // matches the .cc-show-img transition in site.css
 
 export function initSlideshow(works, slideIdx, img) {
@@ -27,10 +30,31 @@ export function initSlideshow(works, slideIdx, img) {
 
   const work = () => works[slideIdx[index]];
 
+  let hello = 0; // repeats the "listening" handshake until the player answers
+  let reveal = 0;
+
   function dropPlayer() {
+    clearInterval(hello);
+    clearTimeout(reveal);
+    reveal = 0;
     if (player) player.remove();
     player = null;
   }
+
+  // The embed reports its state by postMessage (YouTube's iframe API protocol)
+  // once told we're listening. playerState 1 = playing.
+  window.addEventListener('message', (e) => {
+    if (!player || e.origin !== ORIGIN || e.source !== player.contentWindow) return;
+    let d;
+    try { d = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+    clearInterval(hello);
+    if (!d) return;
+    const state = d.event === 'onStateChange' ? d.info : d.info && d.info.playerState;
+    if (state === 1 && !reveal) {
+      const frame = player;
+      reveal = setTimeout(() => { if (frame === player) frame.classList.add('is-in'); }, REVEAL_MS);
+    }
+  });
 
   // Start or stop the current slide to match the page state.
   function sync() {
@@ -46,8 +70,13 @@ export function initSlideshow(works, slideIdx, img) {
       frame.allow = 'autoplay; encrypted-media';
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
       frame.tabIndex = -1;
-      frame.src = w.embed;
-      frame.addEventListener('load', () => setTimeout(() => frame.classList.add('is-in'), PLAYER_DELAY_MS), { once: true });
+      frame.src = `${w.embed}&enablejsapi=1&origin=${encodeURIComponent(location.origin)}`;
+      frame.addEventListener('load', () => {
+        const ask = () => frame.contentWindow && frame.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), ORIGIN);
+        ask();
+        hello = setInterval(ask, 250);
+        setTimeout(() => clearInterval(hello), 10000);
+      }, { once: true });
       image.after(frame);
       player = frame;
     }

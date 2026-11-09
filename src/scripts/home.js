@@ -1,11 +1,13 @@
 // Home and Work page behaviour, ported from the original Claude Design component:
 //  - every card shows a random image from its series and re-picks every 6 s
-//  - the slideshow at the top of the page (see slideshow.js)
+//  - the hero (home, see hero.js) or the video slideshow (Work pages, see slideshow.js)
 //  - clicking a card opens the detail modal
 //  - the Live button pulses while the YouTube channel is on air
 //  - Contact / language dropdowns
 
 import { initSlideshow } from './slideshow.js';
+import { initHero } from './hero.js';
+import { initLogo } from './logo.js';
 
 const img = (size, name) => `/img/${size}/${name}.webp`;
 const pick = (list) => list[Math.floor(Math.random() * list.length)];
@@ -86,6 +88,8 @@ export function initHome(data) {
   }, 6000);
 
   initSlideshow(works, data.slides, img);
+  initHero(works, data.slides, img);
+  initLogo();
 
   // ---- modal -------------------------------------------------------------
   const overlay = document.querySelector('[data-overlay]');
@@ -171,15 +175,8 @@ export function initHome(data) {
   const themeBtn = document.querySelector('[data-theme-btn]');
   const themeMeta = document.querySelector('meta[name="theme-color"]');
   const systemDark = matchMedia('(prefers-color-scheme: dark)');
-  // The animated logo is a same-origin iframe; it styles itself off this too.
-  const logoFrame = document.querySelector('.cc-brand-name iframe');
-  const syncLogo = () => {
-    try { logoFrame.contentDocument.documentElement.setAttribute('data-theme', root.getAttribute('data-theme')); } catch (e) {}
-  };
-  logoFrame.addEventListener('load', syncLogo);
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    syncLogo();
     const dark = theme === 'dark';
     themeBtn.setAttribute('aria-pressed', String(dark));
     themeBtn.setAttribute('aria-label', dark ? 'Light mode' : 'Dark mode');

@@ -12,7 +12,6 @@
   "modalMedium": "Watercolors, time-lapse video, animation and software. Lunar phases. Linear video is turned non linear generative by targeting colours and have them regenerate in real time across all possible 16 million hues.",
   "modalExtra": "Edition of 5 with 2 APs, videos and prints.",
   "images": [
-    "/art/florida-1.jpg",
     "/art/florida-2.jpg",
     "/art/florida-3.jpg",
     "/art/florida-4.jpg",
@@ -22,7 +21,8 @@
     "/art/florida-8.jpg",
     "/art/florida-9.jpg",
     "/art/florida-10.jpg",
-    "/art/florida-11.jpg"
+    "/art/florida-11.jpg",
+    "/art/florida-1.jpg"
   ],
   "translations": {
     "es": {
