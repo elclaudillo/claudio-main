@@ -5,7 +5,6 @@
 // Pages without a slideshow pass `image` for the page's preview picture.
 import '../styles/site.css';
 import Logo from './Logo.astro';
-import Tiles from './Tiles.astro';
 import {
   langOrder, langNames, langFullNames, socialLinks, defaultLang, LIVE_CHANNEL,
   langPath, strings, workSections, sectionPath, videoEmbed, img,
@@ -17,16 +16,11 @@ const t = await strings(lang);
 const home = langPath(lang);
 const youtube = socialLinks.find((s) => s.label === 'YouTube');
 const menu = workSections.map((s) => ({ href: home + sectionPath(s.id), label: t[s.label] }));
-// Letters in the tiled nav labels (About, Work, Live). Phones size the tiles to
-// fit them; long labels (French, Russian) get the icons on a row of their own.
-const whole = lang === 'ar' || lang === 'hi';
-const tileCount = (text: string) => whole ? Math.ceil(text.length * 0.7) : [...new Intl.Segmenter(lang, { granularity: 'grapheme' }).segment(text)].length;
-const navLetters = tileCount(t.navAbout) + tileCount(t.navWorks) + 4;
 
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const canonical = site + langPath(lang) + path;
 const title = pageTitle ? `${pageTitle} — Claudio Castillo` : 'Claudio Castillo — Non-Repeating Generative Art';
-// A page's own description, else the site tagline (no longer shown in the header).
+// A page's own description, else the site tagline (not shown in the header).
 const description = pageDescription || t.tagline;
 const firstImage = image || img('lg', slides[0].variants[0]);
 
@@ -76,30 +70,26 @@ const pageData = {
 </head>
 <body>
 
-<nav class:list={['cc-nav', navLetters > 15 && 'is-long']} style={`--n:${navLetters}`}>
-  <!-- Row 1: logo, then contact, login, language and theme. Row 2: the main
-       links in letter tiles. On phones the icons share row 2 (site.css). -->
+<nav class="cc-nav">
   <div class="cc-brand">
     <Logo home={home} />
   </div>
-  <ul class="cc-nav-links">
-    <li><a class="cc-tiled" href={`${home}#about`} aria-label={t.navAbout}><Tiles text={t.navAbout} lang={lang} /></a></li>
-    <li class="cc-menu-wrap">
-      <button class="cc-tiled" type="button" aria-label={t.navWorks} aria-expanded="false" aria-controls="works-menu" data-menu-btn><Tiles text={t.navWorks} lang={lang} offset={1} /></button>
-      <div class="cc-menu cc-menu-list cc-menu-works" id="works-menu" hidden>
-        <a href={`${home}#works`}>{t.menuSelected}</a>
-        {menu.map((m) => <a href={m.href}>{m.label}</a>)}
-        {youtube && <a href={youtube.href} target="_blank" rel="noopener">{t.menuVideos}</a>}
-        <a href="https://butisitart.netlify.app/" target="_blank" rel="noopener">{t.menuAiApps}</a>
-      </div>
-    </li>
-    <li><a class="cc-tiled cc-live" href="/live/" aria-label="Live" data-live-btn><span class="cc-live-dot" aria-hidden="true"></span><Tiles text="Live" lang="en" offset={3} /></a></li>
-  </ul>
-  <div class="cc-nav-tools">
+  <div class="cc-nav-right">
+    <ul class="cc-nav-links">
+      <li><a class="cc-btn" href={`${home}#about`}>{t.navAbout}</a></li>
+      <li class="cc-menu-wrap">
+        <button class="cc-btn cc-works-btn" type="button" aria-expanded="false" aria-controls="works-menu" data-menu-btn>{t.navWorks}</button>
+        <div class="cc-menu cc-menu-list cc-menu-works" id="works-menu" hidden>
+          <a href={`${home}#works`}>{t.menuSelected}</a>
+          {menu.map((m) => <a href={m.href}>{m.label}</a>)}
+          {youtube && <a href={youtube.href} target="_blank" rel="noopener">{t.menuVideos}</a>}
+          <a href="https://butisitart.netlify.app/" target="_blank" rel="noopener">{t.menuAiApps}</a>
+        </div>
+      </li>
+    </ul>
+    <a class="cc-btn cc-live" href="/live/" data-live-btn><span class="cc-live-dot" aria-hidden="true"></span>Live</a>
     <div class="cc-menu-wrap">
-      <button class="cc-btn cc-icon-btn" type="button" aria-label="Contact" title="Contact" aria-expanded="false" aria-controls="contact-menu" data-menu-btn>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-8 5.3-8-5.3ZM5.6 7 12 11.2 18.4 7H5.6Z"/></svg>
-      </button>
+      <button class="cc-btn" type="button" aria-label="Contact" aria-expanded="false" aria-controls="contact-menu" data-menu-btn>Contact</button>
       <div class="cc-menu cc-menu-contact" id="contact-menu" hidden>
         {socialLinks.map((s) => (
           <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} title={s.label}>
@@ -108,9 +98,11 @@ const pageData = {
         ))}
       </div>
     </div>
-    <a class="cc-btn cc-icon-btn" href="http://api.claudiocastillo.com/admin/" target="_blank" rel="noopener" aria-label="Login" title="Login">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-8 12a8 8 0 0 1 16 0h-2a6 6 0 0 0-12 0H4Z"/></svg>
-    </a>
+    <a class="cc-btn" href="http://api.claudiocastillo.com/admin/" target="_blank" rel="noopener">Login</a>
+    <button class="cc-btn cc-theme-btn" type="button" aria-label="Dark mode" title="Dark mode" aria-pressed="false" data-theme-btn>
+      <svg class="cc-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22C6.6 22 2 17.4 2 11.7c0-4.4 2.8-8.3 7-9.7.4-.1.8 0 1 .3.3.3.3.7.2 1.1-.4 1-.6 2.1-.6 3.2 0 5 4 9 9 9 1.1 0 2.2-.2 3.2-.6.4-.1.8-.1 1.1.2.3.3.4.7.3 1-1.4 4.2-5.3 7-9.7 7Z"/></svg>
+      <svg class="cc-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-15a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 17.5a1 1 0 0 1 1 1V21a1 1 0 1 1-2 0v-.5a1 1 0 0 1 1-1ZM4.2 4.2a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4L4.2 5.6a1 1 0 0 1 0-1.4Zm13.1 13.1a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4l-1.1-1.1a1 1 0 0 1 0-1.4ZM2 12a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm17.5 0a1 1 0 0 1 1-1H21a1 1 0 1 1 0 2h-.5a1 1 0 0 1-1-1ZM4.2 19.8a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 0 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0ZM17.3 6.7a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 1 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0Z"/></svg>
+    </button>
     <div class="cc-menu-wrap">
       <button class="cc-btn cc-lang-btn" type="button" aria-label="Language" title="Language" aria-expanded="false" aria-controls="lang-menu" data-menu-btn>{langNames[lang]}</button>
       <div class="cc-menu cc-menu-lang" id="lang-menu" hidden>
@@ -120,10 +112,6 @@ const pageData = {
       </div>
     </div>
   </div>
-  <button class="cc-btn cc-theme-btn" type="button" aria-label="Dark mode" title="Dark mode" aria-pressed="false" data-theme-btn>
-    <svg class="cc-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22C6.6 22 2 17.4 2 11.7c0-4.4 2.8-8.3 7-9.7.4-.1.8 0 1 .3.3.3.3.7.2 1.1-.4 1-.6 2.1-.6 3.2 0 5 4 9 9 9 1.1 0 2.2-.2 3.2-.6.4-.1.8-.1 1.1.2.3.3.4.7.3 1-1.4 4.2-5.3 7-9.7 7Z"/></svg>
-    <svg class="cc-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-15a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 17.5a1 1 0 0 1 1 1V21a1 1 0 1 1-2 0v-.5a1 1 0 0 1 1-1ZM4.2 4.2a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4L4.2 5.6a1 1 0 0 1 0-1.4Zm13.1 13.1a1 1 0 0 1 1.4 0l1.1 1.1a1 1 0 0 1-1.4 1.4l-1.1-1.1a1 1 0 0 1 0-1.4ZM2 12a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm17.5 0a1 1 0 0 1 1-1H21a1 1 0 1 1 0 2h-.5a1 1 0 0 1-1-1ZM4.2 19.8a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 0 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0ZM17.3 6.7a1 1 0 0 1 0-1.4l1.1-1.1a1 1 0 1 1 1.4 1.4l-1.1 1.1a1 1 0 0 1-1.4 0Z"/></svg>
-  </button>
 </nav>
 
 <slot />

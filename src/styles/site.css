@@ -1,4 +1,4 @@
-/* Light theme values come from Claudio's design (inline styles in the Claude
+﻿/* Light theme values come from Claudio's design (inline styles in the Claude
    Design export). Dark theme is a near-black "gallery wall" for the art.
    The theme is set on <html data-theme> by the inline script in Page.astro:
    the visitor's saved choice, else their system setting. */
@@ -20,7 +20,6 @@
   --nav-text-hover: #1c1a17;
   --btn-border: rgba(28,26,23,0.28);
   --btn-border-hover: rgba(28,26,23,0.55);
-  --tagline: #241f19;
   --menu-hover-bg: #f6f1e7;
   --hero-bg: #0b1b33;
   --footer-bg: #0e223f;
@@ -47,7 +46,6 @@
   --nav-text-hover: #fff;
   --btn-border: rgba(255,255,255,0.22);
   --btn-border-hover: rgba(255,255,255,0.5);
-  --tagline: #b9b1a3;
   --menu-hover-bg: #23252a;
   --hero-bg: #050608;
   --footer-bg: #08090b;
@@ -82,18 +80,15 @@ button { font-family: "Inter", sans-serif; }
 
 /* ---- nav ---------------------------------------------------------------- */
 .cc-nav {
-  position: sticky; top: 0; z-index: 50;
-  /* One row: logo on the left; main links, then icons, on the right. */
-  display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 8px 36px;
-  grid-template-areas: "brand links right";
-  padding: calc(8px + env(safe-area-inset-top)) 5vw 8px 5vw;
+  position: sticky; top: 0; z-index: 50; min-height: 12px;
+  display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 12.8px;
+  padding: calc(6px + env(safe-area-inset-top)) 5vw 6px 5vw;
   background: var(--nav-bg); border-bottom: 1px solid var(--nav-border);
 }
-.cc-brand { grid-area: brand; }
-.cc-logo { width: max-content; }
-/* Letter tiles from the old site: the logo (Logo.astro, logo.js) and the nav
-   labels (Tiles.astro). --tile sets the size; each letter's colour is --c. */
-.cc-logo { --tile: var(--h); position: relative; display: block; height: var(--tile); overflow: hidden; text-decoration: none; }
+.cc-brand { display: flex; flex-shrink: 0; min-width: 0; }
+/* Letter-tile logo from the old site (Logo.astro, logo.js): the only animated
+   part of the header. --tile sets the size; each letter's colour is --c. */
+.cc-logo { --tile: 30px; position: relative; display: block; width: max-content; height: var(--tile); overflow: hidden; text-decoration: none; }
 .cc-word { display: flex; }
 .cc-logo .cc-word { position: absolute; left: 0; top: 0; opacity: 0; }
 .cc-logo .cc-word.is-active { opacity: 1; position: relative; }
@@ -111,9 +106,7 @@ button { font-family: "Inter", sans-serif; }
 }
 .cc-word.is-active > span::before { background: #6d6868; opacity: 1; }
 /* Hover: the colours come back. */
-a:hover .cc-word > span::before, button:hover .cc-word > span::before,
-button[aria-expanded="true"] .cc-word > span::before { background: var(--c); transition-duration: .3s; transition-delay: 0s; }
-.cc-word > span.is-whole { width: auto; padding: 0 .45em; text-transform: none; }
+.cc-logo:hover .cc-word > span::before { background: var(--c); transition-duration: .3s; transition-delay: 0s; }
 /* The first eight letters overshoot and bounce back, one after another. */
 .cc-word.is-active > span:nth-child(1) { z-index: 30; animation: cc-run8 .4s ease-in-out 0s; }
 .cc-word.is-active > span:nth-child(2) { z-index: 40; animation: cc-run7 .4s ease-in-out .15s; }
@@ -134,23 +127,17 @@ button[aria-expanded="true"] .cc-word > span::before { background: var(--c); tra
 @media (prefers-reduced-motion: reduce) {
   .cc-word > span, .cc-word > span::before { transition: none; animation: none !important; }
 }
-/* Icons and theme switch share the right cell; the icons leave room for it. */
-.cc-nav-tools { grid-area: right; justify-self: end; display: flex; align-items: center; gap: 8px; margin-inline-end: calc(var(--icon) + 8px); }
-.cc-nav > .cc-theme-btn { grid-area: right; justify-self: end; }
-/* Nav labels in tiles: no box or padding of their own. */
-.cc-tiled { display: inline-flex; align-items: center; padding: 0; border: 0; background: none; letter-spacing: 0; text-decoration: none; }
-/* On air: the Live tiles pulse red instead of the button. */
-.cc-live.cc-tiled.is-live { background: none; animation: none; }
-.cc-live.is-live .cc-word > span::before { animation: ccTilePulse 3.6s ease-in-out infinite; opacity: 1; }
-@keyframes ccTilePulse { 0%, 100% { background: #5e1712; } 50% { background: #d8392b; } }
-.cc-nav-links { --tile: var(--h); grid-area: links; list-style: none; display: flex; justify-content: center; align-items: center; gap: 28px; }
-.cc-nav-links a { text-decoration: none; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text); }
-.cc-nav-links a:hover { color: var(--nav-text-hover); }
-.cc-nav-links button {
-  cursor: pointer; background: none; border: none; padding: 0; font: inherit; font-size: 0.68rem; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--nav-text);
+.cc-nav-right { display: flex; align-items: center; gap: 12.8px; flex-shrink: 0; flex-wrap: nowrap; margin-left: auto; justify-content: flex-end; }
+.cc-nav-links { list-style: none; display: flex; gap: 12.8px; flex-shrink: 0; }
+/* About and Work are buttons like the rest of the header; Work keeps its chevron. */
+.cc-nav-links .cc-btn { display: block; }
+.cc-nav-links .cc-works-btn { display: inline-flex; align-items: center; gap: 0.55em; }
+.cc-works-btn::after {
+  content: ""; width: 0.42em; height: 0.42em; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.15em) rotate(45deg); transition: transform .2s ease;
 }
-.cc-nav-links button:hover, .cc-nav-links button[aria-expanded="true"] { color: var(--nav-text-hover); }
+.cc-works-btn[aria-expanded="true"]::after { transform: translateY(0.12em) rotate(-135deg); }
+.cc-works-btn[aria-expanded="true"] { color: var(--nav-text-hover); border-color: var(--btn-border-hover); }
 
 .cc-btn {
   cursor: pointer; text-decoration: none; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em;
@@ -159,25 +146,8 @@ button[aria-expanded="true"] .cc-word > span::before { background: var(--c); tra
 }
 .cc-btn:hover { color: var(--nav-text-hover); border-color: var(--btn-border-hover); }
 .cc-lang-btn { line-height: 1; padding-top: 10px; padding-bottom: 10px; }
-/* Header icons as letter tiles: square, white border, grey, each lighting up
-   in a tile colour on hover. --icon is the size (the logo's tile size). */
-/* --h: one height for everything in the header (logo tiles, link tiles, icons). */
-.cc-nav { --h: 30px; --icon: var(--h); }
-.cc-nav .cc-theme-btn, .cc-nav .cc-icon-btn, .cc-nav .cc-lang-btn {
-  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
-  width: var(--icon); height: var(--icon); min-width: var(--icon); padding: 0;
-  border: 2px solid #fff; border-radius: 0; background: #6d6868; color: #fff;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-weight: 700; font-size: calc(var(--icon) * 0.4); letter-spacing: 0.02em;
-  transition: background .3s ease;
-}
-.cc-nav .cc-lang-btn { width: auto; padding: 0 calc(var(--icon) * 0.18); font-size: calc(var(--icon) * 0.5); }
-/* Wrappers lay out like their contents, so no text baseline nudges them down. */
-.cc-nav .cc-menu-wrap, .cc-nav-links li { display: flex; align-items: center; }
-.cc-theme-btn svg, .cc-icon-btn svg { width: 55%; height: 55%; fill: currentColor; }
-.cc-nav .cc-icon-btn[aria-label="Contact"]:hover, .cc-nav .cc-icon-btn[aria-expanded="true"] { background: #2e629b; }
-.cc-nav a.cc-icon-btn:hover { background: #4f7c46; }
-.cc-nav .cc-lang-btn:hover, .cc-nav .cc-lang-btn[aria-expanded="true"] { background: #90422d; }
-.cc-nav .cc-theme-btn:hover { background: #d85225; }
+.cc-theme-btn { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 34px; padding: 0; }
+.cc-theme-btn svg { width: 16px; height: 16px; fill: currentColor; }
 .cc-theme-btn .cc-icon-sun { display: none; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-sun { display: block; }
 :root[data-theme="dark"] .cc-theme-btn .cc-icon-moon { display: none; }
@@ -368,53 +338,36 @@ button[aria-expanded="true"] .cc-word > span::before { background: var(--c); tra
 }
 
 /* Header height, for the slideshow and the scroll stops: one row, two rows. */
-:root { --nav-h: 56px; }
-@media (max-width: 1200px) { :root { --nav-h: 100px; } }
-@media (max-width: 1440px) { :root:has(.cc-nav.is-long) { --nav-h: 100px; } }
+:root { --nav-h: 64px; }
+@media (max-width: 1000px) { :root { --nav-h: 90px; } }
 
-/* ---- laptops: one row, a size down --------------------------------------- */
+/* ---- laptops: logo a size down */
 @media (max-width: 1600px) {
-  .cc-nav { --h: 25px; }
-  .cc-nav-links { gap: 22px; }
+  .cc-logo { --tile: 25px; }
 }
 
-@media (min-width: 681px) and (max-width: 1800px) {
-  .cc-nav.is-long { --h: 25px; }
-  .cc-nav.is-long .cc-nav-links { gap: 22px; }
+/* ---- small laptops: tighter one-row nav --------------------------------- */
+@media (max-width: 1180px) {
+  .cc-nav-right, .cc-nav-links { gap: 9px; }
 }
 
-/* ---- small laptops and tablets: two rows ---------------------------------- */
-/* Row 1: logo, icons, theme. Row 2: the main links, centred. Long labels
-   (French, Russian) need two rows sooner. */
-@media (max-width: 1200px) {
-  .cc-nav { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand tools theme" "links links links"; gap: 8px 8px; }
-  .cc-nav-tools { grid-area: tools; margin-inline-end: 0; }
-  .cc-nav > .cc-theme-btn { grid-area: theme; }
+/* ---- tablets and phones: two-row header --------------------------------- */
+/* Row 1: logo + theme toggle. Row 2: links and buttons, right-aligned. */
+@media (max-width: 1000px) {
+  /* row-gap 4px ×2 around the zero-height line break = 8px between rows */
+  .cc-nav { flex-wrap: wrap; gap: 4px 7px; }
+  .cc-nav::after { content: ""; order: 2; flex-basis: 100%; height: 0; }
+  .cc-nav-right { display: contents; }
+  .cc-nav-right > * { order: 3; }
+  .cc-nav-links { margin-left: auto; gap: 7px; }
+  .cc-nav-right > .cc-theme-btn { order: 1; margin-left: auto; align-self: flex-start; }
 }
-@media (max-width: 1440px) {
-  .cc-nav.is-long { grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "brand tools theme" "links links links"; gap: 8px 8px; }
-  .cc-nav.is-long .cc-nav-tools { grid-area: tools; margin-inline-end: 0; }
-  .cc-nav.is-long > .cc-theme-btn { grid-area: theme; }
-}
-
 
 /* ---- phones (from the design's 680px breakpoint) ------------------------ */
 @media (max-width: 680px) {
-  /* Header: theme stays by the logo; the other icons join the links on row 2. */
-  .cc-nav { grid-template-areas: "brand brand theme" "links tools tools"; gap: 8px 6px; padding-bottom: 8px; }
-  /* Each row has one height: row 1 the logo's (--h), row 2 the links' (--lt).
-     Row-2 tiles fill the row: 90vw less gaps, shared by --n letters (Page.astro)
-     plus about 6.5 tiles' worth of link gaps and icons. */
-  .cc-nav { --h: 18px; --lt: clamp(11px, calc((90vw - 18px) / (var(--n) + 6.5)), 18px); }
-  .cc-nav > .cc-theme-btn { --icon: var(--h); }
-  .cc-nav-links { --tile: var(--lt); justify-content: flex-start; gap: calc(var(--tile) * 0.5); }
-  .cc-nav-tools { --icon: var(--lt); gap: 6px; }
-  /* Long labels (French, Russian): the icons move to a third row. */
-  .cc-nav.is-long { grid-template-areas: "brand brand theme" "links links links" "tools tools tools"; --lt: clamp(11px, calc(90vw / (var(--n) + 3)), 18px); }
-  .cc-nav.is-long .cc-nav-tools { justify-content: flex-end; }
-  /* Small icons, normal-sized touch targets. */
-  .cc-nav .cc-btn { position: relative; }
-  .cc-nav .cc-btn::after { content: ""; position: absolute; inset: -8px -3px; }
+  .cc-btn { padding: 8px 7px; font-size: 0.62rem; letter-spacing: 0.05em; }
+  .cc-nav-right > .cc-theme-btn { width: 34px; height: 32px; padding: 0; }
+  .cc-logo { --tile: 18px; }
   .cc-show { width: 100%; min-width: 0; }
   .cc-hero { align-items: flex-start; height: auto; min-height: 0; }
   .cc-hero img { max-height: 78vh; }
@@ -426,14 +379,18 @@ button[aria-expanded="true"] .cc-word > span::before { background: var(--c); tra
   .cc-card { margin-bottom: 28px; }
 }
 @media (max-width: 380px) {
-  .cc-nav { --h: 16px; }
+  .cc-logo { --tile: 16px; }
+  .cc-nav { gap: 4px 5px; }
+  .cc-nav-links { gap: 5px; }
+  .cc-btn { padding: 8px 5px; font-size: 0.6rem; letter-spacing: 0.03em; }
 }
-/* Smallest phones (320px). */
+
 @media (max-width: 340px) {
-  /* Icons on a third row here for every language. */
-  .cc-nav { grid-template-areas: "brand brand theme" "links links links" "tools tools tools"; }
-  .cc-nav-tools { justify-content: flex-end; }
-  .cc-nav, .cc-nav.is-long { --h: 14px; --lt: clamp(11px, calc(90vw / (var(--n) + 3)), 18px); }
+  .cc-logo { --tile: 14px; }
+  /* All seven buttons on one row on the smallest phones. */
+  .cc-nav { gap: 4px 3px; }
+  .cc-nav-links { gap: 3px; }
+  .cc-btn { padding: 7px 3px; font-size: 0.56rem; letter-spacing: 0.02em; }
 }
 
 /* ---- press page ----------------------------------------------------------- */
