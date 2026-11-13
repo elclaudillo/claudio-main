@@ -222,6 +222,8 @@ button { font-family: "Inter", sans-serif; }
 .cc-show-medium { font-size: 0.88rem; color: rgba(255,255,255,0.82); margin-top: 6px; }
 .cc-show-caption .cc-play { color: #e2bd6a; border-bottom-color: #e2bd6a; margin-top: 8px; }
 .cc-show-caption .cc-play:hover { color: #fff; border-bottom-color: #fff; }
+.cc-show-caption .cc-show-series { display: table; margin: 10px 0 0; color: #e2bd6a; border-bottom-color: #e2bd6a; }
+.cc-show-caption .cc-show-series:hover { color: #fff; border-bottom-color: #fff; }
 
 /* ---- works -------------------------------------------------------------- */
 /* Menu links land below the sticky nav. */
@@ -257,6 +259,11 @@ button { font-family: "Inter", sans-serif; }
   color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start;
 }
 .cc-play:hover { color: var(--heading); border-bottom-color: var(--heading); }
+/* "See additional pieces in same series" under the play link. */
+.cc-card-series { margin-top: 8px; text-transform: none; letter-spacing: 0; font-size: 0.72rem; }
+/* A card whose image home.js hasn't loaded yet keeps a placeholder shape. */
+.cc-card-img:has(img[data-later]) { aspect-ratio: 4 / 3; }
+.cc-card-img img[data-later] { visibility: hidden; }
 
 /* Desktop with a mouse: the art fills the card and the info slides up over
    it on hover (or keyboard focus). Touch screens keep the info below. */
@@ -445,14 +452,10 @@ a.cc-press-title:focus-visible::after { outline: 2px solid var(--gold); outline-
 .cc-doc-body blockquote p { margin: 0; }
 .cc-doc-body em { font-style: italic; }
 
-/* ---- about: lead paragraph + pull quote --------------------------------- */
-.cc-about-body .cc-about-lead { font-size: 1.2rem; line-height: 1.55; color: var(--heading); margin-bottom: 22px; }
+/* ---- about: pull quote at the end of the art statement ------------------- */
 .cc-about-quote { margin: 38px 0; padding: 6px 0 6px 26px; border-left: 2px solid var(--gold); }
 .cc-about-quote p { margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-style: italic; line-height: 1.35; color: var(--heading); }
 .cc-about-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-@media (max-width: 680px) {
-  .cc-about-body .cc-about-lead { font-size: 1.08rem; }
-}
 
 /* ---- series pages (/series/<id>/) ---------------------------------------- */
 .cc-series-nav { min-height: 52px; }
@@ -472,8 +475,8 @@ a.cc-press-title:focus-visible::after { outline: 2px solid var(--gold); outline-
 @media (max-width: 1000px) { .cc-series-grid.is-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .cc-series-grid, .cc-series-grid.is-wide { grid-template-columns: minmax(0, 1fr); } }
 .cc-series-piece { background: var(--surface); border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; }
-.cc-series-img { display: grid; place-items: center; aspect-ratio: 1; background: var(--card-img-bg); overflow: hidden; }
-.cc-series-img img { width: 100%; height: 100%; object-fit: contain; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-series-img { display: block; position: relative; aspect-ratio: var(--ratio, 1); background: var(--card-img-bg); overflow: hidden; }
+.cc-series-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
 a.cc-series-img:hover img { transform: scale(1.035); }
 .cc-series-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
 .cc-series-piece h3 { font-weight: 600; font-size: 1.15rem; color: var(--heading); text-transform: lowercase; }

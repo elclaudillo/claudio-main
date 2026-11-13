@@ -12,7 +12,7 @@
     },
     {
       "title": "gtmo",
-      "year": "2009",
+      "year": "2010",
       "image": "/art/series-rss-gtmo.png",
       "video": "https://www.youtube.com/watch?v=u3KC_4LzFx8",
       "text": "Real time weather RSS feed drives changes in the composition. Heat, humidity, wind, cloud cover etc. are tracked through the web. Flash based AIR application; a random generative non real time version is available in C++. Software on computer. Edition of 8 with 2 APs. Videos and prints."

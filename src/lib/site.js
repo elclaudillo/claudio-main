@@ -14,9 +14,14 @@ export const langPath = (lang) => (lang === defaultLang ? '/' : `/${lang}/`);
 
 // The Work menu's pages (/work/<id>/). Selected is the home page. A work can
 // show on several of these: alhambra is in Selected, All generative and Clocks.
+// The Clocks position keeps each series together (mosaics, bonsai, grids,
+// religions). All generative shows the clocks in that order, then RSS, then
+// the rest by title.
 const byClockOrder = (a, b) => a.clockOrder - b.clockOrder || a.title.localeCompare(b.title);
+const generativeRank = { clock: 0, rss: 1, generative: 2 };
+const byGenerative = (a, b) => generativeRank[a.category] - generativeRank[b.category] || byClockOrder(a, b);
 export const workSections = [
-  { id: 'all-generative', label: 'menuAllGenerative', match: (w) => ['clock', 'generative', 'rss'].includes(w.category) },
+  { id: 'all-generative', label: 'menuAllGenerative', match: (w) => ['clock', 'generative', 'rss'].includes(w.category), sort: byGenerative },
   { id: 'clocks', label: 'menuClocks', match: (w) => w.category === 'clock', sort: byClockOrder },
   { id: 'portraits', label: 'menuPortraits', match: (w) => w.category === 'portrait' },
   { id: 'rss', label: 'menuRss', match: (w) => w.category === 'rss' },

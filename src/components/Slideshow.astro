@@ -5,8 +5,8 @@
 // the first slide is rendered here so the page is complete without JavaScript.
 import { img } from '../lib/site.js';
 
-interface Props { slides: any[]; playVideo: string }
-const { slides, playVideo } = Astro.props;
+interface Props { slides: any[]; playVideo: string; seriesLabel: string }
+const { slides, playVideo, seriesLabel } = Astro.props;
 const first = slides[0];
 const many = slides.length > 1;
 ---
@@ -31,6 +31,7 @@ const many = slides.length > 1;
       </div>
       <p class="cc-show-medium" data-show-medium>{first.medium}</p>
       <a class="cc-play" href={first.video || undefined} target="_blank" rel="noopener" hidden={!first.video} data-show-play>{playVideo}</a>
+      <a class="cc-series cc-show-series" href={first.seriesLink || '#'} hidden={!first.seriesLink} data-show-series>{seriesLabel}</a>
     </div>
   </div>
 </div>

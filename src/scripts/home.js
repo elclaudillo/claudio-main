@@ -63,17 +63,25 @@ export function initHome(data) {
 
   cards.forEach((c) => {
     const el = imgOf(c);
+    if (el.hasAttribute('data-later')) return; // loaded once near the screen, below
     const src = img('sm', current[workOf(c)]);
-    // Not fetched yet (lazy, below the fold): just point it at the pick.
+    // Not fetched yet: just point it at the pick.
     if (!el.complete) el.src = src; else fadeTo(el, src);
     lockFrame(el);
   });
 
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
-      if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
+      if (!e.isIntersecting) { visible.delete(e.target); continue; }
+      visible.add(e.target);
+      const el = imgOf(e.target);
+      if (el.hasAttribute('data-later')) {
+        el.removeAttribute('data-later');
+        el.src = img('sm', current[workOf(e.target)]);
+        lockFrame(el);
+      }
     }
-  }, { rootMargin: '200px 0px' });
+  }, { rootMargin: '600px 0px' });
   cards.forEach((c) => io.observe(c));
 
   // Off-screen cards keep their image; there is no point downloading what

@@ -1,0 +1,70 @@
+{
+  "title": "lunation",
+  "year": "2026",
+  "section": "other",
+  "category": "clock",
+  "visible": true,
+  "featured": false,
+  "heroOrder": null,
+  "video": "https://www.youtube.com/watch?v=vCyoeR4DQmA&t=29s",
+  "seriesLink": "",
+  "medium": "Timelapse animation, ultrasound, animation, photography and software. Real-time 24-hour generative clock with solar, lunar and tidal cycles, as well as hour and minute. Generative audio.",
+  "modalMedium": "",
+  "modalExtra": "A collaborative project between photographer Rachel Levy, coder Yevhen Hetmanov and Claudio Castillo (animation design and production).",
+  "images": [
+    "/art/lunation-1.jpg"
+  ],
+  "translations": {
+    "es": {
+      "medium": "Animación timelapse, ultrasonido, animación, fotografía y software. Reloj generativo de 24 horas en tiempo real con ciclos solares, lunares y de mareas, además de la hora y los minutos. Audio generativo.",
+      "modalMedium": "",
+      "modalExtra": "Un proyecto en colaboración entre la fotógrafa Rachel Levy, el programador Yevhen Hetmanov y Claudio Castillo (diseño y producción de la animación)."
+    },
+    "it": {
+      "medium": "Animazione timelapse, ultrasuoni, animazione, fotografia e software. Orologio generativo di 24 ore in tempo reale con cicli solari, lunari e delle maree, oltre a ore e minuti. Audio generativo.",
+      "modalMedium": "",
+      "modalExtra": "Un progetto in collaborazione tra la fotografa Rachel Levy, il programmatore Yevhen Hetmanov e Claudio Castillo (design e produzione dell'animazione)."
+    },
+    "fr": {
+      "medium": "Animation en timelapse, échographie, animation, photographie et logiciel. Horloge générative de 24 heures en temps réel avec les cycles solaires, lunaires et des marées, ainsi que l'heure et les minutes. Audio génératif.",
+      "modalMedium": "",
+      "modalExtra": "Un projet collaboratif entre la photographe Rachel Levy, le développeur Yevhen Hetmanov et Claudio Castillo (conception et production de l'animation)."
+    },
+    "de": {
+      "medium": "Zeitraffer-Animation, Ultraschall, Animation, Fotografie und Software. Generative 24-Stunden-Uhr in Echtzeit mit Sonnen-, Mond- und Gezeitenzyklen sowie Stunden und Minuten. Generatives Audio.",
+      "modalMedium": "",
+      "modalExtra": "Ein Gemeinschaftsprojekt der Fotografin Rachel Levy, des Programmierers Yevhen Hetmanov und von Claudio Castillo (Animationsdesign und Produktion)."
+    },
+    "ko": {
+      "medium": "타임랩스 애니메이션, 초음파, 애니메이션, 사진, 소프트웨어. 태양·달·조수 주기와 시와 분을 보여주는 실시간 24시간 생성형 시계. 생성 오디오.",
+      "modalMedium": "",
+      "modalExtra": "사진작가 Rachel Levy, 프로그래머 Yevhen Hetmanov, Claudio Castillo(애니메이션 디자인 및 제작)의 공동 프로젝트."
+    },
+    "ja": {
+      "medium": "タイムラプス・アニメーション、超音波、アニメーション、写真、ソフトウェア。太陽・月・潮の周期と時・分を示すリアルタイムの24時間ジェネレーティブ時計。生成オーディオ。",
+      "modalMedium": "",
+      "modalExtra": "写真家 Rachel Levy、プログラマー Yevhen Hetmanov、Claudio Castillo（アニメーションのデザインと制作）による共同プロジェクト。"
+    },
+    "zh": {
+      "medium": "延时动画、超声波、动画、摄影和软件。实时24小时生成式时钟，显示太阳、月亮和潮汐周期以及小时和分钟。生成音频。",
+      "modalMedium": "",
+      "modalExtra": "摄影师 Rachel Levy、程序员 Yevhen Hetmanov 与 Claudio Castillo（动画设计与制作）的合作项目。"
+    },
+    "ar": {
+      "medium": "رسوم متحركة بتقنية الفاصل الزمني، موجات فوق صوتية، رسوم متحركة، تصوير وبرمجيات. ساعة توليدية على مدار 24 ساعة في الوقت الحقيقي مع دورات الشمس والقمر والمد والجزر، إلى جانب الساعة والدقيقة. صوت توليدي.",
+      "modalMedium": "",
+      "modalExtra": "مشروع تعاوني بين المصوّرة راشيل ليفي والمبرمج يفهين هيتمانوف وكلاوديو كاستيو (تصميم الرسوم المتحركة وإنتاجها)."
+    },
+    "ru": {
+      "medium": "Покадровая анимация (таймлапс), ультразвук, анимация, фотография и программное обеспечение. Генеративные 24-часовые часы в реальном времени с солнечными, лунными и приливными циклами, а также часами и минутами. Генеративный звук.",
+      "modalMedium": "",
+      "modalExtra": "Совместный проект фотографа Рэйчел Леви, программиста Евгения Гетманова и Клаудио Кастильо (дизайн и производство анимации)."
+    },
+    "hi": {
+      "medium": "टाइमलैप्स एनिमेशन, अल्ट्रासाउंड, एनिमेशन, फोटोग्राफी और सॉफ्टवेयर। सौर, चंद्र और ज्वारीय चक्रों के साथ घंटे और मिनट दिखाने वाली रीयल-टाइम 24 घंटे की जनरेटिव घड़ी। जनरेटिव ऑडियो।",
+      "modalMedium": "",
+      "modalExtra": "फोटोग्राफर Rachel Levy, कोडर Yevhen Hetmanov और Claudio Castillo (एनिमेशन डिज़ाइन और निर्माण) की एक सहयोगी परियोजना।"
+    }
+  },
+  "clockOrder": 22
+}

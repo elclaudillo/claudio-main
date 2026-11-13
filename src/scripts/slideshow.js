@@ -93,6 +93,8 @@ export function initSlideshow(works, slideIdx, img) {
       el.href = w.video || '#';
       el.hidden = !w.video;
     }
+    $('series').href = w.seriesLink || '#';
+    $('series').hidden = !w.seriesLink;
   }
 
   // Fade the current slide out to the black stage, then the next one in. The

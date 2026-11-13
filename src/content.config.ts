@@ -59,7 +59,7 @@ const site = defineCollection({
     menuPortraits: z.string().nullish().transform((s) => s || 'Generative portraits'),
     menuRss: z.string().nullish().transform((s) => s || 'RSS Live feeds'),
     menuVideos: z.string().nullish().transform((s) => s || 'Videos'),
-    menuAiApps: z.string().nullish().transform((s) => s || 'AI Apps'),
+    menuAiApps: z.string().nullish().transform((s) => s || 'Claude AI artifacts'),
     installNote: z.string(),
     backToTop: z.string().nullish().transform((s) => s || 'Back to top'),
   }),

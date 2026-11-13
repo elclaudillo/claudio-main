@@ -24,7 +24,7 @@ const items = works.map((work, idx) => ({ idx, work }));
       <h2>{t.worksHeading}</h2>
       <div class="cc-rule"></div>
     </div>
-    <WorkGrid items={items} playVideo={t.playVideo} />
+    <WorkGrid items={items} playVideo={t.playVideo} seriesLabel={t.seriesLinkLabel} />
   </section>
 
   <section id="about" class="cc-about">
@@ -36,17 +36,13 @@ const items = works.map((work, idx) => ({ idx, work }));
       <details class="cc-doc">
         <summary>{t.artStatementLabel}</summary>
         <div class="cc-doc-body">
-          {t.about.map((p, i) => (
-            <>
-              <p class={i === 0 ? 'cc-about-lead' : undefined}>{p}</p>
-              {i === 1 && t.aboutQuote && (
-                <blockquote class="cc-about-quote">
-                  <p>{t.aboutQuote}</p>
-                  {t.aboutQuoteAuthor && <cite>— {t.aboutQuoteAuthor}</cite>}
-                </blockquote>
-              )}
-            </>
-          ))}
+          {t.about.map((p) => <p>{p}</p>)}
+          {t.aboutQuote && (
+            <blockquote class="cc-about-quote">
+              <p>{t.aboutQuote}</p>
+              {t.aboutQuoteAuthor && <cite>— {t.aboutQuoteAuthor}</cite>}
+            </blockquote>
+          )}
         </div>
       </details>
       <a class="cc-doc cc-doc-link" href={`${langPath(lang)}press/`}>{t.pressLabel}<span aria-hidden="true">→</span></a>

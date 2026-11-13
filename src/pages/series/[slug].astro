@@ -4,7 +4,8 @@
 // "See additional pieces in same series". English only, like the source.
 import '../../styles/site.css';
 import { getCollection } from 'astro:content';
-import { img } from '../../lib/site.js';
+import sharp from 'sharp';
+import { img, socialLinks } from '../../lib/site.js';
 
 export async function getStaticPaths() {
   return (await getCollection('series')).map((e) => ({ params: { slug: e.id }, props: { series: e.data } }));
@@ -19,6 +20,12 @@ const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const first = imageName(series.pieces[0].image);
 // Squarest grid for the piece count: 4 -> 2x2, 6 -> 3x2, 9 -> 3x3.
 const cols = Math.max(Math.ceil(Math.sqrt(series.pieces.length)), Math.min(series.pieces.length, 2));
+// Image boxes take the shape of the series' narrowest piece (bonsai trees are
+// tall, RSS screens wide), so every picture shows whole and as large as it fits.
+const ratios = await Promise.all(series.pieces.map(async (p) => {
+  try { const m = await sharp('.' + p.image).metadata(); return m.width / m.height; } catch { return 1; }
+}));
+const ratio = Math.min(Math.max(Math.min(...ratios), 0.5), 1.6).toFixed(3);
 ---
 <!doctype html>
 <html lang="en">
@@ -57,7 +64,7 @@ const cols = Math.max(Math.ceil(Math.sqrt(series.pieces.length)), Math.min(serie
     {series.intro && <p class="cc-series-intro">{series.intro}</p>}
   </div>
 
-  <div class="cc-series-grid" class:list={{ 'is-wide': cols > 2 }} style={`--cols: ${cols}`}>
+  <div class="cc-series-grid" class:list={{ 'is-wide': cols > 2 }} style={`--cols: ${cols}; --ratio: ${ratio}`}>
     {series.pieces.map((p) => (
       <article class="cc-series-piece">
         {p.video
@@ -85,6 +92,16 @@ const cols = Math.max(Math.ceil(Math.sqrt(series.pieces.length)), Math.min(serie
     </div>
   )}
 </main>
+
+<footer class="cc-footer">
+  <div class="cc-footer-social">
+    {socialLinks.map((s) => (
+      <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d={s.path} /></svg>
+      </a>
+    ))}
+  </div>
+</footer>
 
 </body>
 </html>

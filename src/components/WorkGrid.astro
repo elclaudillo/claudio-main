@@ -1,17 +1,24 @@
 ---
 // Masonry grid of artwork cards, in the order given. `idx` is the work's
 // position in the page's data list (src/scripts/home.js looks cards up by it).
+// Only the first cards carry an image in the markup; home.js loads the rest
+// as they come near the screen. (Safari on iPad never loads loading="lazy"
+// images inside a CSS-columns layout, so the browser's own lazy loading
+// can't be used here.)
 import { img } from '../lib/site.js';
 
-interface Item { idx: number; work: { title: string; year: string; video: string; medium: string; variants: string[] } }
-interface Props { items: Item[]; playVideo: string }
-const { items, playVideo } = Astro.props;
+interface Item { idx: number; work: { title: string; year: string; video: string; seriesLink: string; medium: string; variants: string[] } }
+interface Props { items: Item[]; playVideo: string; seriesLabel: string }
+const { items, playVideo, seriesLabel } = Astro.props;
+const EAGER = 6;
 ---
 <div class="cc-works-grid">
-  {items.map(({ idx, work: w }) => (
+  {items.map(({ idx, work: w }, n) => (
     <article class="cc-card" data-idx={idx} tabindex="0" role="button" aria-haspopup="dialog" aria-label={w.title}>
       <div class="cc-card-img">
-        <img src={img('sm', w.variants[0])} alt={w.title} loading="lazy" decoding="async" data-card-img />
+        {n < EAGER
+          ? <img src={img('sm', w.variants[0])} alt={w.title} decoding="async" data-card-img />
+          : <img alt={w.title} decoding="async" data-card-img data-later />}
       </div>
       <div class="cc-card-body">
         <div class="cc-title-row">
@@ -20,6 +27,7 @@ const { items, playVideo } = Astro.props;
         </div>
         <div class="cc-medium">{w.medium}</div>
         {w.video && <a class="cc-play" href={w.video} target="_blank" rel="noopener" data-stop>{playVideo}</a>}
+        {w.seriesLink && <a class="cc-play cc-card-series" href={w.seriesLink} target={/^https?:/.test(w.seriesLink) ? '_blank' : undefined} rel="noopener" data-stop>{seriesLabel}</a>}
       </div>
     </article>
   ))}

@@ -315,9 +315,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -343,9 +343,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -371,9 +371,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -399,9 +399,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -427,9 +427,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -455,9 +455,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -483,9 +483,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -511,9 +511,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -539,9 +539,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -567,9 +567,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }
@@ -595,9 +595,9 @@ collections:
           - { name: menuPortraits, label: "Work menu: Generative portraits", widget: string, required: false }
           - { name: menuRss, label: "Work menu: RSS Live feeds", widget: string, required: false }
           - { name: menuVideos, label: "Work menu: Videos (YouTube channel)", widget: string, required: false }
-          - { name: menuAiApps, label: "Work menu: AI Apps", widget: string, required: false }
+          - { name: menuAiApps, label: "Work menu: Claude AI artifacts", widget: string, required: false }
           - { name: aboutHeading, label: About heading, widget: string }
-          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown after the second paragraph." }
+          - { name: aboutQuote, label: About quote, widget: string, required: false, hint: "Pull quote shown at the end of the Art statement." }
           - { name: aboutQuoteAuthor, label: Quote author, widget: string, required: false }
           - { name: about, label: Art statement paragraphs, hint: "Shown in the Art statement box. The first paragraph is larger.", label_singular: Paragraph, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
           - { name: artStatementLabel, label: "About box: Art statement", widget: string, required: false }

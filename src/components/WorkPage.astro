@@ -15,13 +15,13 @@ const items = works.map((work, idx) => ({ idx, work }));
 const heading = t[section.label];
 ---
 <Page lang={lang} path={sectionPath(id)} works={works} slides={works} pageTitle={heading}>
-  <Slideshow slides={works} playVideo={t.playVideo} />
+  <Slideshow slides={works} playVideo={t.playVideo} seriesLabel={t.seriesLinkLabel} />
 
   <section id="works" class="cc-works">
     <div class="cc-heading">
       <h2>{heading}</h2>
       <div class="cc-rule"></div>
     </div>
-    <WorkGrid items={items} playVideo={t.playVideo} />
+    <WorkGrid items={items} playVideo={t.playVideo} seriesLabel={t.seriesLinkLabel} />
   </section>
 </Page>
