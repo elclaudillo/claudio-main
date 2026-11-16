@@ -154,6 +154,8 @@ const pageData = {
 <script type="application/json" id="cc-data" set:html={JSON.stringify(pageData).replace(/</g, '\\u003c')}></script>
 <script>
   import { initHome } from '../scripts/home.js';
+  import { initVideo } from '../scripts/video.js';
+  initVideo();
   initHome(JSON.parse(document.getElementById('cc-data')!.textContent!));
 </script>
 </body>

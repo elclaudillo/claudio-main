@@ -8,11 +8,12 @@
 import { img } from '../lib/site.js';
 
 interface Item { idx: number; work: { title: string; year: string; video: string; seriesLink: string; medium: string; variants: string[] } }
-interface Props { items: Item[]; playVideo: string; seriesLabel: string }
-const { items, playVideo, seriesLabel } = Astro.props;
+// even: same-sized thumbnails in rows (RSS: phone-screen pieces) instead of masonry.
+interface Props { items: Item[]; playVideo: string; seriesLabel: string; even?: boolean }
+const { items, playVideo, seriesLabel, even = false } = Astro.props;
 const EAGER = 6;
 ---
-<div class="cc-works-grid">
+<div class="cc-works-grid" class:list={{ 'is-even': even }}>
   {items.map(({ idx, work: w }, n) => (
     <article class="cc-card" data-idx={idx} tabindex="0" role="button" aria-haspopup="dialog" aria-label={w.title}>
       <div class="cc-card-img">

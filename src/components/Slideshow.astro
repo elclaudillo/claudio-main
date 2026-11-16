@@ -30,8 +30,10 @@ const many = slides.length > 1;
         )}
       </div>
       <p class="cc-show-medium" data-show-medium>{first.medium}</p>
-      <a class="cc-play" href={first.video || undefined} target="_blank" rel="noopener" hidden={!first.video} data-show-play>{playVideo}</a>
-      <a class="cc-series cc-show-series" href={first.seriesLink || '#'} hidden={!first.seriesLink} data-show-series>{seriesLabel}</a>
+      <div class="cc-show-links">
+        <a class="cc-play" href={first.video || undefined} target="_blank" rel="noopener" hidden={!first.video} data-show-play>{playVideo}</a>
+        <a class="cc-series cc-show-series" href={first.seriesLink || '#'} hidden={!first.seriesLink} data-show-series>{seriesLabel}</a>
+      </div>
     </div>
   </div>
 </div>

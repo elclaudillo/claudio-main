@@ -27,6 +27,7 @@ export function initSlideshow(works, slideIdx, img) {
   let image = $('img');
   let change = 0; // guards against an image finishing after a newer slide started
   let swapping = false; // between slides: go() restarts the slide when it's done
+  let watching = false; // a video is open in the player (video.js): stay quiet
 
   const work = () => works[slideIdx[index]];
 
@@ -60,7 +61,7 @@ export function initSlideshow(works, slideIdx, img) {
   function sync() {
     if (swapping) return;
     clearTimeout(timer);
-    const running = !paused && onScreen && !document.hidden;
+    const running = !paused && onScreen && !watching && !document.hidden;
     if (!running) { dropPlayer(); return; }
     const w = work();
     if (w.embed && !player) {
@@ -142,5 +143,6 @@ export function initSlideshow(works, slideIdx, img) {
   }
 
   document.addEventListener('visibilitychange', sync);
+  document.addEventListener('cc-video', (e) => { watching = e.detail.open; sync(); });
   new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); }, { threshold: 0.25 }).observe(stage);
 }

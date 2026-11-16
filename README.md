@@ -51,6 +51,7 @@ Prints and Watercolors stay on their own pages. A piece known by two names has b
 | Styles (values from the original design) | `src/styles/site.css` |
 | Slideshow | `src/components/Slideshow.astro`, `src/scripts/slideshow.js` |
 | Card rotation, modal, menus, live badge | `src/scripts/home.js` |
+| Video player (YouTube links play on the site, with a close button) | `src/scripts/video.js` |
 | Live stream page | `src/pages/live/index.astro` |
 | Animated "claudio castillo" logo (Adobe Edge) | `public/ccname/` |
 | Proxies and headers for Netlify | `netlify.toml` |
@@ -68,6 +69,7 @@ entries were imported from are in `notes/` (neither in git).
 
 The Live button and `/live/` read YouTube's channel page through `/livecheck/…`
 (a proxy, set in `netlify.toml` for Netlify and in `astro.config.mjs` for local dev).
+The proxy asks for `?app=desktop`: without it YouTube sends iPhones and iPads to m.youtube.com and the button never turns red.
 The Login link in the footer goes to `api.claudiocastillo.com/admin/`, a separate system Claudio uses to change the RSS feeds.
 
 ## Slideshow

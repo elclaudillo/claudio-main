@@ -9,7 +9,8 @@ interface Props { lang: string; id: string }
 const { lang, id } = Astro.props;
 const t = await strings(lang);
 const section = workSections.find((s) => s.id === id);
-const works = (await getWorks(lang)).filter(section.match);
+const works = (await getWorks(lang)).filter(section.match)
+  .map((w) => (section.series && w.seriesLink === section.series ? { ...w, seriesLink: '' } : w));
 if (section.sort) works.sort(section.sort);
 const items = works.map((work, idx) => ({ idx, work }));
 const heading = t[section.label];
@@ -22,6 +23,6 @@ const heading = t[section.label];
       <h2>{heading}</h2>
       <div class="cc-rule"></div>
     </div>
-    <WorkGrid items={items} playVideo={t.playVideo} seriesLabel={t.seriesLinkLabel} />
+    <WorkGrid items={items} playVideo={t.playVideo} seriesLabel={t.seriesLinkLabel} even={section.even} />
   </section>
 </Page>

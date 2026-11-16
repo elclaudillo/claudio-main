@@ -6,10 +6,11 @@
   NODE_VERSION = "24"
 
 # Live status: the home page and /live/ ask YouTube's channel page which
-# broadcast is on air. Same-origin proxy avoids CORS.
+# broadcast is on air. Same-origin proxy avoids CORS. app=desktop: without it
+# YouTube redirects iPhone and iPad browsers to m.youtube.com and the check fails.
 [[redirects]]
   from = "/livecheck/:ts/:channel"
-  to = "https://www.youtube.com/channel/:channel/live"
+  to = "https://www.youtube.com/channel/:channel/live?app=desktop"
   status = 200
   force = true
 

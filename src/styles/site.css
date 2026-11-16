@@ -220,9 +220,11 @@ button { font-family: "Inter", sans-serif; }
 .cc-show-pause { cursor: pointer; background: none; border: none; color: rgba(255,255,255,0.75); font-size: 0.7rem; padding: 4px 6px; line-height: 1; }
 .cc-show-pause:hover { color: #fff; }
 .cc-show-medium { font-size: 0.88rem; color: rgba(255,255,255,0.82); margin-top: 6px; }
-.cc-show-caption .cc-play { color: #e2bd6a; border-bottom-color: #e2bd6a; margin-top: 8px; }
+/* Play link on the left, the series link opposite it on the same line. */
+.cc-show-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; margin-top: 8px; }
+.cc-show-caption .cc-play { color: #e2bd6a; border-bottom-color: #e2bd6a; margin-top: 0; }
 .cc-show-caption .cc-play:hover { color: #fff; border-bottom-color: #fff; }
-.cc-show-caption .cc-show-series { display: table; margin: 10px 0 0; color: #e2bd6a; border-bottom-color: #e2bd6a; }
+.cc-show-caption .cc-show-series { margin: 0 0 0 auto; font-size: 0.72rem; color: #e2bd6a; border-bottom-color: #e2bd6a; }
 .cc-show-caption .cc-show-series:hover { color: #fff; border-bottom-color: #fff; }
 
 /* ---- works -------------------------------------------------------------- */
@@ -259,6 +261,13 @@ button { font-family: "Inter", sans-serif; }
   color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); align-self: flex-start;
 }
 .cc-play:hover { color: var(--heading); border-bottom-color: var(--heading); }
+/* Even grid (RSS page): every thumbnail the size of a desktop card (about 377px),
+   on tablets too, instead of stretching to fill two columns. */
+.cc-works-grid.is-even {
+  columns: auto; display: grid; gap: 34px; justify-content: center; align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 377px));
+}
+.cc-works-grid.is-even .cc-card { margin-bottom: 0; }
 /* "See additional pieces in same series" under the play link. */
 .cc-card-series { margin-top: 8px; text-transform: none; letter-spacing: 0; font-size: 0.72rem; }
 /* A card whose image home.js hasn't loaded yet keeps a placeholder shape. */
@@ -452,10 +461,10 @@ a.cc-press-title:focus-visible::after { outline: 2px solid var(--gold); outline-
 .cc-doc-body blockquote p { margin: 0; }
 .cc-doc-body em { font-style: italic; }
 
-/* ---- about: pull quote at the end of the art statement ------------------- */
-.cc-about-quote { margin: 38px 0; padding: 6px 0 6px 26px; border-left: 2px solid var(--gold); }
-.cc-about-quote p { margin: 0; font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-style: italic; line-height: 1.35; color: var(--heading); }
-.cc-about-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+/* ---- about: pull quote opening the art statement -------------------------- */
+.cc-about-quote { margin: 8px 0 26px; padding: 4px 0 4px 20px; border-left: 2px solid var(--gold); }
+.cc-about-quote p { margin: 0; font-size: clamp(0.95rem, 1.82vw, 1.225rem); font-style: italic; line-height: 1.4; color: var(--heading); }
+.cc-about-quote cite { display: block; margin-top: 8px; font-style: normal; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 
 /* ---- series pages (/series/<id>/) ---------------------------------------- */
 .cc-series-nav { min-height: 52px; }
@@ -483,3 +492,29 @@ a.cc-series-img:hover img { transform: scale(1.035); }
 .cc-series-links { max-width: 1200px; margin: 44px auto 0; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
 .cc-series-links a { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--gold); }
 .cc-series-links a:hover { color: var(--heading); }
+
+/* ---- video player (src/scripts/video.js): YouTube links play on the site --- */
+.cc-vp {
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 200; background: rgba(0,0,0,0.94);
+  display: flex; align-items: center; justify-content: center;
+  padding: calc(56px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+html.cc-vp-open, html.cc-vp-open body { overflow: hidden; }
+/* Fallback sizes first for older iPads (no aspect-ratio or dvh before Safari 15). */
+.cc-vp-stage { width: 100%; height: 56.25vw; max-height: calc(100vh - 110px); background: #000; }
+.cc-vp-stage.is-tall { width: 56.25vh; height: calc(100vh - 110px); max-width: 100%; }
+@supports (aspect-ratio: 1) {
+  .cc-vp-stage { height: auto; max-height: none; aspect-ratio: 16 / 9; width: min(100%, calc((100vh - 110px) * 16 / 9)); width: min(100%, calc((100dvh - 110px) * 16 / 9)); }
+  .cc-vp-stage.is-tall { height: auto; max-width: none; aspect-ratio: 9 / 16; width: min(100%, calc((100vh - 110px) * 9 / 16)); width: min(100%, calc((100dvh - 110px) * 9 / 16)); }
+}
+.cc-vp-stage iframe { display: block; width: 100%; height: 100%; border: 0; }
+.cc-vp-close {
+  position: absolute; top: calc(10px + env(safe-area-inset-top)); right: 12px; right: max(12px, env(safe-area-inset-right));
+  width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: #fff;
+  font-size: 1.7rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+}
+.cc-vp-close:hover { background: var(--gold); border-color: var(--gold); }
+.cc-vp-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.cc-vp-error { color: rgba(255,255,255,0.85); text-align: center; font-size: 0.95rem; }
+.cc-vp-error a { color: #e2bd6a; }

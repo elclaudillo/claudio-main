@@ -11,7 +11,9 @@ const youtubeProxy = {
   '/livecheck': {
     target: 'https://www.youtube.com',
     changeOrigin: true,
-    rewrite: (p) => p.replace(/^\/livecheck\/[^/]+\/([^/?]+).*/, '/channel/$1/live'),
+    // A phone's user agent gets ~19KB of response headers, more than Node's proxy accepts.
+    headers: { 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' },
+    rewrite: (p) => p.replace(/^\/livecheck\/[^/]+\/([^/?]+).*/, '/channel/$1/live?app=desktop'),
   },
   '^/snapx/': {
     target: 'https://i.ytimg.com',
