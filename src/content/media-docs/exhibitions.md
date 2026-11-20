@@ -3,7 +3,16 @@ title: Exhibitions
 order: 1
 ---
 
-- CADAF Virtual Fair June 2020
+- Context: Art Miami, Delpuma gallery, Miami art week. Dec 2026
+- Miami Hispanic Cultural Arts Center, "Florida" May 2026
+- Bernice Steinbaum gallery, Miami, August 2024
+- Art Miami Blinkgroup, Miami art week Dec 2024
+- Art Wynwood, Blinkgroup Feb 2024
+- Art Palm Beach, Blinkgroup Jan 2024
+- Epiphany in Art today, La Merced Chapel, Jan 2024
+- Context / Art Miami Blinkgroup, Miami art week Dec 2023
+- Context: Art Miami Blinkgroup, Miami Art Week, Dec 2022
+- Context: Art Miami Blinkgroup, Miami Art Week, Dec 2021
 - MHCAC Virtual art group show SOS earth day April 2020
 - Raw Space (solo) Vero Beach January 2020
 - Context Art Fair Miami Art week Dec 2019
